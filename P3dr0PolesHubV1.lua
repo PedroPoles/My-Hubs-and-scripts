@@ -192,66 +192,25 @@ FPSTab:CreateToggle({
 local AdminTab = Window:CreateTab("Admin", 4483362458)
 local AdminSection = AdminTab:CreateSection("Admin Scripts")
 
--- Botão Infinite Yield
-AdminTab:CreateButton({
-    Name = "Infinite Yield",
-    Callback = function()
-        loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
-    end
-})
+AdminTab:CreateButton({Name="Infinite Yield",Callback=function()loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()end})
+AdminTab:CreateButton({Name="AK / Angelical",Callback=function()loadstring(game:HttpGet("https://angelical.me/ak.lua"))()end})
+AdminTab:CreateButton({Name="Fates Admin",Callback=function()loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))()end})
+AdminTab:CreateButton({Name="Cmd-X",Callback=function()loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()end})
+AdminTab:CreateButton({Name="Leg Admin V2",Callback=function()loadstring(game:HttpGet('https://raw.githubusercontent.com/leg1337/legadmv2/main/legadminv2.lua'))()end})
+AdminTab:CreateButton({Name="Homebrew Admin",Callback=function()loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Syntaxx64/HomebrewAdmin/master/Main"))()end})
+AdminTab:CreateButton({Name="Reviz Admin",Callback=function()loadstring(game:HttpGetAsync("https://pastebin.com/raw/gQg0G6iA"))()end})
+AdminTab:CreateButton({Name="GX Admin",Callback=function()loadstring(game:HttpGet("https://pastebin.com/raw/v6E9BmFK", true))()end})
+AdminTab:CreateButton({Name="IV Admin",Callback=function()loadstring(game:HttpGet('https://raw.githubusercontent.com/BloodyBurns/Hex/main/Iv%20Admin%20v3.lua'))()end})
 
--- Botão AK / Angelical
-AdminTab:CreateButton({
-    Name = "AK / Angelical",
-    Callback = function()
-        loadstring(game:HttpGet("https://angelical.me/ak.lua"))()
-    end
-})
+-- =========================
+-- ABA HUBS
+-- =========================
+local HubsTab = Window:CreateTab("Hubs", 4483362458)
+local HubsSection = HubsTab:CreateSection("Outras Hubs")
 
--- Botão Fates Admin
-AdminTab:CreateButton({
-    Name = "Fates Admin",
+HubsTab:CreateButton({
+    Name = "INDRIPRISXTENXXS Admin Hub V8",
     Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))()
-    end
-})
-
--- Botão Cmd-X
-AdminTab:CreateButton({
-    Name = "Cmd-X",
-    Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
-    end
-})
-
--- Botão Leg Admin V2
-AdminTab:CreateButton({
-    Name = "Leg Admin V2",
-    Callback = function()
-        loadstring(game:HttpGet('https://raw.githubusercontent.com/leg1337/legadmv2/main/legadminv2.lua'))()
-    end
-})
-
--- Botão Homebrew
-AdminTab:CreateButton({
-    Name = "Homebrew Admin",
-    Callback = function()
-        loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Syntaxx64/HomebrewAdmin/master/Main"))()
-    end
-})
-
--- Botão Reviz Admin
-AdminTab:CreateButton({
-    Name = "Reviz Admin",
-    Callback = function()
-        loadstring(game:HttpGetAsync("https://pastebin.com/raw/gQg0G6iA"))()
-    end
-})
-
--- Botão GX Admin
-AdminTab:CreateButton({
-    Name = "GX Admin",
-    Callback = function()
-        loadstring(game:HttpGet("https://pastebin.com/raw/v6E9BmFK", true))()
+        loadstring(game:HttpGet("https://pastebin.com/raw/AHv9tabE"))()
     end
 })
