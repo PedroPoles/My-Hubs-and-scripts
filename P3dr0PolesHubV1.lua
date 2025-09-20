@@ -187,7 +187,7 @@ FPSTab:CreateToggle({
 })
 
 -- =========================
--- ABA ADMIN (BOTÕES)
+-- ABA ADMIN
 -- =========================
 local AdminTab = Window:CreateTab("Admin", 4483362458)
 local AdminSection = AdminTab:CreateSection("Admin Scripts")
@@ -216,9 +216,9 @@ AdminTab:CreateButton({
     end
 })
 
--- Botão CMD-X
+-- Botão Cmd-X
 AdminTab:CreateButton({
-    Name = "CMD-X",
+    Name = "Cmd-X",
     Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
     end
@@ -232,10 +232,26 @@ AdminTab:CreateButton({
     end
 })
 
--- Botão Homebrew Admin
+-- Botão Homebrew
 AdminTab:CreateButton({
     Name = "Homebrew Admin",
     Callback = function()
         loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Syntaxx64/HomebrewAdmin/master/Main"))()
+    end
+})
+
+-- Botão Reviz Admin
+AdminTab:CreateButton({
+    Name = "Reviz Admin",
+    Callback = function()
+        loadstring(game:HttpGetAsync("https://pastebin.com/raw/gQg0G6iA"))()
+    end
+})
+
+-- Botão GX Admin
+AdminTab:CreateButton({
+    Name = "GX Admin",
+    Callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/v6E9BmFK", true))()
     end
 })
