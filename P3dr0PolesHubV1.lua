@@ -269,14 +269,14 @@ local HubsTab = Window:CreateTab("Hubs", 4483362458)
 local SpanishHubSection = HubsTab:CreateSection("Spanish Hub")
 
 HubsTab:CreateButton({
-   Name = "Spanish Hub (Script 1)",
+   Name = "Spanish Hub V10",
    Callback = function()
-      loadstring(game:HttpGet("https://paste.myconan.net/499233.txt"))()
+      loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-SPANISH-HUB-V10-10113"))()
    end,
 })
 
 HubsTab:CreateButton({
-   Name = "Spanish Hub (Script 2)",
+   Name = "GHub V14 (this is not SpanishHub Lol)",
    Callback = function()
       loadstring(game:HttpGet("https://raw.githubusercontent.com/gclich/GHUBV14XZ/main/Ghub_Main_Loader.txt"))()
    end,
@@ -286,16 +286,9 @@ HubsTab:CreateButton({
 local GameHubSection = HubsTab:CreateSection("Game Hub")
 
 HubsTab:CreateButton({
-   Name = "Game Hub (Loader 1)",
+   Name = "Game Hub V6",
    Callback = function()
       loadstring(game:HttpGet("https://raw.githubusercontent.com/GamerScripter/Game-Hub/main/loader"))()
-   end,
-})
-
-HubsTab:CreateButton({
-   Name = "Game Hub (Loader 2)",
-   Callback = function()
-      loadstring(game:HttpGet("https://paste.myconan.net/489718.txt"))()
    end,
 })
 
