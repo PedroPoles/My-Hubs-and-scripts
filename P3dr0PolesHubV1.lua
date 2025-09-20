@@ -1,7 +1,5 @@
--- Carregar Rayfield
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
--- Criar janela principal
 local Window = Rayfield:CreateWindow({
    Name = "P3dr0Poles Hub V1",
    Icon = 0,
@@ -174,9 +172,10 @@ end)
 ---------------------------------------------------
 -- Aba FPS
 ---------------------------------------------------
-local FpsTab = Window:CreateTab("FPS", 4483362458)
+local FPSTab = Window:CreateTab("FPS", 4483362458)
+local FPSSection = FPSTab:CreateSection("FPS Scripts")
 
-FpsTab:CreateToggle({
+FPSTab:CreateToggle({
    Name = "Aimbot",
    CurrentValue = false,
    Flag = "AimbotToggle",
@@ -187,13 +186,16 @@ FpsTab:CreateToggle({
    end,
 })
 
-FpsTab:CreateToggle({
+FPSTab:CreateToggle({
    Name = "ESP",
    CurrentValue = false,
-   Flag = "EspToggle",
+   Flag = "ESPToggle",
    Callback = function(Value)
       if Value then
-         _G.Settings = {ShowNames = true, ShowDistance = true}
+         _G.Settings = {
+            ShowNames = true,
+            ShowDistance = true,
+         }
          loadstring(game:HttpGet("https://raw.githubusercontent.com/apakekbebas/esp-lib/main/lib.lua", true))()
       end
    end,
@@ -203,6 +205,7 @@ FpsTab:CreateToggle({
 -- Aba Admin
 ---------------------------------------------------
 local AdminTab = Window:CreateTab("Admin", 4483362458)
+local AdminSection = AdminTab:CreateSection("Admin Scripts")
 
 AdminTab:CreateButton({
    Name = "Infinite Yield",
@@ -212,7 +215,7 @@ AdminTab:CreateButton({
 })
 
 AdminTab:CreateButton({
-   Name = "AK Admin",
+   Name = "AK (Fates Admin)",
    Callback = function()
       loadstring(game:HttpGet("https://angelical.me/ak.lua"))()
    end,
@@ -226,7 +229,7 @@ AdminTab:CreateButton({
 })
 
 AdminTab:CreateButton({
-   Name = "CmdX",
+   Name = "CMD-X",
    Callback = function()
       loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
    end,
@@ -265,49 +268,120 @@ AdminTab:CreateButton({
 ---------------------------------------------------
 local HubsTab = Window:CreateTab("Hubs", 4483362458)
 
--- Spanish Hub
 local SpanishHubSection = HubsTab:CreateSection("Spanish Hub")
-
 HubsTab:CreateButton({
-   Name = "Spanish Hub V10",
+   Name = "Spanish Hub Script 1",
    Callback = function()
-      loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-SPANISH-HUB-V10-10113"))()
+      loadstring(game:HttpGet(('https://paste.myconan.net/499233.txt')))()
    end,
 })
-
 HubsTab:CreateButton({
-   Name = "GHub V14 (this is not SpanishHub Lol)",
+   Name = "Spanish Hub Script 2",
    Callback = function()
       loadstring(game:HttpGet("https://raw.githubusercontent.com/gclich/GHUBV14XZ/main/Ghub_Main_Loader.txt"))()
    end,
 })
 
--- Game Hub
 local GameHubSection = HubsTab:CreateSection("Game Hub")
-
 HubsTab:CreateButton({
-   Name = "Game Hub V6",
+   Name = "Game Hub Loader",
    Callback = function()
       loadstring(game:HttpGet("https://raw.githubusercontent.com/GamerScripter/Game-Hub/main/loader"))()
    end,
 })
-
--- Other Hubs
-local OtherHubSection = HubsTab:CreateSection("Other Hubs")
-
 HubsTab:CreateButton({
-   Name = "GHUB X ZENXOS V15",
+   Name = "Game Hub Extra",
+   Callback = function()
+      loadstring(game:HttpGet("https://paste.myconan.net/489718.txt"))()
+   end,
+})
+
+local OtherHubSection = HubsTab:CreateSection("Other Hubs")
+HubsTab:CreateButton({
+   Name = "GHUB-X-ZENXOS V15",
    Callback = function()
       loadstring(game:HttpGet("https://raw.githubusercontent.com/gclich/GHUBV15_X_ZENXOS-MAINLOADER/refs/heads/main/GHUB-X-ZENXOS-V15.txt"))()
    end,
 })
 
--- Animations Hub
 local AnimationsHubSection = HubsTab:CreateSection("Animations Hub")
-
 HubsTab:CreateButton({
-   Name = "AFEM Max (All UGC Emotes)",
+   Name = "AFEM Max ALL UGC Emotes",
    Callback = function()
       loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-AFEM-Max-ALL-UGC-EMOTES-FREE-FE-NEW-53663"))()
+   end,
+})
+
+HubsTab:CreateButton({
+   Name = "INDRIPRISXTENXXS ADMIN HUB V8",
+   Callback = function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/AHv9tabE"))()
+   end,
+})
+
+HubsTab:CreateButton({
+   Name = "IV Admin",
+   Callback = function()
+      loadstring(game:HttpGet('https://raw.githubusercontent.com/BloodyBurns/Hex/main/Iv%20Admin%20v3.lua'))()
+   end,
+})
+
+---------------------------------------------------
+-- Aba FE
+---------------------------------------------------
+local FETab = Window:CreateTab("FE", 4483362458)
+
+-- Section FE Scripts
+local FEScriptsSection = FETab:CreateSection("FE Scripts")
+
+FETab:CreateButton({
+   Name = "Netless",
+   Callback = function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/1gtSF7tG"))()
+   end,
+})
+
+-- Section FE Hubs
+local FEHubsSection = FETab:CreateSection("FE Hubs")
+
+FETab:CreateButton({
+   Name = "FE Trolling GUI",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/yofriendfromschool1/Sky-Hub/main/FE%20Trolling%20GUI.luau"))()
+   end,
+})
+
+FETab:CreateButton({
+   Name = "Altair Hub",
+   Callback = function()
+      loadstring(game:HttpGet("https://pastefy.app/MxnvA12M/raw"))()
+   end,
+})
+
+FETab:CreateButton({
+   Name = "Solara Hub",
+   Callback = function()
+      loadstring(game:HttpGet('https://raw.githubusercontent.com/samuraa1/Solara-Hub/refs/heads/main/SH.lua'))()
+   end,
+})
+
+FETab:CreateButton({
+   Name = "XVC Script Hub",
+   Callback = function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/Piw5bqGq"))()
+   end,
+})
+
+FETab:CreateButton({
+   Name = "C00lgui V2",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/sinret/rbxscript.com-scripts-reuploads-/main/ckid", true))()
+   end,
+})
+
+FETab:CreateButton({
+   Name = "C00lkidd F3x???",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/wik7123/hi/main/copyezskid%20ok"))()
    end,
 })
