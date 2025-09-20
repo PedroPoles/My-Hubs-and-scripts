@@ -281,3 +281,4 @@ FETab:CreateButton({Name = "Solara Hub", Callback = function() loadstring(game:H
 FETab:CreateButton({Name = "XVC Script Hub", Callback = function() loadstring(game:HttpGet("https://pastebin.com/raw/Piw5bqGq"))() end})
 FETab:CreateButton({Name = "C00lgui V2", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/sinret/rbxscript.com-scripts-reuploads-/main/ckid", true))() end})
 FETab:CreateButton({Name = "C00lkidd F3x???", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/wik7123/hi/main/copyezskid%20ok"))() end})
+FETab:CreateButton({Name = "Slicer FE V6", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Ahma174/Slicer/refs/heads/main/Slicer%20Fe%20V6"))() end})
