@@ -213,12 +213,11 @@ local HubsTab = Window:CreateTab("Hubs", 4483362458)
 -- Spanish Hub
 HubsTab:CreateSection("Spanish Hub")
 HubsTab:CreateButton({Name = "Spanish Hub (1)", Callback = function() loadstring(game:HttpGet("https://paste.myconan.net/499233.txt"))() end})
-HubsTab:CreateButton({Name = "Spanish Hub (2)", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/gclich/GHUBV14XZ/main/Ghub_Main_Loader.txt"))() end})
+HubsTab:CreateButton({Name = "Ghub LOL(not spanishHub)", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/gclich/GHUBV14XZ/main/Ghub_Main_Loader.txt"))() end})
 
 -- Game Hub
 HubsTab:CreateSection("Game Hub")
-HubsTab:CreateButton({Name = "Game Hub (1)", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/GamerScripter/Game-Hub/main/loader"))() end})
-HubsTab:CreateButton({Name = "Game Hub (2)", Callback = function() loadstring(game:HttpGet("https://paste.myconan.net/489718.txt"))() end})
+HubsTab:CreateButton({Name = "Game Hub v6", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/GamerScripter/Game-Hub/main/loader"))() end})
 
 -- Other Hubs
 HubsTab:CreateSection("Other Hubs")
@@ -227,4 +226,58 @@ HubsTab:CreateButton({Name = "GHUB X ZENXOS V15", Callback = function() loadstri
 -- Animations Hub
 HubsTab:CreateSection("Animations Hub")
 HubsTab:CreateButton({Name = "AFEM Max UGC Emotes", Callback = function() loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-AFEM-Max-ALL-UGC-EMOTES-FREE-FE-NEW-53663"))() end})
-HubsTab:CreateButton({Name = "Aquamatrix Hub",
+HubsTab:CreateButton({Name = "Aquamatrix Hub", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/ExploitFin/AquaMatrix/refs/heads/AquaMatrix/AquaMatrix"))() end})
+
+---------------------------------------------------
+-- Aba FE
+---------------------------------------------------
+local FETab = Window:CreateTab("FE", 4483362458)
+
+-- FE Scripts
+FETab:CreateSection("FE Scripts")
+
+FETab:CreateButton({
+   Name = "Netless",
+   Callback = function()
+      -- Script netless básico
+      local Players = game:GetService("Players")
+      local RunService = game:GetService("RunService")
+      local player = Players.LocalPlayer
+      RunService.Stepped:Connect(function()
+         if player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+            player.Character.HumanoidRootPart.Velocity = Vector3.new(30,0,0)
+         end
+      end)
+   end,
+})
+
+FETab:CreateButton({
+   Name = "FE Animations GUI",
+   Callback = function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/1p6xn0zU"))()
+   end,
+})
+
+FETab:CreateButton({
+   Name = "FE Punch Tool",
+   Callback = function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/tzTXmYf2"))()
+   end,
+})
+
+FETab:CreateButton({
+   Name = "FE Yeet GUI",
+   Callback = function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/VQj9dG7h"))()
+   end,
+})
+
+-- FE Hubs
+FETab:CreateSection("FE Hubs")
+
+FETab:CreateButton({Name = "FE Trolling GUI", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/yofriendfromschool1/Sky-Hub/main/FE%20Trolling%20GUI.luau"))() end})
+FETab:CreateButton({Name = "Altair Hub", Callback = function() loadstring(game:HttpGet("https://pastefy.app/MxnvA12M/raw"))() end})
+FETab:CreateButton({Name = "Solara Hub", Callback = function() loadstring(game:HttpGet('https://raw.githubusercontent.com/samuraa1/Solara-Hub/refs/heads/main/SH.lua'))() end})
+FETab:CreateButton({Name = "XVC Script Hub", Callback = function() loadstring(game:HttpGet("https://pastebin.com/raw/Piw5bqGq"))() end})
+FETab:CreateButton({Name = "C00lgui V2", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/sinret/rbxscript.com-scripts-reuploads-/main/ckid", true))() end})
+FETab:CreateButton({Name = "C00lkidd F3x???", Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/wik7123/hi/main/copyezskid%20ok"))() end})
