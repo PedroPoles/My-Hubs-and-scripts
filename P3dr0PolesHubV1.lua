@@ -215,7 +215,8 @@ HubsTab:CreateButton({Name="Spanish Hub", Callback=function() loadstring(game:Ht
 HubsTab:CreateButton({Name="Ghub v15", Callback=function() loadstring(game:HttpGet("https://raw.githubusercontent.com/gclich/GHUBV14XZ/main/Ghub_Main_Loader.txt"))() end})
 
 HubsTab:CreateSection("Game Hub")
-HubsTab:CreateButton({Name="Game Hub Loader", Callback=function() loadstring(game:HttpGet("https://raw.githubusercontent.com/GamerScripter/Game-Hub/main/loader"))() end})
+HubsTab:CreateButton({Name="Game Hub Loader 1", Callback=function() loadstring(game:HttpGet("https://raw.githubusercontent.com/GamerScripter/Game-Hub/main/loader"))() end})
+HubsTab:CreateButton({Name="Game Hub Loader 2", Callback=function() loadstring(game:HttpGet("https://paste.myconan.net/489718.txt"))() end})
 
 HubsTab:CreateSection("Other Hubs")
 HubsTab:CreateButton({Name="GHUB-X-ZENXOS-V15", Callback=function() loadstring(game:HttpGet("https://raw.githubusercontent.com/gclich/GHUBV15_X_ZENXOS-MAINLOADER/refs/heads/main/GHUB-X-ZENXOS-V15.txt"))() end})
@@ -253,3 +254,40 @@ FETab:CreateButton({Name="Slicer FE V6", Callback=function() loadstring(game:Htt
 FETab:CreateButton({Name="Wisl FE", Callback=function() loadstring(game:HttpGet("https://raw.githubusercontent.com/wisl884/wisl-i-Universal-Project1/main/Wisl'i%20Universal%20Project.lua", true))() end})
 FETab:CreateButton({Name="System Hub", Callback=function() loadstring(game:HttpGet("https://raw.githubusercontent.com/AHMEDPLPL/System-hub-V3/refs/heads/main/System%20Hub%20V3"))() end})
 FETab:CreateButton({Name="ScriptHub V3", Callback=function() loadstring(game:HttpGet("https://raw.githubusercontent.com/scripthubekitten/SCRIPTHUBV3/main/SCRIPTHUBV3", true))() end})
+
+----------------------------------------------------
+-- Aba Visual Scripts
+----------------------------------------------------
+local VisualTab = Window:CreateTab("Visual Scripts", 4483362458)
+VisualTab:CreateSection("Even though they are visual scripts, it's worth testing them, have fun!")
+
+VisualTab:CreateButton({
+   Name = "Don't Use This Bruh",
+   Callback = function()
+      for i,v in pairs(game.Players:GetChildren()) do
+         game:GetService("Chat"):Chat(v.Character.Head,"FUCK \n CUNT \n WHORE \n SHIT \n BITCH \n CUM \n JIZZ \n NIGGER")
+      end
+   end
+})
+
+VisualTab:CreateButton({
+   Name = "Big Head All",
+   Callback = function()
+      for i,v in pairs(game.Players:GetPlayers()) do
+         v.Character.Head.Mesh.Scale = Vector3.new(9,9,9)
+      end
+   end
+})
+
+VisualTab:CreateButton({
+   Name = "Rocket All",
+   Callback = function()
+      for _,v in pairs(game.Players:GetPlayers()) do
+fire = Instance.new("Fire", v.Character.Torso)
+fire.Heat = 30
+fire.Size = 30
+f = Instance.new("BodyForce", v.Character.Torso)
+f.force = Vector3.new(1, 7500, 1)
+      end
+   end
+})
