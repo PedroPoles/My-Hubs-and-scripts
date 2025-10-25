@@ -1,59 +1,71 @@
--- P3dr0Poles Hub V2 (Kavo UI - OceanTheme) - sem Key System
--- Cole esse script no executor (ex: Krnl, Synapse, etc)
+-- P3dr0Poles Hub V2 Ash-Libs
+-- Sem Key System
+-- GUI principal
+local GUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/BloodLetters/Ash-Libs/refs/heads/main/source.lua"))()
 
--- Kavo UI (source oficial xHeptc)
-local Kavo = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Kavo.CreateLib("P3dr0Poles Hub V2", "Ocean") -- OceanTheme
+GUI:CreateMain({
+    Name = "P3dr0Poles Hub V2",
+    title = "P3dr0Poles Hub V2",
+    ToggleUI = "K",
+    WindowIcon = "home",
+    Theme = {
+        Background = Color3.fromRGB(25, 25, 35),
+        Secondary = Color3.fromRGB(35, 35, 45),
+        Accent = Color3.fromRGB(138, 43, 226),
+        Text = Color3.fromRGB(255, 255, 255),
+        TextSecondary = Color3.fromRGB(180, 180, 180),
+        Border = Color3.fromRGB(50, 50, 60),
+        NavBackground = Color3.fromRGB(20, 20, 30)
+    },
+    Blur = { Enable = false, value = 0.2 },
+    Config = { Enabled = false }
+})
 
-----------------------------------------------------
--- Aba Player (mesmo comportamento da V1)
-----------------------------------------------------
-local PlayerTab = Window:NewTab("Player")
-local PlayerSection = PlayerTab:NewSection("Player Options")
+-- =====================
+-- ABA PLAYER
+-- =====================
+local PlayerTab = GUI:CreateTab("Player", "home")
+GUI:CreateSection({parent = PlayerTab, text = "Player Options"})
 
--- WalkSpeed (slider)
-PlayerSection:NewSlider("WalkSpeed", "Move speed", 200, 16, function(v)
-    pcall(function()
-        if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid") then
-            game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").WalkSpeed = v
-        end
-    end)
-end)
+-- WalkSpeed
+GUI:CreateSlider({parent = PlayerTab, text = "WalkSpeed", min = 16, max = 200, default = 16, function(value)
+    local pl = game.Players.LocalPlayer
+    if pl.Character and pl.Character:FindFirstChildOfClass("Humanoid") then
+        pl.Character:FindFirstChildOfClass("Humanoid").WalkSpeed = value
+    end
+end})
 
--- JumpPower (slider)
-PlayerSection:NewSlider("JumpPower", "Jump power", 300, 50, function(v)
-    pcall(function()
-        if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid") then
-            game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").JumpPower = v
-        end
-    end)
-end)
+-- JumpPower
+GUI:CreateSlider({parent = PlayerTab, text = "JumpPower", min = 50, max = 300, default = 50, function(value)
+    local pl = game.Players.LocalPlayer
+    if pl.Character and pl.Character:FindFirstChildOfClass("Humanoid") then
+        pl.Character:FindFirstChildOfClass("Humanoid").JumpPower = value
+    end
+end})
 
--- Infinite Jump (toggle)
+-- Infinite Jump
 local InfiniteJump = false
-PlayerSection:NewToggle("Infinite Jump", "Enable infinite jumping", function(state)
+GUI:CreateToggle({parent = PlayerTab, text = "Infinite Jump", default = false, callback = function(state)
     InfiniteJump = state
-end)
-
+end})
 game:GetService("UserInputService").JumpRequest:Connect(function()
     if InfiniteJump then
         local pl = game.Players.LocalPlayer
-        if pl and pl.Character and pl.Character:FindFirstChildOfClass("Humanoid") then
+        if pl.Character and pl.Character:FindFirstChildOfClass("Humanoid") then
             pl.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Jumping)
         end
     end
 end)
 
--- NoClip (toggle)
+-- NoClip
 local NoClip = false
-PlayerSection:NewToggle("NoClip", "Toggle noclip", function(state)
+GUI:CreateToggle({parent = PlayerTab, text = "NoClip", default = false, callback = function(state)
     NoClip = state
-end)
-
+end})
 game:GetService("RunService").Stepped:Connect(function()
     if NoClip then
         local pl = game.Players.LocalPlayer
-        if pl and pl.Character then
+        if pl.Character then
             for _, part in pairs(pl.Character:GetDescendants()) do
                 if part:IsA("BasePart") then
                     part.CanCollide = false
@@ -63,141 +75,179 @@ game:GetService("RunService").Stepped:Connect(function()
     end
 end)
 
--- Fly (textbox for speed + toggle)
+-- Fly
 local Fly = false
 local FlySpeed = 3
-PlayerSection:NewTextBox("Fly Speed (ex: 5)", "Set fly speed", function(txt)
+GUI:CreateTextBox({parent = PlayerTab, text = "Fly Speed (ex: 5)", placeholder = "Fly speed", callback = function(txt)
     local num = tonumber(txt)
     if num then FlySpeed = num end
-end)
-PlayerSection:NewToggle("Fly", "Hold WASD + Space/Shift to move", function(state)
+end})
+GUI:CreateToggle({parent = PlayerTab, text = "Fly", default = false, callback = function(state)
     Fly = state
-end)
+end})
 
 local UIS = game:GetService("UserInputService")
 local RS = game:GetService("RunService")
 local pl = game.Players.LocalPlayer
-local character = pl.Character or pl.CharacterAdded:Wait()
-local hrp = nil
+local hrp
 local function updateHRP()
-    character = pl.Character or pl.CharacterAdded:Wait()
-    hrp = character:FindFirstChild("HumanoidRootPart")
+    local char = pl.Character or pl.CharacterAdded:Wait()
+    hrp = char:FindFirstChild("HumanoidRootPart")
 end
 updateHRP()
 pl.CharacterAdded:Connect(updateHRP)
 
 RS.RenderStepped:Connect(function()
     if Fly and hrp then
-        local moveVector = Vector3.new(0,0,0)
+        local moveVector = Vector3.new()
         local cam = workspace.CurrentCamera
-        if UIS:IsKeyDown(Enum.KeyCode.W) then moveVector = moveVector + cam.CFrame.LookVector end
-        if UIS:IsKeyDown(Enum.KeyCode.S) then moveVector = moveVector - cam.CFrame.LookVector end
-        if UIS:IsKeyDown(Enum.KeyCode.A) then moveVector = moveVector - cam.CFrame.RightVector end
-        if UIS:IsKeyDown(Enum.KeyCode.D) then moveVector = moveVector + cam.CFrame.RightVector end
-        if UIS:IsKeyDown(Enum.KeyCode.Space) then moveVector = moveVector + Vector3.new(0,1,0) end
-        if UIS:IsKeyDown(Enum.KeyCode.LeftShift) then moveVector = moveVector - Vector3.new(0,1,0) end
-        hrp.Velocity = moveVector.Unit * FlySpeed * 10
+        if UIS:IsKeyDown(Enum.KeyCode.W) then moveVector += cam.CFrame.LookVector end
+        if UIS:IsKeyDown(Enum.KeyCode.S) then moveVector -= cam.CFrame.LookVector end
+        if UIS:IsKeyDown(Enum.KeyCode.A) then moveVector -= cam.CFrame.RightVector end
+        if UIS:IsKeyDown(Enum.KeyCode.D) then moveVector += cam.CFrame.RightVector end
+        if UIS:IsKeyDown(Enum.KeyCode.Space) then moveVector += Vector3.new(0,1,0) end
+        if UIS:IsKeyDown(Enum.KeyCode.LeftShift) then moveVector -= Vector3.new(0,1,0) end
+        if moveVector.Magnitude > 0 then
+            hrp.Velocity = moveVector.Unit * FlySpeed * 10
+        end
     end
 end)
 
-----------------------------------------------------
--- Aba FPS
-----------------------------------------------------
-local FPSTab = Window:NewTab("FPS")
-local FPSSection = FPSTab:NewSection("Aimbot / ESP")
+-- =====================
+-- ABA ADMIN
+-- =====================
+local AdminTab = GUI:CreateTab("Admin", "settings")
+GUI:CreateSection({parent = AdminTab, text = "Admin Scripts"})
 
-FPSSection:NewButton("Enable Aimbot (external)", "Load external aimbot", function()
+local AdminScripts = {
+    {"Infinite Yield", 'https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'},
+    {"Fates Admin", "https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"},
+    {"CMD-X", "https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source"}
+}
+
+for _, v in pairs(AdminScripts) do
+    GUI:CreateButton({parent = AdminTab, text = v[1], callback = function()
+        pcall(function() loadstring(game:HttpGet(v[2]))() end)
+    end})
+end
+
+-- =====================
+-- ABA HUBS
+-- =====================
+local HubsTab = GUI:CreateTab("Hubs", "home")
+GUI:CreateSection({parent = HubsTab, text = "Game / Other Hubs"})
+
+local Hubs = {
+    {"Spanish Hub 1", "https://paste.myconan.net/499233.txt"},
+    {"Ghub v15", "https://raw.githubusercontent.com/gclich/GHUBV14XZ/main/Ghub_Main_Loader.txt"},
+    {"Game Hub Loader 1", "https://raw.githubusercontent.com/GamerScripter/Game-Hub/main/loader"}
+}
+
+for _, v in pairs(Hubs) do
+    GUI:CreateButton({parent = HubsTab, text = v[1], callback = function()
+        pcall(function() loadstring(game:HttpGet(v[2]))() end)
+    end})
+end
+
+-- =====================
+-- ABA FE
+-- =====================
+local FETab = GUI:CreateTab("FE", "home")
+GUI:CreateSection({parent = FETab, text = "FE Scripts / Hubs"})
+
+-- FE Hubs existentes
+local FEHubScripts = {
+    {"FE Trolling GUI", "https://raw.githubusercontent.com/yofriendfromschool1/Sky-Hub/main/FE%20Trolling%20GUI.luau"}
+}
+for _, v in pairs(FEHubScripts) do
+    GUI:CreateButton({parent = FETab, text = v[1], callback = function()
+        pcall(function() loadstring(game:HttpGet(v[2]))() end)
+    end})
+end
+
+-- NOVOS SCRIPTS FE
+GUI:CreateButton({parent = FETab, text = "R15 Animation GUI", callback = function()
     pcall(function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Exunys/Aimbot-V3/main/src/Aimbot.lua"))()()
+        loadstring(game:HttpGet("https://gitlab.com/Tsuniox/lua-stuff/-/raw/master/R15GUI.lua"))()
     end)
-end)
+end})
 
-FPSSection:NewButton("Enable ESP (names/distance)", "Load external ESP lib", function()
+GUI:CreateButton({parent = FETab, text = "FE Walk on Walls R6/R15", callback = function()
     pcall(function()
-        _G.Settings = { ShowNames = true, ShowDistance = true }
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/apakekbebas/esp-lib/main/lib.lua", true))()
+        loadstring(game:HttpGet("https://pastebin.com/raw/zXk4Rq2r"))()
     end)
-end)
+end})
 
-----------------------------------------------------
--- Aba Admin
-----------------------------------------------------
-local AdminTab = Window:NewTab("Admin")
-local AdminSection = AdminTab:NewSection("Admin Scripts")
-
-AdminSection:NewButton("Infinite Yield", "Load Infinite Yield", function()
-    pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))() end)
-end)
-AdminSection:NewButton("AK (Fates Admin)", "Load AK", function()
-    pcall(function() loadstring(game:HttpGet("https://angelical.me/ak.lua"))() end)
-end)
-AdminSection:NewButton("Fates Admin", "Load Fates Admin", function()
-    pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))() end)
-end)
-AdminSection:NewButton("CMD-X", "Load CMD-X", function()
-    pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))() end)
-end)
-AdminSection:NewButton("Leg Admin V2", "Load Leg Admin V2", function()
-    pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/leg1337/legadmv2/main/legadminv2.lua'))() end)
-end)
-AdminSection:NewButton("Homebrew Admin", "Load Homebrew", function()
-    pcall(function() loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Syntaxx64/HomebrewAdmin/master/Main"))() end)
-end)
-AdminSection:NewButton("Reviz Admin", "Load Reviz", function()
-    pcall(function() loadstring(game:HttpGetAsync("https://pastebin.com/raw/gQg0G6iA"))() end)
-end)
-AdminSection:NewButton("GX Admin", "Load GX", function()
-    pcall(function() loadstring(game:HttpGet("https://pastebin.com/raw/v6E9BmFK",true))() end)
-end)
-AdminSection:NewButton("IV Admin", "Load IV Admin", function()
-    pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/BloodyBurns/Hex/main/Iv%20Admin%20v3.lua'))() end)
-end)
-
-----------------------------------------------------
--- Aba Hubs
-----------------------------------------------------
-local HubsTab = Window:NewTab("Hubs")
-local HubsSection1 = HubsTab:NewSection("Spanish Hub")
-HubsSection1:NewButton("Spanish Hub 1", "Load Spanish Hub 1", function()
-    pcall(function() loadstring(game:HttpGet(('https://paste.myconan.net/499233.txt')))() end)
-end)
-HubsSection1:NewButton("Ghub v15", "Load Ghub v15", function()
-    pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/gclich/GHUBV14XZ/main/Ghub_Main_Loader.txt"))() end)
-end)
-
-local HubsSection2 = HubsTab:NewSection("Game Hub")
-HubsSection2:NewButton("Game Hub Loader 1", "Load Game Hub Loader", function()
-    pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/GamerScripter/Game-Hub/main/loader"))() end)
-end)
-HubsSection2:NewButton("Game Hub Loader 2", "Load Extra", function()
-    pcall(function() loadstring(game:HttpGet("https://paste.myconan.net/489718.txt"))() end)
-end)
-
-local HubsSection3 = HubsTab:NewSection("Other Hubs")
-HubsSection3:NewButton("GHUB-X-ZENXOS-V15", "Load GHUB-X-ZENXOS", function()
-    pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/gclich/GHUBV15_X_ZENXOS-MAINLOADER/refs/heads/main/GHUB-X-ZENXOS-V15.txt"))() end)
-end)
-HubsSection3:NewButton("System Broken", "Load System Broken Hub", function()
-    pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/H20CalibreYT/SystemBroken/main/script"))() end)
-end)
-
-local HubsSection4 = HubsTab:NewSection("Animations Hub")
-HubsSection4:NewButton("UGC Emotes Hub", "Load UGC Emotes", function()
-    pcall(function() loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-AFEM-Max-ALL-UGC-EMOTES-FREE-FE-NEW-53663"))() end)
-end)
-HubsSection4:NewButton("AquaMatrix Hub", "Load AquaMatrix", function()
-    pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/ExploitFin/AquaMatrix/refs/heads/AquaMatrix/AquaMatrix"))() end)
-end)
-
-----------------------------------------------------
--- Aba FE (com os scripts que você pediu + hubs FE já adicionados)
-----------------------------------------------------
-local FETab = Window:NewTab("FE")
-local FESec = FETab:NewSection("FE Scripts")
-
--- R15 Animation GUI
-FESec:NewButton("R15 Animation GUI", "Load R15 Animation GUI", function()
+GUI:CreateButton({parent = FETab, text = "FE R15 Spin Fling", callback = function()
     pcall(function()
+        local power = 500
+        local pl = game.Players.LocalPlayer
+        local char = pl.Character or pl.CharacterAdded:Wait()
+
+        game:GetService('RunService').Stepped:Connect(function()
+            if char:FindFirstChild("Head") then char.Head.CanCollide = false end
+            if char:FindFirstChild("UpperTorso") then char.UpperTorso.CanCollide = false end
+            if char:FindFirstChild("LowerTorso") then char.LowerTorso.CanCollide = false end
+            if char:FindFirstChild("HumanoidRootPart") then char.HumanoidRootPart.CanCollide = false end
+        end)
+
+        wait(0.1)
+        local bambam = Instance.new("BodyThrust")
+        bambam.Parent = char.HumanoidRootPart
+        bambam.Force = Vector3.new(power,0,power)
+        bambam.Location = char.HumanoidRootPart.Position
+    end)
+end})
+
+-- =====================
+-- BOTÃO FLUTUANTE ARRASTÁVEL
+-- =====================
+local player = game.Players.LocalPlayer
+
+local FloatBtn = Instance.new("ImageButton")
+FloatBtn.Parent = player:WaitForChild("PlayerGui")
+FloatBtn.BackgroundTransparency = 1
+FloatBtn.Size = UDim2.new(0,50,0,50)
+FloatBtn.Position = UDim2.new(0,10,0,100)
+FloatBtn.Image = "rbxassetid://97282030929898" -- substitua pelo ID da imagem
+FloatBtn.ZIndex = 999
+
+-- Drag
+local dragging = false
+local dragInput, dragStart, startPos
+FloatBtn.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        dragging = true
+        dragStart = input.Position
+        startPos = FloatBtn.Position
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then
+                dragging = false
+            end
+        end)
+    end
+end)
+FloatBtn.InputChanged:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseMovement then
+        dragInput = input
+    end
+end)
+game:GetService("UserInputService").InputChanged:Connect(function(input)
+    if input == dragInput and dragging then
+        local delta = input.Position - dragStart
+        FloatBtn.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+                                      startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+    end
+end)
+
+-- Toggle GUI
+FloatBtn.MouseButton1Click:Connect(function()
+    if GUI.Main then
+        GUI.Main.Enabled = not GUI.Main.Enabled
+    end
+end)
+
+print("P3dr0Poles Hub V2 carregada com Ash-Libs! ✅")��")nction()
         loadstring(game:HttpGet("https://gitlab.com/Tsuniox/lua-stuff/-/raw/master/R15GUI.lua"))()
     end)
 end)
