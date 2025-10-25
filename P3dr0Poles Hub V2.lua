@@ -285,5 +285,39 @@ FEHubSec:NewButton("ScriptHub V3", "Load ScriptHub V3", function()
     pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/scripthubekitten/SCRIPTHUBV3/main/SCRIPTHUBV3", true))() end)
 end)
 
+local UIS = game:GetService("UserInputService")
+local CoreGui = game:GetService("StarterGui")
 
-print("P3dr0Poles Hub V2 loaded (Kavo Ocean).")
+-- Detecta mobile
+local isMobile = UIS.TouchEnabled and not UIS.KeyboardEnabled
+
+-- Cria ScreenGui
+local ToggleGui = Instance.new("ScreenGui")
+ToggleGui.Parent = game.CoreGui
+ToggleGui.ResetOnSpawn = false
+
+-- Botão para abrir/fechar Hub
+local ToggleButton = Instance.new("ImageButton")
+ToggleButton.Parent = ToggleGui
+ToggleButton.Size = UDim2.new(0, 60, 0, 60)
+ToggleButton.Position = UDim2.new(0, 20, 0.9, -70)
+ToggleButton.Image = "rbxassetid://97282030929898" -- f
+ToggleButton.BackgroundTransparency = 1
+
+-- Variável para controle
+local kavoVisible = true
+
+-- Função de Toggle
+ToggleButton.MouseButton1Click:Connect(function()
+    kavoVisible = not kavoVisible
+    for _, gui in pairs(game.CoreGui:GetChildren()) do
+        if gui:FindFirstChild("TopFrame") then -- identifica a UI da Kavo
+            gui.Enabled = kavoVisible
+        end
+    end
+end)
+
+if not isMobile then
+    ToggleButton.Visible = true -- Se quiser só no mobile coloque "= isMobile"
+end
+print("P3dr0Poles Hub V2 loaded (Kavo Ocean).")ded (Kavo Ocean).")
