@@ -4308,3 +4308,43 @@ CreditsSection:NewButton("Roblox Nickname", "My roblox profile(discord server so
     print("Link copied!")
 end)nt("Link copied!")
 end))
+
+-- 🟦 Sistema para arrastar a hub (funciona no PC e Mobile)
+local UIS = game:GetService("UserInputService")
+local dragging = false
+local dragInput, dragStart, startPos
+
+-- Pegue o topo da UI (header). 
+-- No Kavo UI, a janela principal é filha de CoreGui, você pode localizar ela assim:
+local gui = game.CoreGui:FindFirstChild("P3dr0Poles UTG")
+
+if gui then
+    local dragFrame = gui:FindFirstChildWhichIsA("Frame") -- geralmente o topo
+    if dragFrame then
+        dragFrame.InputBegan:Connect(function(input)
+            if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+                dragging = true
+                dragStart = input.Position
+                startPos = gui.Position
+                input.Changed:Connect(function()
+                    if input.UserInputState == Enum.UserInputState.End then
+                        dragging = false
+                    end
+                end)
+            end
+        end)
+
+        dragFrame.InputChanged:Connect(function(input)
+            if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+                dragInput = input
+            end
+        end)
+
+        UIS.InputChanged:Connect(function(input)
+            if input == dragInput and dragging then
+                local delta = input.Position - dragStart
+                gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+            end
+        end)
+    end
+end
