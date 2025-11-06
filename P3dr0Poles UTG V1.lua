@@ -4303,10 +4303,8 @@ local CreditsSection = CreditsTab:NewSection("Informações")
 CreditsSection:NewLabel("P3dr0Poles UTG v1")
 CreditsSection:NewLabel("Created by: PEDROOPSSS")
 CreditsSection:NewLabel("UI: Kavo Library")
-CreditsSection:
--- botão de perfil Roblox (corrigido)
-CreditsSection:NewButton("Roblox Profile Link", "Copy the link to your Roblox profile.", function()
-   "https://www.roblox.com/pt/users/3493739306/profile" .. game.Players.LocalPlayer.UserId .. "/profile")
+CreditsSection:NewButton("Roblox Profile Link", "Copy the link to my Roblox profile.", function()
+    setclipboard("https://www.roblox.com/pt/users/3493739306/profile")
     print("Link copied!")
 end)
 
@@ -4315,37 +4313,52 @@ local UIS = game:GetService("UserInputService")
 local dragging = false
 local dragInput, dragStart, startPos
 
--- Pegue o topo da UI (header). 
--- No Kavo UI, a janela principal é filha de CoreGui, você pode localizar ela assim:
-local gui = game.CoreGui:FindFirstChild("P3dr0Poles UTG")
+-- ⬇️ substitua 'game.CoreGui["Kavo UI Library"]' se sua UI tiver outro nome no CoreGui
+local dragFrame = game.CoreGui:FindFirstChild("Kavo UI Library")
 
-if gui then
-    local dragFrame = gui:FindFirstChildWhichIsA("Frame") -- geralmente o topo
-    if dragFrame then
-        dragFrame.InputBegan:Connect(function(input)
-            if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-                dragging = true
-                dragStart = input.Position
-                startPos = gui.Position
-                input.Changed:Connect(function()
-                    if input.UserInputState == Enum.UserInputState.End then
-                        dragging = false
-                    end
-                end)
-            end
-        end)
+if dragFrame then
+    dragFrame.Active = true
+    dragFrame.Selectable = true
 
-        dragFrame.InputChanged:Connect(function(input)
-            if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-                dragInput = input
-            end
-        end)
-
-        UIS.InputChanged:Connect(function(input)
-            if input == dragInput and dragging then
-                local delta = input.Position - dragStart
-                gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-            end
-        end)
+    local function update(input)
+        local delta = input.Position - dragStart
+        dragFrame.Position = UDim2.new(
+            startPos.X.Scale,
+            startPos.X.Offset + delta.X,
+            startPos.Y.Scale,
+            startPos.Y.Offset + delta.Y
+        )
     end
+
+    dragFrame.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+            dragging = true
+            dragStart = input.Position
+            startPos = dragFrame.Position
+
+            input.Changed:Connect(function()
+                if input.UserInputState == Enum.UserInputState.End then
+                    dragging = false
+                end
+            end)
+        end
+    end)
+
+    dragFrame.InputChanged:Connect(function(input)
+        if
+            input.UserInputType == Enum.UserInputType.MouseMovement
+            or input.UserInputType == Enum.UserInputType.Touch
+        then
+            dragInput = input
+        end
+    end)
+
+    UIS.InputChanged:Connect(function(input)
+        if input == dragInput and dragging then
+            update(input)
+        end
+    end)
+else
+    warn("❌ Não foi possível encontrar o frame principal da UI para arrastar!")
 end
+    
