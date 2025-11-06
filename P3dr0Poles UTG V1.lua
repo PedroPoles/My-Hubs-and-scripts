@@ -4313,8 +4313,14 @@ local UIS = game:GetService("UserInputService")
 local dragging = false
 local dragInput, dragStart, startPos
 
--- ⬇️ substitua 'game.CoreGui["Kavo UI Library"]' se sua UI tiver outro nome no CoreGui
-local dragFrame = game.CoreGui:FindFirstChild("P3dr0Poles UTG")
+-- 🔍 Encontra automaticamente o frame principal da Kavo UI
+local dragFrame
+for _, v in pairs(game.CoreGui:GetChildren()) do
+    if v:IsA("ScreenGui") and v:FindFirstChildOfClass("Frame") and string.find(v.Name, "Kavo") then
+        dragFrame = v
+        break
+    end
+end
 
 if dragFrame then
     dragFrame.Active = true
@@ -4345,10 +4351,8 @@ if dragFrame then
     end)
 
     dragFrame.InputChanged:Connect(function(input)
-        if
-            input.UserInputType == Enum.UserInputType.MouseMovement
-            or input.UserInputType == Enum.UserInputType.Touch
-        then
+        if input.UserInputType == Enum.UserInputType.MouseMovement
+            or input.UserInputType == Enum.UserInputType.Touch then
             dragInput = input
         end
     end)
@@ -4359,6 +4363,5 @@ if dragFrame then
         end
     end)
 else
-    warn("❌ Não foi possível encontrar o frame principal da UI para arrastar!")
+    warn("❌ Não foi possível encontrar a UI para arrastar!")
 end
-     
