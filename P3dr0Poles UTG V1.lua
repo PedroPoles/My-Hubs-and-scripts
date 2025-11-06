@@ -4314,7 +4314,7 @@ local dragging = false
 local dragInput, dragStart, startPos
 
 -- ⬇️ substitua 'game.CoreGui["Kavo UI Library"]' se sua UI tiver outro nome no CoreGui
-local dragFrame = game.CoreGui:FindFirstChild("Kavo UI Library")
+local dragFrame = game.CoreGui:FindFirstChild("P3dr0Poles UTG")
 
 if dragFrame then
     dragFrame.Active = true
@@ -4361,4 +4361,4 @@ if dragFrame then
 else
     warn("❌ Não foi possível encontrar o frame principal da UI para arrastar!")
 end
-    
+     
