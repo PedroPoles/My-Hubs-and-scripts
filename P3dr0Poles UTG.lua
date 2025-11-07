@@ -1,19 +1,41 @@
--- Carrega a Rayfield UI
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
--- Janela principal
 local Window = Rayfield:CreateWindow({
-    Name = "P3dr0Poles UTG",
-    LoadingTitle = "Carregando sua UTG...",
-    LoadingSubtitle = "por PEDROOPSSS",
-    ConfigurationSaving = {
-        Enabled = true,
-        FolderName = "P3dr0PolesUTG", -- Nome da pasta de configs
-        FileName = "UTG_Config"
-    },
-    KeySystem = false -- se quiser depois colocar key system, muda pra true
-})
+   Name = "P3dr0Poles UTG",
+   Icon = 0,
+   LoadingTitle = "Loading...",
+   LoadingSubtitle = "by PEDROOPSSS",
+   ShowText = "Rayfield",
+   Theme = "Default",
 
+   ToggleUIKeybind = "P",
+
+   DisableRayfieldPrompts = false,
+   DisableBuildWarnings = false,
+
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = "LoL",
+      FileName = "P3dr0Poles Hub V1.txt"
+   },
+
+   Discord = {
+      Enabled = false,
+      Invite = "noinvitelink",
+      RememberJoins = true
+   },
+
+   KeySystem = false,
+   KeySettings = {
+      Title = "P3dr0Poles",
+      Subtitle = "Key System",
+      Note = "if you want the key, you can have it, here: P3dr0Hub101",
+      FileName = "Get Key",
+      SaveKey = true,
+      GrabKeyFromSite = false,
+      Key = {"P3dr0Hub101"}
+   }
+})
 -- 🧰 ABA TOOLS
 local ToolsTab = Window:CreateTab("Tools", 4483362458) -- ID do ícone pode trocar
 local ToolsSection = ToolsTab:CreateSection("Ferramentas")
@@ -158,4 +180,5 @@ CharactersTab:CreateButton({
     Callback = function()
         -- Coloque aqui o script do Character 10
     end
+})
 })
