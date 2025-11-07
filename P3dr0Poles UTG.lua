@@ -22205,8 +22205,8 @@ end
 ToolsTab:CreateButton({
     Name = "more soon",
     Callback = function()
-        -- Coloque aqui o script da Tool 4
-    end
+        err
+  
 })
 ---------------------------------------------------------------------
 -- ABA 2: CHARACTERS
@@ -22283,4 +22283,5 @@ AboutTab:CreateParagraph({
 ---------------------------------------------------------------------
 -- PRONTO ✅
 ---------------------------------------------------------------------
+Rayfield:LoadConfiguration()-------
 Rayfield:LoadConfiguration()
