@@ -1,0 +1,234 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "ZabiraiYT UTG by p3dr0poles",
+   Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
+   LoadingTitle = "ZabiraiYT UTG",
+   LoadingSubtitle = "by P3dr0Poles",
+   ShowText = "Hub", -- for mobile users to unhide Rayfield, change if you'd like
+   Theme = "Default", -- Check https://docs.sirius.menu/rayfield/configuration/themes
+
+   ToggleUIKeybind = "P", -- The keybind to toggle the UI visibility (string like "K" or Enum.KeyCode)
+
+   DisableRayfieldPrompts = false,
+   DisableBuildWarnings = false, -- Prevents Rayfield from emitting warnings when the script has a version mismatch with the interface.
+
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "Big Hub"
+   },
+
+   Discord = {
+      Enabled = false, -- Prompt the user to join your Discord server if their executor supports it
+      Invite = "noinvitelink", -- The Discord invite code, do not include Discord.gg/. E.g. Discord.gg/ ABCD would be ABCD
+      RememberJoins = true -- Set this to false to make them join the Discord every time they load it up
+   },
+
+   KeySystem = true, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "P3dr0Poles",
+      Subtitle = "Key System",
+      Note = "The key was leaked, have fun loll: TheBestP3dr0Poles", -- Use this to tell the user how to get a key
+      FileName = "Key", -- It is recommended to use something unique, as other scripts using Rayfield may overwrite your key file
+      SaveKey = false, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"TheBestP3dr0Poles", "secretkeyl0l"} -- List of keys that the system will accept, can be RAW file links (pastebin, github, etc.) or simple strings ("hello", "key22")
+   }
+})
+local Tab = Window:CreateTab("About", 4483362458)
+
+local Section = Tab:CreateSection("Made by P3dr0Poles Team with love, enjoy the hub!")
+
+local Tab = Window:CreateTab("Project Zeno Archive", 4483362458) -- Title, Image
+
+local Section = Tab:CreateSection("Chromium")
+
+local Button = Tab:CreateButton({
+   Name = "Astaroth",
+   Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/PedroPoles/My-Hubs-and-scripts/refs/heads/main/Astaroth"))()
+   end
+})
+
+
+local Button = Tab:CreateButton({
+   Name = "Gladiator",
+   Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/PedroPoles/My-Hubs-and-scripts/refs/heads/main/Gladiator"))()
+   end
+})
+
+local Button = Tab:CreateButton({
+   Name = "Cybuster",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/PedroPoles/My-Hubs-and-scripts/refs/heads/main/Cybuster"))()
+   end
+})
+
+local Button = Tab:CreateButton({
+   Name = "Warrior",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/PedroPoles/My-Hubs-and-scripts/refs/heads/main/Warrior"))()
+   end
+})
+
+local Button = Tab:CreateButton({
+   Name = "Monk",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/PedroPoles/My-Hubs-and-scripts/refs/heads/main/Monk"))()
+   end
+})
+
+local Section = Tab:CreateSection("Cit")
+
+local Button = Tab:CreateButton({
+   Name = "Rainbow Cape",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/PedroPoles/My-Hubs-and-scripts/refs/heads/main/Rainbow%20Cape"))()
+   end 
+})
+
+local Button = Tab:CreateButton({
+   Name = "Devil Squid",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/PedroPoles/My-Hubs-and-scripts/refs/heads/main/Devil%20Squid"))()
+   end
+})
+
+local Button = Tab:CreateButton({
+   Name = "NeflHelm",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/PedroPoles/My-Hubs-and-scripts/refs/heads/main/NeflHelm"))()
+   end
+})
+
+local Button = Tab:CreateButton({
+   Name = "Indigo",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/PedroPoles/My-Hubs-and-scripts/refs/heads/main/Indigo"))()
+   end
+})
+
+local Section = Tab:CreateSection("Edited Scripts 1")
+
+local Button = Tab:CreateButton({
+   Name = "Scary Ghostiee",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/PedroPoles/My-Hubs-and-scripts/refs/heads/main/Scary%20Ghostiee"))()
+   end
+})
+
+local Button = Tab:CreateButton({
+   Name = "Golden Ultima",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/PedroPoles/My-Hubs-and-scripts/refs/heads/main/Golden%20Ultima"))()
+   end
+})
+
+local Button = Tab:CreateButton({
+   Name = "Absalom Titan",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/PedroPoles/My-Hubs-and-scripts/refs/heads/main/Absalom%20Titan"))()
+   end
+})
+
+local Button = Tab:CreateButton({
+   Name = "Eragon Enraged",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/PedroPoles/My-Hubs-and-scripts/refs/heads/main/Eragon%20Enraged"))()
+   end
+})
+
+local Button = Tab:CreateButton({
+   Name = "Eraser by Ep1cEdit",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/PedroPoles/My-Hubs-and-scripts/refs/heads/main/Eraser%20-%20Ep1cEdit"))()
+   end
+})
+
+local Button = Tab:CreateButton({
+   Name = "Fighting Moon",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/PedroPoles/My-Hubs-and-scripts/refs/heads/main/Fighting%20Moon"))()
+   end
+})
+
+local Button = Tab:CreateButton({
+   Name = "Genkadda Beam Edit",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/PedroPoles/My-Hubs-and-scripts/refs/heads/main/Genkadda%20Beam%20Edit"))()
+   end
+})
+
+local Button = Tab:CreateButton({
+   Name = "Half-a-Eragon",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/PedroPoles/My-Hubs-and-scripts/refs/heads/main/Half-a-Eragon"))()
+   end
+})
+
+local Button = Tab:CreateButton({
+   Name = "Kaerin Rescript by Blake",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/PedroPoles/My-Hubs-and-scripts/refs/heads/main/Kaerin%20Edited%20by%20Blake"))()
+   end
+})
+
+local Button = Tab:CreateButton({
+   Name = "Rainbow Super Saiyan",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/PedroPoles/My-Hubs-and-scripts/refs/heads/main/Rainbow%20Super%20Saiyan"))()
+   end
+})
+
+local Button = Tab:CreateButton({
+   Name = "White Fate",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/PedroPoles/My-Hubs-and-scripts/refs/heads/main/White%20Fate"))()
+   end
+})
+
+local Button = Tab:CreateButton({
+   Name = "Sonic Driver",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/PedroPoles/My-Hubs-and-scripts/refs/heads/main/Sonic%20Driver"))()
+   end
+})
+
+local Section = Tab:CreateSection("Forms")
+
+local Button = Tab:CreateButton({
+   Name = "Dark Arc",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/PedroPoles/My-Hubs-and-scripts/refs/heads/main/Dark%20Arc"))()
+   end
+})
+
+local Button = Tab:CreateButton({
+   Name = "Dark Creature",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/PedroPoles/My-Hubs-and-scripts/refs/heads/main/Dark%20Creature"))()
+   end
+})
+
+local Button = Tab:CreateButton({
+   Name = "Glitch 5-10-16",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/PedroPoles/My-Hubs-and-scripts/refs/heads/main/Glitch%20-%205-10-16"))()
+   end
+})
+
+local Button = Tab:CreateButton({
+   Name = "Karamura Naturo",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/PedroPoles/My-Hubs-and-scripts/refs/heads/main/Karamura%20Naruto"))()
+   end
+})
+
+local Button = Tab:CreateButton({
+   Name = "Leaked Flash",
+   Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/PedroPoles/My-Hubs-and-scripts/refs/heads/main/Leaked%20Flash"))()  
+   end
+})
