@@ -1,0 +1,1012 @@
+--[[
+    P3dr0Poles Map Chooser
+    Version: 2.0
+
+    Created by:
+    P3dr0Poles Team
+
+    UI:
+    Rayfield
+
+    Code developed with AI assistance.
+]]
+
+--==================================================
+-- RAYFIELD
+--==================================================
+
+local Rayfield = loadstring(game:HttpGet(
+    "https://sirius.menu/rayfield"
+))()
+
+--==================================================
+-- SERVICES
+--==================================================
+
+local Players = game:GetService("Players")
+
+local player = Players.LocalPlayer
+
+--==================================================
+-- CONFIG
+--==================================================
+
+local Config = {
+    Theme = "Default",
+    Notifications = true
+}
+
+--==================================================
+-- MAP FOLDER
+--==================================================
+
+local MapFolder = workspace:FindFirstChild(
+    "P3dr0Poles_Maps"
+)
+
+if not MapFolder then
+
+    MapFolder = Instance.new("Folder")
+
+    MapFolder.Name =
+        "P3dr0Poles_Maps"
+
+    MapFolder.Parent =
+        workspace
+
+end
+
+--==================================================
+-- WINDOW
+--==================================================
+
+local Window = Rayfield:CreateWindow({
+
+    Name = "P3dr0Poles Map Chooser",
+
+    LoadingTitle =
+        "P3dr0Poles Map Chooser",
+
+    LoadingSubtitle =
+        "P3dr0Poles Team",
+
+    ConfigurationSaving = {
+        Enabled = false
+    },
+
+    Discord = {
+        Enabled = false
+    },
+
+    KeySystem = false
+
+})
+
+--==================================================
+-- NOTIFICATION
+--==================================================
+
+local function Notify(title, content)
+
+    if Config.Notifications then
+
+        Rayfield:Notify({
+            Title = title,
+            Content = content,
+            Duration = 4
+        })
+
+    end
+
+end
+
+--==================================================
+-- MAP FUNCTIONS
+--==================================================
+
+local function GetCharacter()
+
+    return player.Character
+        or player.CharacterAdded:Wait()
+
+end
+
+local function Teleport(position)
+
+    local character =
+        GetCharacter()
+
+    local root =
+        character:FindFirstChild(
+            "HumanoidRootPart"
+        )
+
+    if root then
+
+        root.CFrame =
+            CFrame.new(position)
+
+    end
+
+end
+
+--==================================================
+-- BACKROOMS
+--==================================================
+
+local function CreateBackrooms()
+
+    local old =
+        MapFolder:FindFirstChild(
+            "Backrooms"
+        )
+
+    if old then
+        old:Destroy()
+    end
+
+    local map =
+        Instance.new("Folder")
+
+    map.Name =
+        "Backrooms"
+
+    map.Parent =
+        MapFolder
+
+    local function Part(
+        name,
+        size,
+        position,
+        color,
+        material
+    )
+
+        local p =
+            Instance.new("Part")
+
+        p.Name = name
+        p.Size = size
+        p.Position = position
+
+        p.Anchored = true
+        p.CanCollide = true
+
+        p.Color = color
+        p.Material =
+            material or
+            Enum.Material.SmoothPlastic
+
+        p.Parent = map
+
+        return p
+
+    end
+
+    local wallColor =
+        Color3.fromRGB(
+            210,
+            200,
+            145
+        )
+
+    -- FLOOR
+
+    Part(
+        "Floor",
+        Vector3.new(
+            180,
+            1,
+            180
+        ),
+        Vector3.new(
+            0,
+            0,
+            0
+        ),
+        Color3.fromRGB(
+            180,
+            170,
+            115
+        ),
+        Enum.Material.Carpet
+    )
+
+    -- CEILING
+
+    Part(
+        "Ceiling",
+        Vector3.new(
+            180,
+            1,
+            180
+        ),
+        Vector3.new(
+            0,
+            25,
+            0
+        ),
+        Color3.fromRGB(
+            220,
+            215,
+            190
+        )
+    )
+
+    -- OUTER WALLS
+
+    Part(
+        "NorthWall",
+        Vector3.new(
+            180,
+            25,
+            2
+        ),
+        Vector3.new(
+            0,
+            12.5,
+            -90
+        ),
+        wallColor
+    )
+
+    Part(
+        "SouthWall",
+        Vector3.new(
+            180,
+            25,
+            2
+        ),
+        Vector3.new(
+            0,
+            12.5,
+            90
+        ),
+        wallColor
+    )
+
+    Part(
+        "EastWall",
+        Vector3.new(
+            2,
+            25,
+            180
+        ),
+        Vector3.new(
+            90,
+            12.5,
+            0
+        ),
+        wallColor
+    )
+
+    Part(
+        "WestWall",
+        Vector3.new(
+            2,
+            25,
+            180
+        ),
+        Vector3.new(
+            -90,
+            12.5,
+            0
+        ),
+        wallColor
+    )
+
+    -- RANDOM WALLS
+
+    for i = 1, 18 do
+
+        local x =
+            math.random(-70, 70)
+
+        local z =
+            math.random(-70, 70)
+
+        local length =
+            math.random(10, 30)
+
+        Part(
+            "Wall_" .. i,
+            Vector3.new(
+                length,
+                25,
+                2
+            ),
+            Vector3.new(
+                x,
+                12.5,
+                z
+            ),
+            wallColor
+        )
+
+    end
+
+    -- LIGHTS
+
+    for x = -70, 70, 35 do
+
+        for z = -70, 70, 35 do
+
+            local lamp = Part(
+                "Light",
+                Vector3.new(
+                    8,
+                    0.4,
+                    3
+                ),
+                Vector3.new(
+                    x,
+                    24.3,
+                    z
+                ),
+                Color3.fromRGB(
+                    255,
+                    255,
+                    220
+                ),
+                Enum.Material.Neon
+            )
+
+            local light =
+                Instance.new(
+                    "PointLight"
+                )
+
+            light.Brightness = 1.5
+            light.Range = 25
+
+            light.Parent =
+                lamp
+
+        end
+
+    end
+
+    Teleport(
+        Vector3.new(
+            0,
+            5,
+            0
+        )
+    )
+
+    Notify(
+        "Backrooms",
+        "Level 0 carregado!"
+    )
+
+end
+
+--==================================================
+-- MINECRAFT
+--==================================================
+
+local function CreateMinecraft()
+
+    local old =
+        MapFolder:FindFirstChild(
+            "Minecraft"
+        )
+
+    if old then
+        old:Destroy()
+    end
+
+    local map =
+        Instance.new("Folder")
+
+    map.Name =
+        "Minecraft"
+
+    map.Parent =
+        MapFolder
+
+    local function Block(
+        name,
+        size,
+        position,
+        color,
+        material
+    )
+
+        local block =
+            Instance.new("Part")
+
+        block.Name = name
+        block.Size = size
+        block.Position = position
+
+        block.Anchored = true
+
+        block.Color = color
+        block.Material = material
+
+        block.Parent =
+            map
+
+        return block
+
+    end
+
+    -- GRASS
+
+    Block(
+        "Grass",
+        Vector3.new(
+            150,
+            2,
+            150
+        ),
+        Vector3.new(
+            0,
+            0,
+            0
+        ),
+        Color3.fromRGB(
+            80,
+            170,
+            70
+        ),
+        Enum.Material.Grass
+    )
+
+    -- DIRT
+
+    Block(
+        "Dirt",
+        Vector3.new(
+            150,
+            8,
+            150
+        ),
+        Vector3.new(
+            0,
+            -5,
+            0
+        ),
+        Color3.fromRGB(
+            120,
+            75,
+            40
+        ),
+        Enum.Material.Ground
+    )
+
+    -- TREES
+
+    for i = 1, 15 do
+
+        local x =
+            math.random(-60, 60)
+
+        local z =
+            math.random(-60, 60)
+
+        Block(
+            "TreeTrunk",
+            Vector3.new(
+                4,
+                14,
+                4
+            ),
+            Vector3.new(
+                x,
+                8,
+                z
+            ),
+            Color3.fromRGB(
+                100,
+                60,
+                30
+            ),
+            Enum.Material.Wood
+        )
+
+        Block(
+            "Leaves",
+            Vector3.new(
+                14,
+                10,
+                14
+            ),
+            Vector3.new(
+                x,
+                17,
+                z
+            ),
+            Color3.fromRGB(
+                50,
+                130,
+                50
+            ),
+            Enum.Material.Grass
+        )
+
+    end
+
+    Teleport(
+        Vector3.new(
+            0,
+            8,
+            0
+        )
+    )
+
+    Notify(
+        "Minecraft",
+        "Overworld carregado!"
+    )
+
+end
+
+--==================================================
+-- CLASSIC ROBLOX
+--==================================================
+
+local function CreateClassic()
+
+    local old =
+        MapFolder:FindFirstChild(
+            "ClassicRoblox"
+        )
+
+    if old then
+        old:Destroy()
+    end
+
+    local map =
+        Instance.new("Folder")
+
+    map.Name =
+        "ClassicRoblox"
+
+    map.Parent =
+        MapFolder
+
+    local baseplate =
+        Instance.new("Part")
+
+    baseplate.Name =
+        "ClassicBaseplate"
+
+    baseplate.Size =
+        Vector3.new(
+            200,
+            2,
+            200
+        )
+
+    baseplate.Position =
+        Vector3.new(
+            0,
+            0,
+            0
+        )
+
+    baseplate.Anchored = true
+
+    baseplate.Material =
+        Enum.Material.Plastic
+
+    baseplate.Color =
+        Color3.fromRGB(
+            110,
+            110,
+            110
+        )
+
+    baseplate.Parent =
+        map
+
+    Teleport(
+        Vector3.new(
+            0,
+            6,
+            0
+        )
+    )
+
+    Notify(
+        "Classic Roblox",
+        "Mapa clássico carregado!"
+    )
+
+end
+
+--==================================================
+-- VOID ISLAND
+--==================================================
+
+local function CreateVoidIsland()
+
+    local old =
+        MapFolder:FindFirstChild(
+            "VoidIsland"
+        )
+
+    if old then
+        old:Destroy()
+    end
+
+    local map =
+        Instance.new("Folder")
+
+    map.Name =
+        "VoidIsland"
+
+    map.Parent =
+        MapFolder
+
+    local island =
+        Instance.new("Part")
+
+    island.Name =
+        "Island"
+
+    island.Size =
+        Vector3.new(
+            70,
+            5,
+            70
+        )
+
+    island.Position =
+        Vector3.new(
+            0,
+            80,
+            0
+        )
+
+    island.Anchored = true
+
+    island.Material =
+        Enum.Material.Grass
+
+    island.Color =
+        Color3.fromRGB(
+            70,
+            150,
+            70
+        )
+
+    island.Parent =
+        map
+
+    Teleport(
+        Vector3.new(
+            0,
+            88,
+            0
+        )
+    )
+
+    Notify(
+        "Void Island",
+        "Ilha carregada!"
+    )
+
+end
+
+--==================================================
+-- ABOUT TAB
+--==================================================
+
+local About =
+    Window:CreateTab(
+        "About",
+        "info"
+    )
+
+About:CreateSection(
+    "P3dr0Poles Map Chooser"
+)
+
+About:CreateParagraph({
+
+    Title =
+        "P3dr0Poles Map Chooser V2",
+
+    Content = [[
+P3dr0Poles Map Chooser
+
+Criador:
+P3dr0Poles Team
+
+Interface:
+Rayfield
+
+Código desenvolvido com
+auxílio de inteligência artificial.
+
+Novos mapas e recursos
+serão adicionados em futuras versões.
+]]
+
+})
+
+--==================================================
+-- MAPS TAB
+--==================================================
+
+local Maps =
+    Window:CreateTab(
+        "Maps",
+        "map"
+    )
+
+Maps:CreateSection(
+    "Backrooms"
+)
+
+Maps:CreateButton({
+
+    Name =
+        "Backrooms Map",
+
+    Callback = function()
+
+        CreateBackrooms()
+
+    end
+
+})
+
+Maps:CreateSection(
+    "Minecraft"
+)
+
+Maps:CreateButton({
+
+    Name =
+        "Minecraft Overworld",
+
+    Callback = function()
+
+        CreateMinecraft()
+
+    end
+
+})
+
+Maps:CreateSection(
+    "Classic Roblox"
+)
+
+Maps:CreateButton({
+
+    Name =
+        "Classic Roblox Map",
+
+    Callback = function()
+
+        CreateClassic()
+
+    end
+
+})
+
+Maps:CreateSection(
+    "Other Maps"
+)
+
+Maps:CreateButton({
+
+    Name =
+        "Void Island",
+
+    Callback = function()
+
+        CreateVoidIsland()
+
+    end
+
+})
+
+--==================================================
+-- UPLOAD MAP TAB
+--==================================================
+
+local Upload =
+    Window:CreateTab(
+        "Upload Map",
+        "upload"
+    )
+
+Upload:CreateSection(
+    "Map Loader"
+)
+
+Upload:CreateParagraph({
+
+    Title =
+        "Custom Maps",
+
+    Content = [[
+Esta seção será usada para
+carregar mapas personalizados.
+
+Na V2, os mapas podem ser
+adicionados diretamente ao sistema
+da P3dr0Poles Map Chooser.
+
+Suporte a mapas externos poderá
+ser adicionado futuramente.
+]]
+
+})
+
+Upload:CreateButton({
+
+    Name =
+        "Load Demo Map",
+
+    Callback = function()
+
+        CreateVoidIsland()
+
+    end
+
+})
+
+--==================================================
+-- OTHERS SCRIPTS
+--==================================================
+
+local Others =
+    Window:CreateTab(
+        "Others Scripts",
+        "code"
+    )
+
+Others:CreateSection(
+    "P3dr0Poles"
+)
+
+Others:CreateButton({
+
+    Name =
+        "P3dr0Poles Script Hub",
+
+    Callback = function()
+
+        Notify(
+            "P3dr0Poles Script Hub",
+            "Em breve..."
+        )
+
+        -- Código do Script Hub
+        -- poderá ser colocado aqui.
+
+    end
+
+})
+
+--==================================================
+-- SETTINGS
+--==================================================
+
+local Settings =
+    Window:CreateTab(
+        "Settings",
+        "settings"
+    )
+
+Settings:CreateSection(
+    "Map Controls"
+)
+
+Settings:CreateButton({
+
+    Name =
+        "Unload Map",
+
+    Callback = function()
+
+        for _, map in
+            ipairs(
+                MapFolder:GetChildren()
+            ) do
+
+            map:Destroy()
+
+        end
+
+        Notify(
+            "Maps",
+            "Todos os mapas foram removidos."
+        )
+
+    end
+
+})
+
+Settings:CreateSection(
+    "Hub Controls"
+)
+
+Settings:CreateToggle({
+
+    Name =
+        "Notifications",
+
+    CurrentValue = true,
+
+    Flag =
+        "Notifications",
+
+    Callback = function(value)
+
+        Config.Notifications =
+            value
+
+    end
+
+})
+
+Settings:CreateButton({
+
+    Name =
+        "Unload Hub",
+
+    Callback = function()
+
+        -- Remove mapas criados pela hub
+
+        if MapFolder then
+            MapFolder:Destroy()
+        end
+
+        -- Remove Rayfield
+
+        Rayfield:Destroy()
+
+    end
+
+})
+
+--==================================================
+-- CUSTOMIZATION
+--==================================================
+
+Settings:CreateSection(
+    "Customization"
+)
+
+Settings:CreateParagraph({
+
+    Title =
+        "Hub Customization",
+
+    Content = [[
+A customização visual poderá ser
+expandida em versões futuras.
+
+Exemplos:
+• Tema
+• Nome da hub
+• Ícones
+• Notificações
+• Interface
+]]
+
+})
+
+--==================================================
+-- START
+--==================================================
+
+Rayfield:Notify({
+
+    Title =
+        "P3dr0Poles Map Chooser",
+
+    Content =
+        "V2 carregada com sucesso!",
+
+    Duration = 5
+
+})
