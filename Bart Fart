@@ -1,0 +1,70 @@
+local Instances = {
+	Dust = Instance.new("ParticleEmitter"),
+	gwen = Instance.new("Sound"),
+	bart = Instance.new("MeshPart"),
+	Sound = Instance.new("Sound"),
+	bigballybutt = Instance.new("Part"),
+	Weld = Instance.new("Weld"),
+	ParticleEmitter = Instance.new("ParticleEmitter"),
+	gwen_2 = Instance.new("Sound"),
+}
+
+Instances.Dust.Name = "Dust"
+Instances.Dust.LightInfluence = 1
+Instances.Dust.Lifetime = NumberRange.new(0.5, 2)
+Instances.Dust.Texture = "rbxassetid://3959152627"
+Instances.Dust.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0, 1), NumberSequenceKeypoint.new(0.1, 0.2), NumberSequenceKeypoint.new(1, 1)}
+Instances.Dust.Color = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.new(0, 0.21, 0)), ColorSequenceKeypoint.new(1, Color3.new(0, 0.21, 0))}
+Instances.Dust.Speed = NumberRange.new(2, 6)
+Instances.Dust.Size = NumberSequence.new{NumberSequenceKeypoint.new(0, 4), NumberSequenceKeypoint.new(1, 4)}
+Instances.Dust.Enabled = false
+Instances.Dust.RotSpeed = NumberRange.new(-50, 50)
+Instances.Dust.EmissionDirection = Enum.NormalId.Left
+Instances.Dust.SpreadAngle = Vector2.new(45, 10)
+Instances.Dust.Rotation = NumberRange.new(-180, 180)
+Instances.Dust.Acceleration = Vector3.new(0, 2, 0)
+Instances.Dust.Parent = game.Workspace.MainModule.Disintegrate
+
+Instances.gwen.Name = "gwen"
+Instances.gwen.Volume = 10
+Instances.gwen.SoundId = "rbxassetid://6087891128"
+Instances.gwen.Parent = game.Workspace.MainModule.Disintegrate
+
+Instances.bart.Name = "bart"
+Instances.bart.Anchored = true
+Instances.bart.CFrame = CFrame.new(-0.3, 2.6, -7.56, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Instances.bart.TextureID = "rbxassetid://2643689009"
+Instances.bart.Parent = game.Workspace.MainModule.Disintegrate
+
+Instances.Sound.Name = "Sound"
+Instances.Sound.Volume = 10
+Instances.Sound.SoundId = "rbxassetid://6317687791"
+Instances.Sound.Parent = Instances.bart
+
+Instances.bigballybutt.Name = "bigballybutt"
+Instances.bigballybutt.TopSurface = Enum.SurfaceType.Smooth
+Instances.bigballybutt.BottomSurface = Enum.SurfaceType.Smooth
+Instances.bigballybutt.CanCollide = false
+Instances.bigballybutt.Transparency = 1
+Instances.bigballybutt.CFrame = CFrame.new(-0.3, 1.6, -7.06, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Instances.bigballybutt.Parent = Instances.bart
+
+Instances.Weld.Name = "Weld"
+Instances.Weld.Parent = Instances.bigballybutt
+
+Instances.ParticleEmitter.Name = "ParticleEmitter"
+Instances.ParticleEmitter.LightInfluence = 1
+Instances.ParticleEmitter.Lifetime = NumberRange.new(0.5, 0.5)
+Instances.ParticleEmitter.Texture = "rbxassetid://3959152627"
+Instances.ParticleEmitter.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0, 0.5), NumberSequenceKeypoint.new(1, 0.5)}
+Instances.ParticleEmitter.Color = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.new(0, 0.3, 0)), ColorSequenceKeypoint.new(1, Color3.new(0, 0.3, 0))}
+Instances.ParticleEmitter.Speed = NumberRange.new(2, 2)
+Instances.ParticleEmitter.Enabled = false
+Instances.ParticleEmitter.EmissionDirection = Enum.NormalId.Front
+Instances.ParticleEmitter.Acceleration = Vector3.new(0, 20, 50)
+Instances.ParticleEmitter.Parent = Instances.bigballybutt
+
+Instances.gwen_2.Name = "gwen"
+Instances.gwen_2.Volume = 10
+Instances.gwen_2.SoundId = "rbxassetid://6087891128"
+Instances.gwen_2.Parent = Instances.bart
