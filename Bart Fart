@@ -1,70 +1,85 @@
-local Instances = {
-	Dust = Instance.new("ParticleEmitter"),
-	gwen = Instance.new("Sound"),
-	bart = Instance.new("MeshPart"),
-	Sound = Instance.new("Sound"),
-	bigballybutt = Instance.new("Part"),
-	Weld = Instance.new("Weld"),
-	ParticleEmitter = Instance.new("ParticleEmitter"),
-	gwen_2 = Instance.new("Sound"),
-}
+--qwerty's Gui2Lua
+--version 1.1
 
-Instances.Dust.Name = "Dust"
-Instances.Dust.LightInfluence = 1
-Instances.Dust.Lifetime = NumberRange.new(0.5, 2)
-Instances.Dust.Texture = "rbxassetid://3959152627"
-Instances.Dust.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0, 1), NumberSequenceKeypoint.new(0.1, 0.2), NumberSequenceKeypoint.new(1, 1)}
-Instances.Dust.Color = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.new(0, 0.21, 0)), ColorSequenceKeypoint.new(1, Color3.new(0, 0.21, 0))}
-Instances.Dust.Speed = NumberRange.new(2, 6)
-Instances.Dust.Size = NumberSequence.new{NumberSequenceKeypoint.new(0, 4), NumberSequenceKeypoint.new(1, 4)}
-Instances.Dust.Enabled = false
-Instances.Dust.RotSpeed = NumberRange.new(-50, 50)
-Instances.Dust.EmissionDirection = Enum.NormalId.Left
-Instances.Dust.SpreadAngle = Vector2.new(45, 10)
-Instances.Dust.Rotation = NumberRange.new(-180, 180)
-Instances.Dust.Acceleration = Vector3.new(0, 2, 0)
-Instances.Dust.Parent = game.Workspace.MainModule.Disintegrate
+--made by @new_qwertyui on discord
 
-Instances.gwen.Name = "gwen"
-Instances.gwen.Volume = 10
-Instances.gwen.SoundId = "rbxassetid://6087891128"
-Instances.gwen.Parent = game.Workspace.MainModule.Disintegrate
+local Disintegrate: Script = Instance.new('Script', game.Workspace);
+Disintegrate.Capabilities = RunClientScript | RunServerScript | AccessOutsideWrite | ScriptGlobals | CreateInstances | Basic | Audio | DataStore | Network | Physics | UI | CSG | Chat | Animation | AvatarAppearance | Input | Environment | RemoteEvent | LegacySound | Players | AssetRead | AssetManagement | DynamicGeneration | PlatformAvatarEditing | AssetCreateUpdate | Capture | SensitiveInput | Monetization | Social | ServerCommunication | Logging | PromptExternalPurchase | Groups | Teleport | Consequences | Material | AvatarBehavior;
+Disintegrate.Source = 'bart = script.bart\nbart.Parent = workspace\nscript.Parent.HumanoidRootPart.Anchored = true\nbart.CFrame = script.Parent.HumanoidRootPart.CFrame * CFrame.new(0,0,-4) * CFrame.Angles(0,math.rad(180),0)\nwait(1)\ngame:GetService('Chat'):Chat(bart,'im gonna bart fart snap you')\nbart.Sound:Play()\nwait(3.5)\nbart.CFrame = script.Parent.HumanoidRootPart.CFrame * CFrame.new(0,0,-4) * CFrame.Angles(0,0,0)\nbart.gwen:Play()\nbart.bigballybutt.ParticleEmitter.Enabled = true\nwait(1)\nbart.bigballybutt.ParticleEmitter.Enabled = false\n--function fart() \nlocal t = game:GetService('TweenService')\n\n	local c = script.Parent:GetDescendants()\n	local p = {}\n	for x=1,#c do\n		if c[x]:IsA('BasePart') then\n			p[#p+1] = c[x]\n			c[x].Anchored = true\n		elseif c[x]:IsA('Decal') then\n			local tween = t:Create(c[x],TweenInfo.new(1),{Transparency = 1})\n			tween:Play()\n		end\n	end\n	for x=1,#p do\n	local tween = t:Create(p[x],TweenInfo.new(1),{Transparency = 1})\n	gwen = script.gwen:Clone()\n	gwen.Parent = script.Parent\n	gwen:Play()\n		tween:Play()\n		if p[x].Parent == script.Parent then\n			local picle = script.Dust:Clone()\n			--picle.Color = Color3.fromRGB(0, 53, 0)\n			picle.Parent = p[x]\n			p[x].Dust:Emit(10*math.abs(p[x].Size.magnitude))\n		end\n		wait(.1)\n	end\n--end\nwait(5)\nbart:Destroy()\ngame.Players[script.Parent.Name]:Kick('bart fart snapped xd')\n-- Source of Workspace.MainModule.Disintegrate\ncoroutine.wrap(function()\n	local script = Instance.new('Script', game.Workspace.MainModule.Disintegrate)\n	bart = script.bart\n	bart.Parent = workspace\n	script.Parent.HumanoidRootPart.Anchored = true\n	bart.CFrame = script.Parent.HumanoidRootPart.CFrame * CFrame.new(0,0,-4) * CFrame.Angles(0,math.rad(180),0)\n	wait(1)\n	game:GetService('Chat'):Chat(bart,'im gonna bart fart snap you')\n	bart.Sound:Play()\n	wait(3.5)\n	bart.CFrame = script.Parent.HumanoidRootPart.CFrame * CFrame.new(0,0,-4) * CFrame.Angles(0,0,0)\n	bart.gwen:Play()\n	bart.bigballybutt.ParticleEmitter.Enabled = true\n	wait(1)\n	bart.bigballybutt.ParticleEmitter.Enabled = false\n	--function fart() \n	local t = game:GetService('TweenService')\n	\n		local c = script.Parent:GetDescendants()\n		local p = {}\n		for x=1,#c do\n			if c[x]:IsA('BasePart') then\n				p[#p+1] = c[x]\n				c[x].Anchored = true\n			elseif c[x]:IsA('Decal') then\n				local tween = t:Create(c[x],TweenInfo.new(1),{Transparency = 1})\n				tween:Play()\n			end\n		end\n		for x=1,#p do\n		local tween = t:Create(p[x],TweenInfo.new(1),{Transparency = 1})\n		gwen = script.gwen:Clone()\n		gwen.Parent = script.Parent\n		gwen:Play()\n			tween:Play()\n			if p[x].Parent == script.Parent then\n				local picle = script.Dust:Clone()\n				--picle.Color = Color3.fromRGB(0, 53, 0)\n				picle.Parent = p[x]\n				p[x].Dust:Emit(10*math.abs(p[x].Size.magnitude))\n			end\n			wait(.1)\n		end\n	--end\n	wait(5)\n	bart:Destroy()\n	game.Players[script.Parent.Name]:Kick('bart fart snapped xd')\nend)()';
+Disintegrate.Name = 'Disintegrate';
 
-Instances.bart.Name = "bart"
-Instances.bart.Anchored = true
-Instances.bart.CFrame = CFrame.new(-0.3, 2.6, -7.56, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-Instances.bart.TextureID = "rbxassetid://2643689009"
-Instances.bart.Parent = game.Workspace.MainModule.Disintegrate
 
-Instances.Sound.Name = "Sound"
-Instances.Sound.Volume = 10
-Instances.Sound.SoundId = "rbxassetid://6317687791"
-Instances.Sound.Parent = Instances.bart
+local Dust: ParticleEmitter = Instance.new('ParticleEmitter', Disintegrate);
+Dust.Enabled = false;
+Dust.Acceleration = 0, 2, 0;
+Dust.RotSpeed = NumberRange.new(-50, 50);
+Dust.Color = ColorSequence.new{	ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 53, 0)),\n	ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 53, 0))\n};
+Dust.Name = 'Dust';
+Dust.Texture = 'rbxassetid://3959152627';
+Dust.SpreadAngle = Vector2.new(45, 10);
+Dust.LightInfluence = 1;
+Dust.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0, 1),	NumberSequenceKeypoint.new(0.1, 0.20000000298023224),	NumberSequenceKeypoint.new(1, 1)\n};
+Dust.TextureContent = Content{SourceType=Uri, Uri=rbxassetid://3959152627};
+Dust.Lifetime = NumberRange.new(0.5, 2);
+Dust.Speed = NumberRange.new(2, 6);
+Dust.Rotation = NumberRange.new(-180, 180);
+Dust.EmissionDirection = Enum.NormalId.Left;
+Dust.Size = NumberSequence.new{NumberSequenceKeypoint.new(0, 4),	NumberSequenceKeypoint.new(0.25, 3.5),	NumberSequenceKeypoint.new(0.5, 2.5),	NumberSequenceKeypoint.new(0.75, 1.5),	NumberSequenceKeypoint.new(1, 4)\n};
 
-Instances.bigballybutt.Name = "bigballybutt"
-Instances.bigballybutt.TopSurface = Enum.SurfaceType.Smooth
-Instances.bigballybutt.BottomSurface = Enum.SurfaceType.Smooth
-Instances.bigballybutt.CanCollide = false
-Instances.bigballybutt.Transparency = 1
-Instances.bigballybutt.CFrame = CFrame.new(-0.3, 1.6, -7.06, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-Instances.bigballybutt.Parent = Instances.bart
 
-Instances.Weld.Name = "Weld"
-Instances.Weld.Parent = Instances.bigballybutt
+local gwen: Sound = Instance.new('Sound', Disintegrate);
+gwen.SoundId = 'rbxassetid://6087891128';
+gwen.Name = 'gwen';
+gwen.Volume = 10;
 
-Instances.ParticleEmitter.Name = "ParticleEmitter"
-Instances.ParticleEmitter.LightInfluence = 1
-Instances.ParticleEmitter.Lifetime = NumberRange.new(0.5, 0.5)
-Instances.ParticleEmitter.Texture = "rbxassetid://3959152627"
-Instances.ParticleEmitter.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0, 0.5), NumberSequenceKeypoint.new(1, 0.5)}
-Instances.ParticleEmitter.Color = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.new(0, 0.3, 0)), ColorSequenceKeypoint.new(1, Color3.new(0, 0.3, 0))}
-Instances.ParticleEmitter.Speed = NumberRange.new(2, 2)
-Instances.ParticleEmitter.Enabled = false
-Instances.ParticleEmitter.EmissionDirection = Enum.NormalId.Front
-Instances.ParticleEmitter.Acceleration = Vector3.new(0, 20, 50)
-Instances.ParticleEmitter.Parent = Instances.bigballybutt
 
-Instances.gwen_2.Name = "gwen"
-Instances.gwen_2.Volume = 10
-Instances.gwen_2.SoundId = "rbxassetid://6087891128"
-Instances.gwen_2.Parent = Instances.bart
+local bart: MeshPart = Instance.new('MeshPart', Disintegrate);
+bart.Name = 'bart';
+bart.TextureContent = Content{SourceType=Uri, Uri=rbxassetid://2643689009};
+bart.CFrame = -0.299613953, 2.60387349, -7.55875683, 1, 0, 0, 0, 1, 0, 0, 0, 1;
+bart.TextureID = 'rbxassetid://2643689009';
+bart.MeshId = 'rbxassetid://2643688992';
+bart.MeshContent = Content{SourceType=Uri, Uri=rbxassetid://2643688992};
+bart.Anchored = true;
+
+
+local Sound: Sound = Instance.new('Sound', bart);
+Sound.SoundId = 'rbxassetid://6317687791';
+Sound.Volume = 10;
+
+
+local bigballybutt: Part = Instance.new('Part', bart);
+bigballybutt.Transparency = 1;
+bigballybutt.BottomSurface = Enum.SurfaceType.Smooth;
+bigballybutt.CanCollide = false;
+bigballybutt.CFrame = -0.299613953, 1.60387349, -7.05875683, 1, 0, 0, 0, 1, 0, 0, 0, 1;
+bigballybutt.Name = 'bigballybutt';
+bigballybutt.TopSurface = Enum.SurfaceType.Smooth;
+
+
+local Weld: Weld = Instance.new('Weld', bigballybutt);
+Weld.Part0 = game.Workspace.Disintegrate.bart;
+Weld.C0 = 0, -1, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1;
+Weld.Part1 = game.Workspace.Disintegrate.bart.bigballybutt;
+
+
+local ParticleEmitter: ParticleEmitter = Instance.new('ParticleEmitter', bigballybutt);
+ParticleEmitter.Enabled = false;
+ParticleEmitter.Acceleration = 0, 20, 50;
+ParticleEmitter.Color = ColorSequence.new{\n	ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 76, 0)),\n	ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 76, 0))\n};
+ParticleEmitter.LightInfluence = 1;
+ParticleEmitter.Transparency = NumberSequence.new{\n	NumberSequenceKeypoint.new(0, 0.5),\n	NumberSequenceKeypoint.new(1, 0.5)\n};
+ParticleEmitter.TextureContent = Content{SourceType=Uri, Uri=rbxassetid://3959152627};
+ParticleEmitter.Lifetime = NumberRange.new(0.5, 0.5);
+ParticleEmitter.Speed = NumberRange.new(2, 2);
+ParticleEmitter.EmissionDirection = Enum.NormalId.Front;
+ParticleEmitter.Texture = 'rbxassetid://3959152627';
+
+ParticleEmitter:SetAttribute(EmitDelay, 0)
+
+local gwen: Sound = Instance.new('Sound', bart);
+gwen.SoundId = 'rbxassetid://6087891128';
+gwen.Name = 'gwen';
+gwen.Volume = 10;
+
+
