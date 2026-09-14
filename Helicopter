@@ -1,0 +1,2265 @@
+local Instances = {
+	Blackhawk = Instance.new("Model"),
+	MainParts = Instance.new("Folder"),
+	Engine = Instance.new("Part"),
+	Flying = Instance.new("Sound"),
+	EchoSoundEffect = Instance.new("EchoSoundEffect"),
+	StartUp = Instance.new("Sound"),
+	Player = Instance.new("ObjectValue"),
+	Pilot = Instance.new("Seat"),
+	FlightControls = Instance.new("ScreenGui"),
+	Helicopter = Instance.new("ObjectValue"),
+	Controls_2 = Instance.new("ScrollingFrame"),
+	UIListLayout = Instance.new("UIListLayout"),
+	UIPadding = Instance.new("UIPadding"),
+	MainFrame = Instance.new("Frame"),
+	ALT = Instance.new("TextLabel"),
+	UIGridLayout = Instance.new("UIGridLayout"),
+	SPD = Instance.new("TextLabel"),
+	TASPEED = Instance.new("TextLabel"),
+	TControlsButton = Instance.new("TextButton"),
+	Z1 = Instance.new("TextLabel"),
+	ZZ = Instance.new("TextLabel"),
+	CoPilot = Instance.new("Seat"),
+	Events = Instance.new("Folder"),
+	Takeoff = Instance.new("RemoteEvent"),
+	LightsEvent = Instance.new("RemoteEvent"),
+	Copilot = Instance.new("RemoteEvent"),
+	Misc = Instance.new("Folder"),
+	Lights_2 = Instance.new("Folder"),
+	RotorModel = Instance.new("Model"),
+	Main_3 = Instance.new("Part"),
+	Rotor_Blades = Instance.new("MeshPart"),
+	Rotor_Blades = Instance.new("MeshPart"),
+	Rotor_Blades = Instance.new("MeshPart"),
+	Rotor_Blades = Instance.new("MeshPart"),
+	topsinner = Instance.new("MeshPart"),
+	RotorModel_2 = Instance.new("Model"),
+	Main_4 = Instance.new("Part"),
+	rearspinner = Instance.new("MeshPart"),
+	Rotor_Blades = Instance.new("MeshPart"),
+	Rotor_Blades = Instance.new("MeshPart"),
+	Rotor_Blades = Instance.new("MeshPart"),
+	Rotor_Blades = Instance.new("MeshPart"),
+	Rotor_11 = Instance.new("Part"),
+	Motor = Instance.new("Motor6D"),
+	Rotor_12 = Instance.new("Part"),
+	Motor_2 = Instance.new("Motor6D"),
+	MiscScripts = Instance.new("Folder"),
+	EngineFunctions = Instance.new("ModuleScript"),
+	Settings = Instance.new("Folder"),
+	Config = Instance.new("ModuleScript"),
+	FX = Instance.new("Folder"),
+	MiscLocalScripts = Instance.new("Folder"),
+	Template = Instance.new("TextLabel"),
+	WeaponSpawns = Instance.new("Folder"),
+	Body = Instance.new("Folder"),
+	Seat = Instance.new("Seat"),
+	Seat_2 = Instance.new("Seat"),
+	Seat_3 = Instance.new("Seat"),
+	Detector = Instance.new("Model"),
+	Color = Instance.new("WedgePart"),
+	Color_2 = Instance.new("Part"),
+	Mesh = Instance.new("BlockMesh"),
+	Color_3 = Instance.new("Part"),
+	Mesh_2 = Instance.new("CylinderMesh"),
+	Color_4 = Instance.new("Part"),
+	Mesh_3 = Instance.new("BlockMesh"),
+	Color_5 = Instance.new("Part"),
+	Mesh_4 = Instance.new("SpecialMesh"),
+	Color_6 = Instance.new("Part"),
+	Mesh_5 = Instance.new("BlockMesh"),
+	Color_7 = Instance.new("Part"),
+	Mesh_6 = Instance.new("BlockMesh"),
+	Color_8 = Instance.new("Part"),
+	Mesh_7 = Instance.new("SpecialMesh"),
+	Color_9 = Instance.new("Part"),
+	Mesh_8 = Instance.new("BlockMesh"),
+	Part_2 = Instance.new("Part"),
+	Mesh_9 = Instance.new("CylinderMesh"),
+	Color_10 = Instance.new("Part"),
+	Mesh_10 = Instance.new("BlockMesh"),
+	Color_11 = Instance.new("Part"),
+	Mesh_11 = Instance.new("CylinderMesh"),
+	Color_12 = Instance.new("Part"),
+	Mesh_12 = Instance.new("CylinderMesh"),
+	Color_13 = Instance.new("Part"),
+	Mesh_13 = Instance.new("SpecialMesh"),
+	Color_14 = Instance.new("Part"),
+	Mesh_14 = Instance.new("SpecialMesh"),
+	Color_15 = Instance.new("Part"),
+	Mesh_15 = Instance.new("CylinderMesh"),
+	Part_3 = Instance.new("Part"),
+	Mesh_16 = Instance.new("CylinderMesh"),
+	Color_16 = Instance.new("Part"),
+	Mesh_17 = Instance.new("BlockMesh"),
+	Color_17 = Instance.new("Part"),
+	Mesh_18 = Instance.new("CylinderMesh"),
+	Color_18 = Instance.new("Part"),
+	Mesh_19 = Instance.new("CylinderMesh"),
+	Color_19 = Instance.new("Part"),
+	Mesh_20 = Instance.new("BlockMesh"),
+	Part_4 = Instance.new("Part"),
+	Mesh_21 = Instance.new("CylinderMesh"),
+	Color_20 = Instance.new("Part"),
+	Mesh_22 = Instance.new("CylinderMesh"),
+	Part_5 = Instance.new("Part"),
+	Mesh_23 = Instance.new("BlockMesh"),
+	Color_21 = Instance.new("Part"),
+	Mesh_24 = Instance.new("BlockMesh"),
+	Lights_3 = Instance.new("Model"),
+	Flash = Instance.new("Part"),
+	PointLight = Instance.new("PointLight"),
+	Gui = Instance.new("BillboardGui"),
+	ImageLabel = Instance.new("ImageLabel"),
+	Mesh_25 = Instance.new("SpecialMesh"),
+	Flash_2 = Instance.new("Part"),
+	PointLight_2 = Instance.new("PointLight"),
+	Gui_2 = Instance.new("BillboardGui"),
+	ImageLabel_2 = Instance.new("ImageLabel"),
+	Mesh_26 = Instance.new("SpecialMesh"),
+	Light_6 = Instance.new("Part"),
+	PointLight_3 = Instance.new("PointLight"),
+	Gui_3 = Instance.new("BillboardGui"),
+	ImageLabel_3 = Instance.new("ImageLabel"),
+	Mesh_27 = Instance.new("SpecialMesh"),
+	Light_8 = Instance.new("Part"),
+	Mesh_28 = Instance.new("SpecialMesh"),
+	PointLight_4 = Instance.new("PointLight"),
+	Gui_4 = Instance.new("BillboardGui"),
+	ImageLabel_4 = Instance.new("ImageLabel"),
+	Model_3 = Instance.new("Model"),
+	MeshPart = Instance.new("Part"),
+	Model_4 = Instance.new("Model"),
+	Cockpit = Instance.new("UnionOperation"),
+	Cockpit_2 = Instance.new("UnionOperation"),
+	Cockpit_3 = Instance.new("UnionOperation"),
+	Cockpit_4 = Instance.new("UnionOperation"),
+	Cockpit_5 = Instance.new("Part"),
+	Decal = Instance.new("Decal"),
+	Rangefinder = Instance.new("SurfaceGui"),
+	Frame_2 = Instance.new("Frame"),
+	Identifier = Instance.new("TextLabel"),
+	Location = Instance.new("TextButton"),
+	Altitude = Instance.new("TextButton"),
+	Background = Instance.new("Frame"),
+	Frame_3 = Instance.new("Frame"),
+	Scripts_3 = Instance.new("Folder"),
+	Mode_5 = Instance.new("Folder"),
+	Target = Instance.new("StringValue"),
+	Search = Instance.new("StringValue"),
+	PlayerIcon = Instance.new("TextLabel"),
+	Cockpit_6 = Instance.new("UnionOperation"),
+	Cockpit_7 = Instance.new("UnionOperation"),
+	Cockpit_8 = Instance.new("UnionOperation"),
+	Cockpit_9 = Instance.new("UnionOperation"),
+	Cockpit_10 = Instance.new("UnionOperation"),
+	Cockpit_11 = Instance.new("UnionOperation"),
+	Cockpit_12 = Instance.new("UnionOperation"),
+	Cockpit_13 = Instance.new("UnionOperation"),
+	Cockpit_14 = Instance.new("UnionOperation"),
+	Cockpit_15 = Instance.new("Part"),
+	Mesh_30 = Instance.new("CylinderMesh"),
+	RadarGUI = Instance.new("SurfaceGui"),
+	Frame_4 = Instance.new("ImageLabel"),
+	CDot = Instance.new("Frame"),
+	S_14 = Instance.new("TextLabel"),
+	N = Instance.new("TextLabel"),
+	E_7 = Instance.new("TextLabel"),
+	W_2 = Instance.new("TextLabel"),
+	Decal_2 = Instance.new("Decal"),
+	Cockpit_16 = Instance.new("UnionOperation"),
+	Cockpit_17 = Instance.new("UnionOperation"),
+	Cockpit_18 = Instance.new("UnionOperation"),
+	Cockpit_19 = Instance.new("UnionOperation"),
+	Cockpit_20 = Instance.new("UnionOperation"),
+	Cockpit_21 = Instance.new("UnionOperation"),
+	Cockpit_22 = Instance.new("UnionOperation"),
+	Cockpit_23 = Instance.new("UnionOperation"),
+	Cockpit_24 = Instance.new("UnionOperation"),
+	Cockpit_25 = Instance.new("UnionOperation"),
+	Cockpit_26 = Instance.new("UnionOperation"),
+	Cockpit_27 = Instance.new("UnionOperation"),
+	Cockpit_28 = Instance.new("UnionOperation"),
+	Cockpit_29 = Instance.new("UnionOperation"),
+	Cockpit_30 = Instance.new("UnionOperation"),
+	Cockpit_31 = Instance.new("UnionOperation"),
+	Cockpit_32 = Instance.new("UnionOperation"),
+	Cockpit_33 = Instance.new("UnionOperation"),
+	Cockpit_34 = Instance.new("UnionOperation"),
+	Cockpit_35 = Instance.new("UnionOperation"),
+	Cockpit_36 = Instance.new("UnionOperation"),
+	Model_5 = Instance.new("Model"),
+	Union = Instance.new("UnionOperation"),
+	Part_7 = Instance.new("Part"),
+	Part_8 = Instance.new("Part"),
+	Part_9 = Instance.new("Part"),
+	Part_10 = Instance.new("Part"),
+	Part_11 = Instance.new("Part"),
+	Union_2 = Instance.new("UnionOperation"),
+	Model_6 = Instance.new("Model"),
+	Union_3 = Instance.new("UnionOperation"),
+	Union_4 = Instance.new("UnionOperation"),
+	ROTOR = Instance.new("Part"),
+	START = Instance.new("Sound"),
+	STOP = Instance.new("Sound"),
+	Union_5 = Instance.new("UnionOperation"),
+	Union_6 = Instance.new("UnionOperation"),
+	Model_7 = Instance.new("Model"),
+	MeshPart_2 = Instance.new("MeshPart"),
+	MeshPart_3 = Instance.new("MeshPart"),
+	Model_8 = Instance.new("Model"),
+	Seat_4 = Instance.new("Seat"),
+	Union_7 = Instance.new("UnionOperation"),
+	Model_9 = Instance.new("Model"),
+	Seat_5 = Instance.new("Seat"),
+	Union_8 = Instance.new("UnionOperation"),
+	Model_10 = Instance.new("Model"),
+	Seat_6 = Instance.new("Seat"),
+	Union_9 = Instance.new("UnionOperation"),
+	RailRappel = Instance.new("Model"),
+	Carbiner = Instance.new("UnionOperation"),
+	ClickDetector = Instance.new("ClickDetector"),
+	Carbiner_2 = Instance.new("UnionOperation"),
+	ClickDetector_2 = Instance.new("ClickDetector"),
+	Carbiner_3 = Instance.new("UnionOperation"),
+	ClickDetector_3 = Instance.new("ClickDetector"),
+	Part_14 = Instance.new("Part"),
+	Part_15 = Instance.new("Part"),
+	Part_16 = Instance.new("Part"),
+	Part_17 = Instance.new("Part"),
+	Part_18 = Instance.new("Part"),
+	Seats = Instance.new("Model"),
+	PilotSeat = Instance.new("Model"),
+	Metal = Instance.new("UnionOperation"),
+	Fabric = Instance.new("UnionOperation"),
+	Collective = Instance.new("MeshPart"),
+	Joystick = Instance.new("MeshPart"),
+	Collective_2 = Instance.new("Part"),
+	Pedals = Instance.new("UnionOperation"),
+	CopilotSeat = Instance.new("Model"),
+	Metal_2 = Instance.new("UnionOperation"),
+	Fabric_2 = Instance.new("UnionOperation"),
+	Collective_3 = Instance.new("MeshPart"),
+	Joystick_2 = Instance.new("MeshPart"),
+	Collective_4 = Instance.new("Part"),
+	Pedals_2 = Instance.new("UnionOperation"),
+	MeshPart_4 = Instance.new("MeshPart"),
+	MeshPart_5 = Instance.new("MeshPart"),
+	MeshPart_6 = Instance.new("MeshPart"),
+	MeshPart_7 = Instance.new("MeshPart"),
+	MeshPart_8 = Instance.new("MeshPart"),
+	MeshPart_9 = Instance.new("MeshPart"),
+	MeshPart_10 = Instance.new("MeshPart"),
+	MeshPart_11 = Instance.new("MeshPart"),
+	PointLight_5 = Instance.new("PointLight"),
+	MeshPart_12 = Instance.new("MeshPart"),
+	MeshPart_13 = Instance.new("MeshPart"),
+	MeshPart_14 = Instance.new("MeshPart"),
+	MeshPart_15 = Instance.new("MeshPart"),
+	MeshPart_16 = Instance.new("MeshPart"),
+	PointLight_6 = Instance.new("PointLight"),
+	Mesh_46 = Instance.new("FileMesh"),
+	MeshPart_17 = Instance.new("MeshPart"),
+	MeshPart_18 = Instance.new("MeshPart"),
+	MeshPart_19 = Instance.new("MeshPart"),
+	MeshPart_20 = Instance.new("MeshPart"),
+	MeshPart_21 = Instance.new("MeshPart"),
+	MeshPart_22 = Instance.new("MeshPart"),
+	MeshPart_23 = Instance.new("MeshPart"),
+	MeshPart_24 = Instance.new("MeshPart"),
+	MeshPart_25 = Instance.new("MeshPart"),
+	MeshPart_26 = Instance.new("MeshPart"),
+	MeshPart_27 = Instance.new("MeshPart"),
+	MeshPart_28 = Instance.new("MeshPart"),
+	MeshPart_29 = Instance.new("MeshPart"),
+	MeshPart_30 = Instance.new("MeshPart"),
+	MeshPart_31 = Instance.new("MeshPart"),
+	MeshPart_32 = Instance.new("MeshPart"),
+	MeshPart_33 = Instance.new("MeshPart"),
+	MeshPart_34 = Instance.new("MeshPart"),
+	MeshPart_35 = Instance.new("MeshPart"),
+	MeshPart_36 = Instance.new("MeshPart"),
+	Union_10 = Instance.new("UnionOperation"),
+	Union_11 = Instance.new("UnionOperation"),
+	Union_12 = Instance.new("UnionOperation"),
+	PointLight_7 = Instance.new("PointLight"),
+	Union_13 = Instance.new("UnionOperation"),
+	Union_14 = Instance.new("UnionOperation"),
+	Union_15 = Instance.new("UnionOperation"),
+	Union_16 = Instance.new("UnionOperation"),
+	Union_17 = Instance.new("UnionOperation"),
+	MeshPart_37 = Instance.new("Part"),
+	MeshPart_38 = Instance.new("Part"),
+	Part_54 = Instance.new("Part"),
+	SurfaceGui = Instance.new("SurfaceGui"),
+	TextLabel = Instance.new("TextLabel"),
+	Part_55 = Instance.new("Part"),
+	Part_56 = Instance.new("Part"),
+	Part_57 = Instance.new("Part"),
+	Part_58 = Instance.new("Part"),
+}
+
+Instances.Blackhawk.Name = "Blackhawk"
+Instances.Blackhawk.PrimaryPart = game.Workspace.Blackhawk.MainParts.Engine
+Instances.Blackhawk.Parent = game.Workspace
+
+Instances.MainParts.Name = "MainParts"
+Instances.MainParts.Parent = Instances.Blackhawk
+
+Instances.Engine.Name = "Engine"
+Instances.Engine.Anchored = true
+Instances.Engine.Material = Enum.Material.Metal
+Instances.Engine.TopSurface = Enum.SurfaceType.Smooth
+Instances.Engine.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Engine.CanCollide = false
+Instances.Engine.Transparency = 1
+Instances.Engine.CFrame = CFrame.new(-9.12, 18.41, -7.4, 0, -0, 1, -0, 1, -0, -1, 0, -0)
+Instances.Engine.Parent = Instances.MainParts
+
+Instances.Flying.Name = "Flying"
+Instances.Flying.Looped = true
+Instances.Flying.RollOffMinDistance = 5
+Instances.Flying.RollOffMode = Enum.RollOffMode.InverseTapered
+Instances.Flying.RollOffMaxDistance = 1000
+Instances.Flying.Volume = 0.8
+Instances.Flying.SoundId = "rbxassetid://4438467052"
+Instances.Flying.Parent = Instances.Engine
+
+Instances.EchoSoundEffect.Name = "EchoSoundEffect"
+Instances.EchoSoundEffect.Feedback = 1
+Instances.EchoSoundEffect.Parent = Instances.Flying
+
+Instances.StartUp.Name = "StartUp"
+Instances.StartUp.Looped = true
+Instances.StartUp.RollOffMaxDistance = 100
+Instances.StartUp.Volume = 0.6
+Instances.StartUp.SoundId = "http://roblox.com/asset/?id=150485913"
+Instances.StartUp.Parent = Instances.Engine
+
+Instances.Player.Name = "Player"
+Instances.Player.Parent = Instances.MainParts
+
+Instances.Pilot.Name = "Pilot"
+Instances.Pilot.Anchored = true
+Instances.Pilot.Material = Enum.Material.SmoothPlastic
+Instances.Pilot.TopSurface = Enum.SurfaceType.Smooth
+Instances.Pilot.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Pilot.CanCollide = false
+Instances.Pilot.Transparency = 1
+Instances.Pilot.CFrame = CFrame.new(-21.36, 4.37, -5.18, 0, -0, 1, -0, 1, -0, -1, 0, -0)
+Instances.Pilot.Parent = Instances.MainParts
+
+Instances.FlightControls.Name = "FlightControls"
+Instances.FlightControls.Parent = Instances.Pilot
+
+Instances.Helicopter.Name = "Helicopter"
+Instances.Helicopter.Parent = Instances.FlightControls
+
+Instances.Controls_2.Name = "Controls"
+Instances.Controls_2.Size = UDim2.new(0, 190, 0, 80)
+Instances.Controls_2.Visible = false
+Instances.Controls_2.BorderColor3 = Color3.new(0.11, 0.16, 0.21)
+Instances.Controls_2.BackgroundTransparency = 0.5
+Instances.Controls_2.Position = UDim2.new(0.32, 0, 0.28, 0)
+Instances.Controls_2.BorderSizePixel = 5
+Instances.Controls_2.BackgroundColor3 = Color3.new(0.5, 0.5, 0.5)
+Instances.Controls_2.ScrollBarThickness = 5
+Instances.Controls_2.HorizontalScrollBarInset = Enum.ScrollBarInset.Always
+Instances.Controls_2.Parent = Instances.FlightControls
+
+Instances.UIListLayout.Name = "UIListLayout"
+Instances.UIListLayout.Parent = Instances.Controls_2
+
+Instances.UIPadding.Name = "UIPadding"
+Instances.UIPadding.PaddingLeft = UDim.new(0, 5)
+Instances.UIPadding.Parent = Instances.Controls_2
+
+Instances.MainFrame.Name = "MainFrame"
+Instances.MainFrame.Size = UDim2.new(0, 430, 0, 45)
+Instances.MainFrame.BorderColor3 = Color3.new(0.11, 0.16, 0.21)
+Instances.MainFrame.BackgroundTransparency = 0.5
+Instances.MainFrame.Position = UDim2.new(0.32, 0, 0.13, 0)
+Instances.MainFrame.BorderSizePixel = 5
+Instances.MainFrame.BackgroundColor3 = Color3.new(0.5, 0.5, 0.5)
+Instances.MainFrame.Parent = Instances.FlightControls
+
+Instances.ALT.Name = "ALT"
+Instances.ALT.Size = UDim2.new(0, 155, 0, 26)
+Instances.ALT.BorderColor3 = Color3.new(0.11, 0.16, 0.21)
+Instances.ALT.BackgroundTransparency = 1
+Instances.ALT.Position = UDim2.new(0.02, 0, 0, 0)
+Instances.ALT.BackgroundColor3 = Color3.new(1, 1, 1)
+Instances.ALT.FontFace = Font.new("rbxasset://fonts/families/Inconsolata.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Instances.ALT.TextStrokeTransparency = 0.8
+Instances.ALT.TextColor3 = Color3.new(1, 1, 1)
+Instances.ALT.Text = " ALTITUDE:"
+Instances.ALT.TextXAlignment = Enum.TextXAlignment.Left
+Instances.ALT.Parent = Instances.MainFrame
+
+Instances.UIGridLayout.Name = "UIGridLayout"
+Instances.UIGridLayout.CellPadding = UDim2.new(0, 2, 0, 2)
+Instances.UIGridLayout.CellSize = UDim2.new(0, 140, 0, 20)
+Instances.UIGridLayout.Parent = Instances.MainFrame
+
+Instances.SPD.Name = "SPD"
+Instances.SPD.Size = UDim2.new(0, 155, 0, 26)
+Instances.SPD.BorderColor3 = Color3.new(0.11, 0.16, 0.21)
+Instances.SPD.BackgroundTransparency = 1
+Instances.SPD.Position = UDim2.new(0.02, 0, 0, 0)
+Instances.SPD.BackgroundColor3 = Color3.new(1, 1, 1)
+Instances.SPD.FontFace = Font.new("rbxasset://fonts/families/Inconsolata.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Instances.SPD.TextStrokeTransparency = 0.8
+Instances.SPD.TextColor3 = Color3.new(1, 1, 1)
+Instances.SPD.Text = " SPEED:"
+Instances.SPD.TextXAlignment = Enum.TextXAlignment.Left
+Instances.SPD.Parent = Instances.MainFrame
+
+Instances.TASPEED.Name = "TASPEED"
+Instances.TASPEED.Size = UDim2.new(0, 155, 0, 26)
+Instances.TASPEED.BorderColor3 = Color3.new(0.11, 0.16, 0.21)
+Instances.TASPEED.ClipsDescendants = true
+Instances.TASPEED.BackgroundTransparency = 1
+Instances.TASPEED.Position = UDim2.new(0.02, 0, 0, 0)
+Instances.TASPEED.BackgroundColor3 = Color3.new(1, 1, 1)
+Instances.TASPEED.FontFace = Font.new("rbxasset://fonts/families/Inconsolata.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Instances.TASPEED.TextStrokeTransparency = 0.8
+Instances.TASPEED.TextColor3 = Color3.new(1, 1, 1)
+Instances.TASPEED.Text = "V SPEED:"
+Instances.TASPEED.TextXAlignment = Enum.TextXAlignment.Left
+Instances.TASPEED.Parent = Instances.MainFrame
+
+Instances.TControlsButton.Name = "TControlsButton"
+Instances.TControlsButton.Size = UDim2.new(0, 200, 0, 50)
+Instances.TControlsButton.BorderColor3 = Color3.new(0.11, 0.16, 0.21)
+Instances.TControlsButton.BackgroundTransparency = 0.8
+Instances.TControlsButton.BackgroundColor3 = Color3.new(0.11, 0.16, 0.21)
+Instances.TControlsButton.FontFace = Font.new("rbxasset://fonts/families/ComicNeueAngular.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Instances.TControlsButton.TextStrokeTransparency = 0.8
+Instances.TControlsButton.TextColor3 = Color3.new(1, 1, 1)
+Instances.TControlsButton.Text = "CONTROLS"
+Instances.TControlsButton.Parent = Instances.MainFrame
+
+Instances.Z1.Name = "Z1"
+Instances.Z1.Size = UDim2.new(0, 155, 0, 26)
+Instances.Z1.BorderColor3 = Color3.new(0.11, 0.16, 0.21)
+Instances.Z1.BackgroundTransparency = 1
+Instances.Z1.Position = UDim2.new(0.02, 0, 0, 0)
+Instances.Z1.BackgroundColor3 = Color3.new(1, 1, 1)
+Instances.Z1.FontFace = Font.new("rbxasset://fonts/families/Inconsolata.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Instances.Z1.TextStrokeTransparency = 0.8
+Instances.Z1.TextColor3 = Color3.new(1, 1, 1)
+Instances.Z1.Text = ""
+Instances.Z1.TextXAlignment = Enum.TextXAlignment.Left
+Instances.Z1.Parent = Instances.MainFrame
+
+Instances.ZZ.Name = "ZZ"
+Instances.ZZ.Size = UDim2.new(0, 155, 0, 26)
+Instances.ZZ.BorderColor3 = Color3.new(0.11, 0.16, 0.21)
+Instances.ZZ.BackgroundTransparency = 1
+Instances.ZZ.Position = UDim2.new(0.02, 0, 0, 0)
+Instances.ZZ.BackgroundColor3 = Color3.new(1, 1, 1)
+Instances.ZZ.FontFace = Font.new("rbxasset://fonts/families/Inconsolata.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Instances.ZZ.TextStrokeTransparency = 0.8
+Instances.ZZ.TextColor3 = Color3.new(1, 1, 1)
+Instances.ZZ.Text = " THROTTLE:"
+Instances.ZZ.TextXAlignment = Enum.TextXAlignment.Left
+Instances.ZZ.Parent = Instances.MainFrame
+
+Instances.CoPilot.Name = "CoPilot"
+Instances.CoPilot.Anchored = true
+Instances.CoPilot.Material = Enum.Material.SmoothPlastic
+Instances.CoPilot.TopSurface = Enum.SurfaceType.Smooth
+Instances.CoPilot.BottomSurface = Enum.SurfaceType.Smooth
+Instances.CoPilot.CanCollide = false
+Instances.CoPilot.Transparency = 1
+Instances.CoPilot.CFrame = CFrame.new(-21.36, 4.42, -9.5, 0, -0, 1, -0, 1, -0, -1, 0, -0)
+Instances.CoPilot.Parent = Instances.MainParts
+
+Instances.Events.Name = "Events"
+Instances.Events.Parent = Instances.Blackhawk
+
+Instances.Takeoff.Name = "Takeoff"
+Instances.Takeoff.Parent = Instances.Events
+
+Instances.LightsEvent.Name = "LightsEvent"
+Instances.LightsEvent.Parent = Instances.Events
+
+Instances.Copilot.Name = "Copilot"
+Instances.Copilot.Parent = Instances.Events
+
+Instances.Misc.Name = "Misc"
+Instances.Misc.Parent = Instances.Blackhawk
+
+Instances.Lights_2.Name = "Lights"
+Instances.Lights_2.Parent = Instances.Misc
+
+Instances.RotorModel.Name = "RotorModel"
+Instances.RotorModel.Parent = Instances.Misc
+
+Instances.Main_3.Name = "Main"
+Instances.Main_3.Anchored = true
+Instances.Main_3.TopSurface = Enum.SurfaceType.Smooth
+Instances.Main_3.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Main_3.CanCollide = false
+Instances.Main_3.Transparency = 1
+Instances.Main_3.CFrame = CFrame.new(-9.12, 16.95, -7.48, -0, 1, -0, -0, -0, -1, -1, -0, 0)
+Instances.Main_3.Parent = Instances.RotorModel
+
+Instances.Rotor_Blades.Name = "Rotor Blades"
+Instances.Rotor_Blades.Material = Enum.Material.Metal
+Instances.Rotor_Blades.CanCollide = false
+Instances.Rotor_Blades.CFrame = CFrame.new(-27.73, 18.36, -5.74, -1, -0, -0, -0, 1, 0, 0, 0, -1)
+Instances.Rotor_Blades.TextureID = "rbxassetid://2536861899"
+Instances.Rotor_Blades.Parent = Instances.RotorModel
+
+Instances.Rotor_Blades.Name = "Rotor Blades"
+Instances.Rotor_Blades.Material = Enum.Material.Metal
+Instances.Rotor_Blades.CanCollide = false
+Instances.Rotor_Blades.CFrame = CFrame.new(-10.71, 18.36, -26.07, -0, -0, 1, 0, 1, 0, -1, 0, -0)
+Instances.Rotor_Blades.TextureID = "rbxassetid://2536861899"
+Instances.Rotor_Blades.Parent = Instances.RotorModel
+
+Instances.Rotor_Blades.Name = "Rotor Blades"
+Instances.Rotor_Blades.Material = Enum.Material.Metal
+Instances.Rotor_Blades.CanCollide = false
+Instances.Rotor_Blades.CFrame = CFrame.new(-7.48, 18.36, 11.2, 0, -0, -1, -0, 1, -0, 1, 0, 0)
+Instances.Rotor_Blades.TextureID = "rbxassetid://2536861899"
+Instances.Rotor_Blades.Parent = Instances.RotorModel
+
+Instances.Rotor_Blades.Name = "Rotor Blades"
+Instances.Rotor_Blades.Material = Enum.Material.Metal
+Instances.Rotor_Blades.CanCollide = false
+Instances.Rotor_Blades.CFrame = CFrame.new(9.53, 18.36, -9.05, 1, -0, 0, 0, 1, -0, -0, 0, 1)
+Instances.Rotor_Blades.TextureID = "rbxassetid://2536861899"
+Instances.Rotor_Blades.Parent = Instances.RotorModel
+
+Instances.topsinner.Name = "topsinner"
+Instances.topsinner.Material = Enum.Material.Metal
+Instances.topsinner.CanCollide = false
+Instances.topsinner.CFrame = CFrame.new(-9.15, 16.78, -7.35, -0, -0, 1, 0, 1, 0, -1, 0, -0)
+Instances.topsinner.Parent = Instances.RotorModel
+
+Instances.RotorModel_2.Name = "RotorModel"
+Instances.RotorModel_2.Parent = Instances.Misc
+
+Instances.Main_4.Name = "Main"
+Instances.Main_4.Anchored = true
+Instances.Main_4.TopSurface = Enum.SurfaceType.Smooth
+Instances.Main_4.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Main_4.CanCollide = false
+Instances.Main_4.Transparency = 1
+Instances.Main_4.CFrame = CFrame.new(41.56, 20.37, -8.88, -0, 1, 0, -0.98, -0, -0.21, -0.21, -0, 0.98)
+Instances.Main_4.Parent = Instances.RotorModel_2
+
+Instances.rearspinner.Name = "rearspinner"
+Instances.rearspinner.Material = Enum.Material.Metal
+Instances.rearspinner.CanCollide = false
+Instances.rearspinner.CFrame = CFrame.new(41.56, 20.37, -8.88, 0, 0, -1, -0.21, 0.98, -0, 0.98, 0.21, 0)
+Instances.rearspinner.Parent = Instances.RotorModel_2
+
+Instances.Rotor_Blades.Name = "Rotor Blades"
+Instances.Rotor_Blades.Anchored = true
+Instances.Rotor_Blades.Material = Enum.Material.Metal
+Instances.Rotor_Blades.CanCollide = false
+Instances.Rotor_Blades.CFrame = CFrame.new(45.85, 19.95, -8.96, 1, -0, 0, 0, 0.21, 0.98, -0, -0.98, 0.21)
+Instances.Rotor_Blades.TextureID = "rbxassetid://2536861899"
+Instances.Rotor_Blades.Parent = Instances.RotorModel_2
+
+Instances.Rotor_Blades.Name = "Rotor Blades"
+Instances.Rotor_Blades.Anchored = true
+Instances.Rotor_Blades.Material = Enum.Material.Metal
+Instances.Rotor_Blades.CanCollide = false
+Instances.Rotor_Blades.CFrame = CFrame.new(37.24, 20.81, -8.77, -1, -0, -0, -0, 0.21, -0.98, 0, -0.98, -0.21)
+Instances.Rotor_Blades.TextureID = "rbxassetid://2536861899"
+Instances.Rotor_Blades.Parent = Instances.RotorModel_2
+
+Instances.Rotor_Blades.Name = "Rotor Blades"
+Instances.Rotor_Blades.Anchored = true
+Instances.Rotor_Blades.Material = Enum.Material.Metal
+Instances.Rotor_Blades.CanCollide = false
+Instances.Rotor_Blades.CFrame = CFrame.new(41.1, 16.16, -9.76, -0, -0, 1, -0.98, 0.21, 0, -0.21, -0.98, -0)
+Instances.Rotor_Blades.TextureID = "rbxassetid://2536861899"
+Instances.Rotor_Blades.Parent = Instances.RotorModel_2
+
+Instances.Rotor_Blades.Name = "Rotor Blades"
+Instances.Rotor_Blades.Anchored = true
+Instances.Rotor_Blades.Material = Enum.Material.Metal
+Instances.Rotor_Blades.CanCollide = false
+Instances.Rotor_Blades.CFrame = CFrame.new(41.99, 24.59, -7.97, 0, -0, -1, 0.98, 0.21, -0, 0.21, -0.98, 0)
+Instances.Rotor_Blades.TextureID = "rbxassetid://2536861899"
+Instances.Rotor_Blades.Parent = Instances.RotorModel_2
+
+Instances.Rotor_11.Name = "Rotor"
+Instances.Rotor_11.Anchored = true
+Instances.Rotor_11.TopSurface = Enum.SurfaceType.Smooth
+Instances.Rotor_11.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Rotor_11.CanCollide = false
+Instances.Rotor_11.Transparency = 1
+Instances.Rotor_11.CFrame = CFrame.new(-9.12, 17.12, -7.47, -0, 1, -0, -0, -0, -1, -1, -0, 0)
+Instances.Rotor_11.Parent = Instances.Misc
+
+Instances.Motor.Name = "Motor"
+Instances.Motor.Parent = Instances.Rotor_11
+
+Instances.Rotor_12.Name = "Rotor"
+Instances.Rotor_12.Anchored = true
+Instances.Rotor_12.TopSurface = Enum.SurfaceType.Smooth
+Instances.Rotor_12.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Rotor_12.CanCollide = false
+Instances.Rotor_12.Transparency = 1
+Instances.Rotor_12.CFrame = CFrame.new(41.56, 20.34, -8.71, -0, 1, 0, -0.98, -0, -0.21, -0.21, -0, 0.98)
+Instances.Rotor_12.Parent = Instances.Misc
+
+Instances.Motor_2.Name = "Motor"
+Instances.Motor_2.Parent = Instances.Rotor_12
+
+Instances.MiscScripts.Name = "MiscScripts"
+Instances.MiscScripts.Parent = Instances.Blackhawk
+
+Instances.EngineFunctions.Name = "EngineFunctions"
+Instances.EngineFunctions.Parent = Instances.MiscScripts
+
+Instances.Settings.Name = "Settings"
+Instances.Settings.Parent = Instances.Blackhawk
+
+Instances.Config.Name = "Config"
+Instances.Config.Parent = Instances.Settings
+
+Instances.FX.Name = "FX"
+Instances.FX.Parent = Instances.Blackhawk
+
+Instances.MiscLocalScripts.Name = "MiscLocalScripts"
+Instances.MiscLocalScripts.Parent = Instances.Blackhawk
+
+Instances.Template.Name = "Template"
+Instances.Template.Size = UDim2.new(0, 155, 0, 20)
+Instances.Template.BorderColor3 = Color3.new(0.11, 0.16, 0.21)
+Instances.Template.BackgroundTransparency = 1
+Instances.Template.Position = UDim2.new(0.02, 0, 0, 0)
+Instances.Template.BackgroundColor3 = Color3.new(1, 1, 1)
+Instances.Template.FontFace = Font.new("rbxasset://fonts/families/Inconsolata.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Instances.Template.TextStrokeTransparency = 0.8
+Instances.Template.TextColor3 = Color3.new(1, 1, 1)
+Instances.Template.Text = "N/A"
+Instances.Template.TextXAlignment = Enum.TextXAlignment.Left
+Instances.Template.Parent = game.Workspace.Blackhawk.MiscLocalScripts.GUIController
+
+Instances.WeaponSpawns.Name = "WeaponSpawns"
+Instances.WeaponSpawns.Parent = Instances.Blackhawk
+
+Instances.Body.Name = "Body"
+Instances.Body.Parent = Instances.Blackhawk
+
+Instances.Seat.Name = "Seat"
+Instances.Seat.Anchored = true
+Instances.Seat.CanCollide = false
+Instances.Seat.Transparency = 1
+Instances.Seat.CFrame = CFrame.new(-2.13, 3.94, -9.08, -0, -0.02, 1, 0, 1, 0.02, -1, 0, -0)
+Instances.Seat.Parent = Instances.Body
+
+Instances.Seat_2.Name = "Seat"
+Instances.Seat_2.Anchored = true
+Instances.Seat_2.CanCollide = false
+Instances.Seat_2.Transparency = 1
+Instances.Seat_2.CFrame = CFrame.new(-2.14, 3.94, -11.56, -0, -0.02, 1, 0, 1, 0.02, -1, 0, -0)
+Instances.Seat_2.Parent = Instances.Body
+
+Instances.Seat_3.Name = "Seat"
+Instances.Seat_3.Anchored = true
+Instances.Seat_3.CanCollide = false
+Instances.Seat_3.Transparency = 1
+Instances.Seat_3.CFrame = CFrame.new(-2.13, 3.94, -3.72, -0, -0.02, 1, 0, 1, 0.02, -1, 0, -0)
+Instances.Seat_3.Parent = Instances.Body
+
+Instances.Detector.Name = "Detector"
+Instances.Detector.PrimaryPart = game.Workspace.Blackhawk.Body.Detector.Color
+Instances.Detector.Parent = Instances.Body
+
+Instances.Color.Name = "Color"
+Instances.Color.Anchored = true
+Instances.Color.Material = Enum.Material.Metal
+Instances.Color.CanCollide = false
+Instances.Color.CFrame = CFrame.new(-30.52, 2.79, -7.51, -0, -1, -0.02, -0, -0.02, 1, -1, 0, -0)
+Instances.Color.Parent = Instances.Detector
+
+Instances.Color_2.Name = "Color"
+Instances.Color_2.Anchored = true
+Instances.Color_2.Material = Enum.Material.Metal
+Instances.Color_2.TopSurface = Enum.SurfaceType.Smooth
+Instances.Color_2.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Color_2.CanCollide = false
+Instances.Color_2.CFrame = CFrame.new(-30.69, 3.53, -7.5, 0, -0.02, -1, 0, 1, -0.02, 1, -0, 0)
+Instances.Color_2.Parent = Instances.Detector
+
+Instances.Mesh.Name = "Mesh"
+Instances.Mesh.Parent = Instances.Color_2
+
+Instances.Color_3.Name = "Color"
+Instances.Color_3.Anchored = true
+Instances.Color_3.Material = Enum.Material.Metal
+Instances.Color_3.TopSurface = Enum.SurfaceType.Smooth
+Instances.Color_3.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Color_3.CanCollide = false
+Instances.Color_3.CFrame = CFrame.new(-31.24, 3.52, -7.5, -0, 0.02, -1, -0, -1, -0.02, -1, 0, 0)
+Instances.Color_3.Parent = Instances.Detector
+
+Instances.Mesh_2.Name = "Mesh"
+Instances.Mesh_2.Parent = Instances.Color_3
+
+Instances.Color_4.Name = "Color"
+Instances.Color_4.Anchored = true
+Instances.Color_4.Material = Enum.Material.Metal
+Instances.Color_4.TopSurface = Enum.SurfaceType.Smooth
+Instances.Color_4.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Color_4.CanCollide = false
+Instances.Color_4.CFrame = CFrame.new(-30.47, 4.36, -6.72, -1, -0, 0.02, -0.02, -0, -1, 0, -1, 0)
+Instances.Color_4.Parent = Instances.Detector
+
+Instances.Mesh_3.Name = "Mesh"
+Instances.Mesh_3.Parent = Instances.Color_4
+
+Instances.Color_5.Name = "Color"
+Instances.Color_5.Anchored = true
+Instances.Color_5.Material = Enum.Material.Metal
+Instances.Color_5.TopSurface = Enum.SurfaceType.Smooth
+Instances.Color_5.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Color_5.CanCollide = false
+Instances.Color_5.CFrame = CFrame.new(-30.91, 4.04, -7.5, -0, 0.02, -1, -0, -1, -0.02, -1, 0, 0)
+Instances.Color_5.Parent = Instances.Detector
+
+Instances.Mesh_4.Name = "Mesh"
+Instances.Mesh_4.MeshType = Enum.MeshType.Sphere
+Instances.Mesh_4.Parent = Instances.Color_5
+
+Instances.Color_6.Name = "Color"
+Instances.Color_6.Anchored = true
+Instances.Color_6.Material = Enum.Material.Metal
+Instances.Color_6.TopSurface = Enum.SurfaceType.Smooth
+Instances.Color_6.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Color_6.CanCollide = false
+Instances.Color_6.CFrame = CFrame.new(-31.02, 4.2, -6.72, -1, 0.02, 0, -0.02, -1, 0, 0, 0, 1)
+Instances.Color_6.Parent = Instances.Detector
+
+Instances.Mesh_5.Name = "Mesh"
+Instances.Mesh_5.Parent = Instances.Color_6
+
+Instances.Color_7.Name = "Color"
+Instances.Color_7.Anchored = true
+Instances.Color_7.Material = Enum.Material.Metal
+Instances.Color_7.TopSurface = Enum.SurfaceType.Smooth
+Instances.Color_7.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Color_7.CanCollide = false
+Instances.Color_7.CFrame = CFrame.new(-30.24, 4.37, -7.5, -0, 1, 0.02, -0, 0.02, -1, -1, -0, 0)
+Instances.Color_7.Parent = Instances.Detector
+
+Instances.Mesh_6.Name = "Mesh"
+Instances.Mesh_6.Parent = Instances.Color_7
+
+Instances.Color_8.Name = "Color"
+Instances.Color_8.Anchored = true
+Instances.Color_8.Material = Enum.Material.Metal
+Instances.Color_8.TopSurface = Enum.SurfaceType.Smooth
+Instances.Color_8.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Color_8.CanCollide = false
+Instances.Color_8.CFrame = CFrame.new(-31.1, 4.51, -6.72, 0, -1, 0.02, 0, -0.02, -1, 1, 0, 0)
+Instances.Color_8.Parent = Instances.Detector
+
+Instances.Mesh_7.Name = "Mesh"
+Instances.Mesh_7.MeshType = Enum.MeshType.Wedge
+Instances.Mesh_7.Parent = Instances.Color_8
+
+Instances.Color_9.Name = "Color"
+Instances.Color_9.Anchored = true
+Instances.Color_9.Material = Enum.Material.Metal
+Instances.Color_9.TopSurface = Enum.SurfaceType.Smooth
+Instances.Color_9.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Color_9.CanCollide = false
+Instances.Color_9.CFrame = CFrame.new(-31.02, 4.19, -8.29, -1, 0.02, 0, -0.02, -1, 0, 0, 0, 1)
+Instances.Color_9.Parent = Instances.Detector
+
+Instances.Mesh_8.Name = "Mesh"
+Instances.Mesh_8.Parent = Instances.Color_9
+
+Instances.Part_2.Name = "Part"
+Instances.Part_2.Anchored = true
+Instances.Part_2.Material = Enum.Material.Neon
+Instances.Part_2.TopSurface = Enum.SurfaceType.Smooth
+Instances.Part_2.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Part_2.CanCollide = false
+Instances.Part_2.CFrame = CFrame.new(-31.58, 4.42, -7.51, -0.02, 1, -0, 1, 0.02, -0, -0, -0, -1)
+Instances.Part_2.Parent = Instances.Detector
+
+Instances.Mesh_9.Name = "Mesh"
+Instances.Mesh_9.Parent = Instances.Part_2
+
+Instances.Color_10.Name = "Color"
+Instances.Color_10.Anchored = true
+Instances.Color_10.Material = Enum.Material.Metal
+Instances.Color_10.TopSurface = Enum.SurfaceType.Smooth
+Instances.Color_10.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Color_10.CanCollide = false
+Instances.Color_10.CFrame = CFrame.new(-30.47, 4.36, -8.29, -1, -0, 0.02, -0.02, -0, -1, 0, -1, 0)
+Instances.Color_10.Parent = Instances.Detector
+
+Instances.Mesh_10.Name = "Mesh"
+Instances.Mesh_10.Parent = Instances.Color_10
+
+Instances.Color_11.Name = "Color"
+Instances.Color_11.Anchored = true
+Instances.Color_11.Material = Enum.Material.Metal
+Instances.Color_11.TopSurface = Enum.SurfaceType.Smooth
+Instances.Color_11.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Color_11.CanCollide = false
+Instances.Color_11.CFrame = CFrame.new(-30.91, 4.43, -7.5, -0, -0.02, 1, -0, 1, 0.02, -1, -0, -0)
+Instances.Color_11.Parent = Instances.Detector
+
+Instances.Mesh_11.Name = "Mesh"
+Instances.Mesh_11.Parent = Instances.Color_11
+
+Instances.Color_12.Name = "Color"
+Instances.Color_12.Anchored = true
+Instances.Color_12.Material = Enum.Material.Metal
+Instances.Color_12.TopSurface = Enum.SurfaceType.Smooth
+Instances.Color_12.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Color_12.CanCollide = false
+Instances.Color_12.CFrame = CFrame.new(-31.55, 4.42, -7.51, -0.02, 1, -0, 1, 0.02, -0, -0, -0, -1)
+Instances.Color_12.Parent = Instances.Detector
+
+Instances.Mesh_12.Name = "Mesh"
+Instances.Mesh_12.Parent = Instances.Color_12
+
+Instances.Color_13.Name = "Color"
+Instances.Color_13.Anchored = true
+Instances.Color_13.Material = Enum.Material.Metal
+Instances.Color_13.TopSurface = Enum.SurfaceType.Smooth
+Instances.Color_13.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Color_13.CanCollide = false
+Instances.Color_13.CFrame = CFrame.new(-30.92, 4.83, -7.5, -0, 0.02, -1, -0, -1, -0.02, -1, 0, 0)
+Instances.Color_13.Parent = Instances.Detector
+
+Instances.Mesh_13.Name = "Mesh"
+Instances.Mesh_13.MeshType = Enum.MeshType.Sphere
+Instances.Mesh_13.Parent = Instances.Color_13
+
+Instances.Color_14.Name = "Color"
+Instances.Color_14.Anchored = true
+Instances.Color_14.Material = Enum.Material.Metal
+Instances.Color_14.TopSurface = Enum.SurfaceType.Smooth
+Instances.Color_14.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Color_14.CanCollide = false
+Instances.Color_14.CFrame = CFrame.new(-31.11, 4.51, -8.29, 0, -1, 0.02, 0, -0.02, -1, 1, 0, 0)
+Instances.Color_14.Parent = Instances.Detector
+
+Instances.Mesh_14.Name = "Mesh"
+Instances.Mesh_14.MeshType = Enum.MeshType.Wedge
+Instances.Mesh_14.Parent = Instances.Color_14
+
+Instances.Color_15.Name = "Color"
+Instances.Color_15.Anchored = true
+Instances.Color_15.Material = Enum.Material.Metal
+Instances.Color_15.TopSurface = Enum.SurfaceType.Smooth
+Instances.Color_15.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Color_15.CanCollide = false
+Instances.Color_15.CFrame = CFrame.new(-31.57, 4.92, -7.36, 0.02, 1, 0, -1, 0.02, 0, 0, -0, 1)
+Instances.Color_15.Parent = Instances.Detector
+
+Instances.Mesh_15.Name = "Mesh"
+Instances.Mesh_15.Parent = Instances.Color_15
+
+Instances.Part_3.Name = "Part"
+Instances.Part_3.Anchored = true
+Instances.Part_3.Material = Enum.Material.Metal
+Instances.Part_3.TopSurface = Enum.SurfaceType.Smooth
+Instances.Part_3.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Part_3.CanCollide = false
+Instances.Part_3.CFrame = CFrame.new(-31.64, 4.91, -7.46, -0.02, 1, -0, 1, 0.02, -0, -0, -0, -1)
+Instances.Part_3.Parent = Instances.Detector
+
+Instances.Mesh_16.Name = "Mesh"
+Instances.Mesh_16.Parent = Instances.Part_3
+
+Instances.Color_16.Name = "Color"
+Instances.Color_16.Anchored = true
+Instances.Color_16.Material = Enum.Material.Metal
+Instances.Color_16.TopSurface = Enum.SurfaceType.Smooth
+Instances.Color_16.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Color_16.CanCollide = false
+Instances.Color_16.CFrame = CFrame.new(-31.63, 4.91, -7.39, 1, -0, -0.02, 0.02, -0, 1, -0, -1, -0)
+Instances.Color_16.Parent = Instances.Detector
+
+Instances.Mesh_17.Name = "Mesh"
+Instances.Mesh_17.Parent = Instances.Color_16
+
+Instances.Color_17.Name = "Color"
+Instances.Color_17.Anchored = true
+Instances.Color_17.Material = Enum.Material.Metal
+Instances.Color_17.TopSurface = Enum.SurfaceType.Smooth
+Instances.Color_17.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Color_17.CanCollide = false
+Instances.Color_17.CFrame = CFrame.new(-31.63, 4.91, -7.48, -0.02, 1, -0, 1, 0.02, -0, -0, -0, -1)
+Instances.Color_17.Parent = Instances.Detector
+
+Instances.Mesh_18.Name = "Mesh"
+Instances.Mesh_18.Parent = Instances.Color_17
+
+Instances.Color_18.Name = "Color"
+Instances.Color_18.Anchored = true
+Instances.Color_18.Material = Enum.Material.Metal
+Instances.Color_18.TopSurface = Enum.SurfaceType.Smooth
+Instances.Color_18.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Color_18.CanCollide = false
+Instances.Color_18.CFrame = CFrame.new(-31.57, 4.91, -7.66, 0.02, 1, 0, -1, 0.02, 0, 0, -0, 1)
+Instances.Color_18.Parent = Instances.Detector
+
+Instances.Mesh_19.Name = "Mesh"
+Instances.Mesh_19.Parent = Instances.Color_18
+
+Instances.Color_19.Name = "Color"
+Instances.Color_19.Anchored = true
+Instances.Color_19.Material = Enum.Material.Metal
+Instances.Color_19.TopSurface = Enum.SurfaceType.Smooth
+Instances.Color_19.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Color_19.CanCollide = false
+Instances.Color_19.CFrame = CFrame.new(-31.6, 4.91, -7.52, 1, -0, -0.02, 0.02, -0, 1, -0, -1, -0)
+Instances.Color_19.Parent = Instances.Detector
+
+Instances.Mesh_20.Name = "Mesh"
+Instances.Mesh_20.Parent = Instances.Color_19
+
+Instances.Part_4.Name = "Part"
+Instances.Part_4.Anchored = true
+Instances.Part_4.Material = Enum.Material.Neon
+Instances.Part_4.TopSurface = Enum.SurfaceType.Smooth
+Instances.Part_4.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Part_4.CanCollide = false
+Instances.Part_4.CFrame = CFrame.new(-31.62, 4.91, -7.63, -0.02, 1, -0, 1, 0.02, -0, -0, -0, -1)
+Instances.Part_4.Parent = Instances.Detector
+
+Instances.Mesh_21.Name = "Mesh"
+Instances.Mesh_21.Parent = Instances.Part_4
+
+Instances.Color_20.Name = "Color"
+Instances.Color_20.Anchored = true
+Instances.Color_20.Material = Enum.Material.Metal
+Instances.Color_20.TopSurface = Enum.SurfaceType.Smooth
+Instances.Color_20.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Color_20.CanCollide = false
+Instances.Color_20.CFrame = CFrame.new(-31.62, 4.91, -7.63, -0.02, 1, -0, 1, 0.02, -0, -0, -0, -1)
+Instances.Color_20.Parent = Instances.Detector
+
+Instances.Mesh_22.Name = "Mesh"
+Instances.Mesh_22.Parent = Instances.Color_20
+
+Instances.Part_5.Name = "Part"
+Instances.Part_5.Anchored = true
+Instances.Part_5.Material = Enum.Material.Neon
+Instances.Part_5.TopSurface = Enum.SurfaceType.Smooth
+Instances.Part_5.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Part_5.CanCollide = false
+Instances.Part_5.CFrame = CFrame.new(-31.64, 4.91, -7.39, 1, -0, -0.02, 0.02, -0, 1, -0, -1, -0)
+Instances.Part_5.Parent = Instances.Detector
+
+Instances.Mesh_23.Name = "Mesh"
+Instances.Mesh_23.Parent = Instances.Part_5
+
+Instances.Color_21.Name = "Color"
+Instances.Color_21.Anchored = true
+Instances.Color_21.Material = Enum.Material.Metal
+Instances.Color_21.TopSurface = Enum.SurfaceType.Smooth
+Instances.Color_21.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Color_21.CanCollide = false
+Instances.Color_21.CFrame = CFrame.new(-31.57, 4.92, -7.51, 1, -0, -0.02, 0.02, -0, 1, -0, -1, -0)
+Instances.Color_21.Parent = Instances.Detector
+
+Instances.Mesh_24.Name = "Mesh"
+Instances.Mesh_24.Parent = Instances.Color_21
+
+Instances.Lights_3.Name = "Lights"
+Instances.Lights_3.Parent = Instances.Body
+
+Instances.Flash.Name = "Flash"
+Instances.Flash.Anchored = true
+Instances.Flash.Material = Enum.Material.Neon
+Instances.Flash.TopSurface = Enum.SurfaceType.Smooth
+Instances.Flash.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Flash.CanCollide = false
+Instances.Flash.Transparency = 0.1
+Instances.Flash.CFrame = CFrame.new(38.35, 10.12, -18.48, -0, -0, 1, -0, 1, 0, -1, -0, -0)
+Instances.Flash.Parent = Instances.Lights_3
+
+Instances.PointLight.Name = "PointLight"
+Instances.PointLight.Parent = Instances.Flash
+
+Instances.Gui.Name = "Gui"
+Instances.Gui.Size = UDim2.new(4, 0, 4, 0)
+Instances.Gui.Parent = Instances.Flash
+
+Instances.ImageLabel.Name = "ImageLabel"
+Instances.ImageLabel.ZIndex = 5
+Instances.ImageLabel.Size = UDim2.new(1, 0, 1, 0)
+Instances.ImageLabel.BorderColor3 = Color3.new(0.6, 0, 0)
+Instances.ImageLabel.BackgroundTransparency = 2
+Instances.ImageLabel.BackgroundColor3 = Color3.new(0.6, 0, 0)
+Instances.ImageLabel.Image = "http://www.roblox.com/asset/?id=141116476"
+Instances.ImageLabel.Parent = Instances.Gui
+
+Instances.Mesh_25.Name = "Mesh"
+Instances.Mesh_25.MeshType = Enum.MeshType.Sphere
+Instances.Mesh_25.Parent = Instances.Flash
+
+Instances.Flash_2.Name = "Flash"
+Instances.Flash_2.Anchored = true
+Instances.Flash_2.Material = Enum.Material.Neon
+Instances.Flash_2.TopSurface = Enum.SurfaceType.Smooth
+Instances.Flash_2.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Flash_2.CanCollide = false
+Instances.Flash_2.Transparency = 0.1
+Instances.Flash_2.CFrame = CFrame.new(38.34, 9.72, 3.82, -0, -0.01, 1, -0, 1, 0.01, -1, -0, -0)
+Instances.Flash_2.Parent = Instances.Lights_3
+
+Instances.PointLight_2.Name = "PointLight"
+Instances.PointLight_2.Parent = Instances.Flash_2
+
+Instances.Gui_2.Name = "Gui"
+Instances.Gui_2.Size = UDim2.new(8, 0, 8, 0)
+Instances.Gui_2.Parent = Instances.Flash_2
+
+Instances.ImageLabel_2.Name = "ImageLabel"
+Instances.ImageLabel_2.ZIndex = 5
+Instances.ImageLabel_2.Size = UDim2.new(1, 0, 1, 0)
+Instances.ImageLabel_2.BorderColor3 = Color3.new(0.6, 0, 0)
+Instances.ImageLabel_2.BackgroundTransparency = 2
+Instances.ImageLabel_2.BackgroundColor3 = Color3.new(0.6, 0, 0)
+Instances.ImageLabel_2.Image = "http://www.roblox.com/asset/?id=133355109"
+Instances.ImageLabel_2.Parent = Instances.Gui_2
+
+Instances.Mesh_26.Name = "Mesh"
+Instances.Mesh_26.MeshType = Enum.MeshType.Sphere
+Instances.Mesh_26.Parent = Instances.Flash_2
+
+Instances.Light_6.Name = "Light"
+Instances.Light_6.Anchored = true
+Instances.Light_6.Material = Enum.Material.Neon
+Instances.Light_6.TopSurface = Enum.SurfaceType.Smooth
+Instances.Light_6.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Light_6.CanCollide = false
+Instances.Light_6.Transparency = 0.1
+Instances.Light_6.CFrame = CFrame.new(-17.91, 2.54, 0.21, -0, 0.02, 1, -0, 1, -0.02, -1, -0, -0)
+Instances.Light_6.Parent = Instances.Lights_3
+
+Instances.PointLight_3.Name = "PointLight"
+Instances.PointLight_3.Parent = Instances.Light_6
+
+Instances.Gui_3.Name = "Gui"
+Instances.Gui_3.Size = UDim2.new(8, 0, 8, 0)
+Instances.Gui_3.Parent = Instances.Light_6
+
+Instances.ImageLabel_3.Name = "ImageLabel"
+Instances.ImageLabel_3.ZIndex = 5
+Instances.ImageLabel_3.Size = UDim2.new(1, 0, 1, 0)
+Instances.ImageLabel_3.BorderColor3 = Color3.new(0.6, 0, 0)
+Instances.ImageLabel_3.BackgroundTransparency = 2
+Instances.ImageLabel_3.BackgroundColor3 = Color3.new(0.6, 0, 0)
+Instances.ImageLabel_3.Image = "http://www.roblox.com/asset/?id=133355109"
+Instances.ImageLabel_3.Parent = Instances.Gui_3
+
+Instances.Mesh_27.Name = "Mesh"
+Instances.Mesh_27.MeshType = Enum.MeshType.Sphere
+Instances.Mesh_27.Parent = Instances.Light_6
+
+Instances.Light_8.Name = "Light"
+Instances.Light_8.Anchored = true
+Instances.Light_8.Material = Enum.Material.Neon
+Instances.Light_8.TopSurface = Enum.SurfaceType.Smooth
+Instances.Light_8.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Light_8.CanCollide = false
+Instances.Light_8.Transparency = 0.1
+Instances.Light_8.CFrame = CFrame.new(-17.97, 2.54, -15.15, -0, 0.02, 1, -0, 1, -0.02, -1, -0, -0)
+Instances.Light_8.Parent = Instances.Lights_3
+
+Instances.Mesh_28.Name = "Mesh"
+Instances.Mesh_28.MeshType = Enum.MeshType.Sphere
+Instances.Mesh_28.Parent = Instances.Light_8
+
+Instances.PointLight_4.Name = "PointLight"
+Instances.PointLight_4.Parent = Instances.Light_8
+
+Instances.Gui_4.Name = "Gui"
+Instances.Gui_4.Size = UDim2.new(4, 0, 4, 0)
+Instances.Gui_4.Parent = Instances.Light_8
+
+Instances.ImageLabel_4.Name = "ImageLabel"
+Instances.ImageLabel_4.ZIndex = 5
+Instances.ImageLabel_4.Size = UDim2.new(1, 0, 1, 0)
+Instances.ImageLabel_4.BorderColor3 = Color3.new(0.6, 0, 0)
+Instances.ImageLabel_4.BackgroundTransparency = 2
+Instances.ImageLabel_4.BackgroundColor3 = Color3.new(0.6, 0, 0)
+Instances.ImageLabel_4.Image = "http://www.roblox.com/asset/?id=141116476"
+Instances.ImageLabel_4.Parent = Instances.Gui_4
+
+Instances.Model_3.Name = "Model"
+Instances.Model_3.PrimaryPart = game.Workspace.Blackhawk.Body.Model.MeshPart
+Instances.Model_3.Parent = Instances.Body
+
+Instances.MeshPart.Name = "MeshPart"
+Instances.MeshPart.Anchored = true
+Instances.MeshPart.Material = Enum.Material.Metal
+Instances.MeshPart.TopSurface = Enum.SurfaceType.Smooth
+Instances.MeshPart.BottomSurface = Enum.SurfaceType.Smooth
+Instances.MeshPart.CanCollide = false
+Instances.MeshPart.CFrame = CFrame.new(-8.96, 13.86, -7.44, 0.1, -0, 1, -1, 0.01, 0.1, -0.01, -1, -0)
+Instances.MeshPart.Parent = Instances.Model_3
+
+Instances.Model_4.Name = "Model"
+Instances.Model_4.Parent = Instances.Body
+
+Instances.Cockpit.Name = "Cockpit"
+Instances.Cockpit.Anchored = true
+Instances.Cockpit.Material = Enum.Material.Metal
+Instances.Cockpit.CFrame = CFrame.new(-24.2, 6.26, -7.43, 0.99, 0.16, -0, -0.16, 0.99, -0, 0, 0, 1)
+Instances.Cockpit.Parent = Instances.Model_4
+
+Instances.Cockpit_2.Name = "Cockpit"
+Instances.Cockpit_2.Anchored = true
+Instances.Cockpit_2.Material = Enum.Material.SmoothPlastic
+Instances.Cockpit_2.CFrame = CFrame.new(-24.62, 6.47, -7.83, -0.64, 0.77, -0, 0.77, 0.64, 0, 0, 0, -1)
+Instances.Cockpit_2.Parent = Instances.Model_4
+
+Instances.Cockpit_3.Name = "Cockpit"
+Instances.Cockpit_3.Anchored = true
+Instances.Cockpit_3.Material = Enum.Material.Metal
+Instances.Cockpit_3.CFrame = CFrame.new(-25.07, 5.59, -6.16, 1, -0.05, -0, 0.05, 1, -0, 0, 0, 1)
+Instances.Cockpit_3.Parent = Instances.Model_4
+
+Instances.Cockpit_4.Name = "Cockpit"
+Instances.Cockpit_4.Anchored = true
+Instances.Cockpit_4.Material = Enum.Material.Neon
+Instances.Cockpit_4.CFrame = CFrame.new(-24.98, 6.67, -5.61, 0.75, -0.66, -0, 0.66, 0.75, 0, 0, -0, 1)
+Instances.Cockpit_4.Parent = Instances.Model_4
+
+Instances.Cockpit_5.Name = "Cockpit"
+Instances.Cockpit_5.Anchored = true
+Instances.Cockpit_5.Material = Enum.Material.Neon
+Instances.Cockpit_5.TopSurface = Enum.SurfaceType.Smooth
+Instances.Cockpit_5.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Cockpit_5.CFrame = CFrame.new(-24.21, 6.17, -7.37, 0, 0.16, 0.99, 0, 0.99, -0.16, -1, 0, 0)
+Instances.Cockpit_5.Parent = Instances.Model_4
+
+Instances.Decal.Name = "Decal"
+Instances.Decal.Transparency = 0.6
+Instances.Decal.Texture = "rbxassetid://176088847"
+Instances.Decal.Parent = Instances.Cockpit_5
+
+Instances.Rangefinder.Name = "Rangefinder"
+Instances.Rangefinder.Parent = Instances.Cockpit_5
+
+Instances.Frame_2.Name = "Frame"
+Instances.Frame_2.Size = UDim2.new(0, 840, 0, 580)
+Instances.Frame_2.BorderColor3 = Color3.new(0, 1, 0)
+Instances.Frame_2.BackgroundTransparency = 1.4
+Instances.Frame_2.Position = UDim2.new(0, 10, 0, 11)
+Instances.Frame_2.BorderSizePixel = 0
+Instances.Frame_2.BackgroundColor3 = Color3.new(0, 1, 0)
+Instances.Frame_2.Parent = Instances.Rangefinder
+
+Instances.Identifier.Name = "Identifier"
+Instances.Identifier.Size = UDim2.new(1, 0, 1, 0)
+Instances.Identifier.Visible = false
+Instances.Identifier.BorderColor3 = Color3.new(0.11, 0.16, 0.21)
+Instances.Identifier.BackgroundTransparency = 1.4
+Instances.Identifier.Position = UDim2.new(0, -120, 0, 70)
+Instances.Identifier.BorderSizePixel = 0
+Instances.Identifier.BackgroundColor3 = Color3.new(1, 1, 1)
+Instances.Identifier.TextStrokeTransparency = 0
+Instances.Identifier.TextColor3 = Color3.new(0.74, 1, 0.7)
+Instances.Identifier.Text = "PlayerName"
+Instances.Identifier.TextStrokeColor3 = Color3.new(0, 1, 0)
+Instances.Identifier.TextWrapped = true
+Instances.Identifier.Parent = Instances.Frame_2
+
+Instances.Location.Name = "Location"
+Instances.Location.Size = UDim2.new(0.8, 0, 1, 0)
+Instances.Location.Visible = false
+Instances.Location.BorderColor3 = Color3.new(0.11, 0.16, 0.21)
+Instances.Location.BackgroundTransparency = 1.4
+Instances.Location.Position = UDim2.new(0, -170, 0, -130)
+Instances.Location.BorderSizePixel = 0
+Instances.Location.BackgroundColor3 = Color3.new(0, 0, 0)
+Instances.Location.TextStrokeTransparency = 0
+Instances.Location.TextColor3 = Color3.new(0.74, 1, 0.7)
+Instances.Location.Text = "Closest Hostile:"
+Instances.Location.TextStrokeColor3 = Color3.new(0, 1, 0)
+Instances.Location.TextScaled = true
+Instances.Location.TextWrapped = true
+Instances.Location.Parent = Instances.Frame_2
+
+Instances.Altitude.Name = "Altitude"
+Instances.Altitude.Size = UDim2.new(1, 0, 1, 0)
+Instances.Altitude.Visible = false
+Instances.Altitude.BorderColor3 = Color3.new(0.07, 0.07, 0.07)
+Instances.Altitude.BackgroundTransparency = 1
+Instances.Altitude.Position = UDim2.new(0, -260, 0, -350)
+Instances.Altitude.BackgroundColor3 = Color3.new(0, 1, 0.5)
+Instances.Altitude.TextStrokeTransparency = 0
+Instances.Altitude.TextColor3 = Color3.new(0.74, 1, 0.7)
+Instances.Altitude.Text = "Altitude"
+Instances.Altitude.TextStrokeColor3 = Color3.new(0, 1, 0)
+Instances.Altitude.TextScaled = true
+Instances.Altitude.TextWrapped = true
+Instances.Altitude.Parent = Instances.Frame_2
+
+Instances.Background.Name = "Background"
+Instances.Background.Size = UDim2.new(0.53, 0, 0.53, 0)
+Instances.Background.Visible = false
+Instances.Background.BorderColor3 = Color3.new(0.11, 0.16, 0.21)
+Instances.Background.Position = UDim2.new(0, 60, 0, 60)
+Instances.Background.BackgroundColor3 = Color3.new(1, 1, 1)
+Instances.Background.Parent = Instances.Frame_2
+
+Instances.Frame_3.Name = "Frame"
+Instances.Frame_3.Size = UDim2.new(0, 800, 0, 580)
+Instances.Frame_3.BorderColor3 = Color3.new(0.11, 0.16, 0.21)
+Instances.Frame_3.BackgroundTransparency = 1
+Instances.Frame_3.Position = UDim2.new(0, 3, 0, -4)
+Instances.Frame_3.BorderSizePixel = 0
+Instances.Frame_3.BackgroundColor3 = Color3.new(0.24, 0.24, 0.24)
+Instances.Frame_3.Parent = Instances.Frame_2
+
+Instances.Scripts_3.Name = "Scripts"
+Instances.Scripts_3.Parent = Instances.Frame_3
+
+Instances.Mode_5.Name = "Mode"
+Instances.Mode_5.Parent = Instances.Frame_3
+
+Instances.Target.Name = "Target"
+Instances.Target.Parent = Instances.Mode_5
+
+Instances.Search.Name = "Search"
+Instances.Search.Value = "Closest"
+Instances.Search.Parent = Instances.Mode_5
+
+Instances.PlayerIcon.Name = "PlayerIcon"
+Instances.PlayerIcon.ZIndex = 5
+Instances.PlayerIcon.Size = UDim2.new(0.2, 0, 0.3, 0)
+Instances.PlayerIcon.BorderColor3 = Color3.new(0.11, 0.16, 0.21)
+Instances.PlayerIcon.BackgroundTransparency = 1
+Instances.PlayerIcon.Position = UDim2.new(0.42, 0, 0.35, 0)
+Instances.PlayerIcon.BackgroundColor3 = Color3.new(1, 1, 1)
+Instances.PlayerIcon.TextStrokeTransparency = 0
+Instances.PlayerIcon.TextColor3 = Color3.new(1, 1, 1)
+Instances.PlayerIcon.Text = ">"
+Instances.PlayerIcon.TextScaled = true
+Instances.PlayerIcon.TextWrapped = true
+Instances.PlayerIcon.Parent = Instances.Frame_3
+
+Instances.Cockpit_6.Name = "Cockpit"
+Instances.Cockpit_6.Anchored = true
+Instances.Cockpit_6.Material = Enum.Material.Neon
+Instances.Cockpit_6.CFrame = CFrame.new(-24.98, 6.67, -9.19, 0.75, -0.66, -0, 0.66, 0.75, 0, 0, -0, 1)
+Instances.Cockpit_6.Parent = Instances.Model_4
+
+Instances.Cockpit_7.Name = "Cockpit"
+Instances.Cockpit_7.Anchored = true
+Instances.Cockpit_7.Material = Enum.Material.SmoothPlastic
+Instances.Cockpit_7.CFrame = CFrame.new(-24.75, 6.63, -9.87, 0.54, 0.75, -0.38, -0.62, 0.66, 0.43, 0.57, 0, 0.82)
+Instances.Cockpit_7.Parent = Instances.Model_4
+
+Instances.Cockpit_8.Name = "Cockpit"
+Instances.Cockpit_8.Anchored = true
+Instances.Cockpit_8.Material = Enum.Material.SmoothPlastic
+Instances.Cockpit_8.CFrame = CFrame.new(-24.18, 6.02, -7.83, -0, 0.75, 0.66, 0, 0.66, -0.75, -1, 0, -0)
+Instances.Cockpit_8.Parent = Instances.Model_4
+
+Instances.Cockpit_9.Name = "Cockpit"
+Instances.Cockpit_9.Anchored = true
+Instances.Cockpit_9.Material = Enum.Material.Neon
+Instances.Cockpit_9.CFrame = CFrame.new(-24.13, 6.23, -7.78, 0.99, 0.16, -0, -0.16, 0.99, -0, 0, 0, 1)
+Instances.Cockpit_9.Parent = Instances.Model_4
+
+Instances.Cockpit_10.Name = "Cockpit"
+Instances.Cockpit_10.Anchored = true
+Instances.Cockpit_10.Material = Enum.Material.Metal
+Instances.Cockpit_10.CFrame = CFrame.new(-24.2, 6.27, -7.78, 0.99, 0.16, -0, -0.16, 0.99, -0, 0, 0, 1)
+Instances.Cockpit_10.Parent = Instances.Model_4
+
+Instances.Cockpit_11.Name = "Cockpit"
+Instances.Cockpit_11.Anchored = true
+Instances.Cockpit_11.Material = Enum.Material.SmoothPlastic
+Instances.Cockpit_11.CFrame = CFrame.new(-24.62, 6.47, -7.02, -0.64, 0.77, -0, 0.77, 0.64, 0, 0, 0, -1)
+Instances.Cockpit_11.Parent = Instances.Model_4
+
+Instances.Cockpit_12.Name = "Cockpit"
+Instances.Cockpit_12.Anchored = true
+Instances.Cockpit_12.Material = Enum.Material.Metal
+Instances.Cockpit_12.CFrame = CFrame.new(-24.94, 6.86, -5.61, 0.66, 0.75, -0, -0.75, 0.66, 0, 0, 0, 1)
+Instances.Cockpit_12.Parent = Instances.Model_4
+
+Instances.Cockpit_13.Name = "Cockpit"
+Instances.Cockpit_13.Anchored = true
+Instances.Cockpit_13.Material = Enum.Material.SmoothPlastic
+Instances.Cockpit_13.CFrame = CFrame.new(-25.02, 6.97, -9.86, 0.66, 0.75, 0, -0.75, 0.66, -0, -0, -0, 1)
+Instances.Cockpit_13.Parent = Instances.Model_4
+
+Instances.Cockpit_14.Name = "Cockpit"
+Instances.Cockpit_14.Anchored = true
+Instances.Cockpit_14.Material = Enum.Material.SmoothPlastic
+Instances.Cockpit_14.CFrame = CFrame.new(-24.88, 6.79, -7.83, -0.52, 0.77, 0.36, 0.63, 0.64, -0.44, -0.57, 0, -0.82)
+Instances.Cockpit_14.Parent = Instances.Model_4
+
+Instances.Cockpit_15.Name = "Cockpit"
+Instances.Cockpit_15.Anchored = true
+Instances.Cockpit_15.Material = Enum.Material.Neon
+Instances.Cockpit_15.CFrame = CFrame.new(-23.46, 6.06, -7.44, 0.99, 0.15, -0, -0.15, 0.99, -0, 0, 0, 1)
+Instances.Cockpit_15.Parent = Instances.Model_4
+
+Instances.Mesh_30.Name = "Mesh"
+Instances.Mesh_30.Parent = Instances.Cockpit_15
+
+Instances.RadarGUI.Name = "RadarGUI"
+Instances.RadarGUI.Parent = Instances.Cockpit_15
+
+Instances.Frame_4.Name = "Frame"
+Instances.Frame_4.Size = UDim2.new(0, 628, 0, 511)
+Instances.Frame_4.SizeConstraint = Enum.SizeConstraint.RelativeXX
+Instances.Frame_4.BorderColor3 = Color3.new(0, 0.71, 0.91)
+Instances.Frame_4.BackgroundTransparency = 1
+Instances.Frame_4.Position = UDim2.new(0, 80, 0, 40)
+Instances.Frame_4.BorderSizePixel = 0
+Instances.Frame_4.BackgroundColor3 = Color3.new(0, 0.71, 0.91)
+Instances.Frame_4.ImageTransparency = 1
+Instances.Frame_4.Image = "http://www.roblox.com/asset/?id=17725494"
+Instances.Frame_4.Parent = Instances.RadarGUI
+
+Instances.CDot.Name = "CDot"
+Instances.CDot.ZIndex = 3
+Instances.CDot.Size = UDim2.new(0, 10, 0, 10)
+Instances.CDot.BorderColor3 = Color3.new(1, 1, 1)
+Instances.CDot.BackgroundTransparency = 1
+Instances.CDot.Position = UDim2.new(0.5, 0, 0.5, 0)
+Instances.CDot.BackgroundColor3 = Color3.new(1, 1, 1)
+Instances.CDot.Parent = Instances.Frame_4
+
+Instances.S_14.Name = "S"
+Instances.S_14.BorderColor3 = Color3.new(0, 0, 0)
+Instances.S_14.BackgroundTransparency = 1
+Instances.S_14.BorderSizePixel = 0
+Instances.S_14.BackgroundColor3 = Color3.new(0, 0, 0)
+Instances.S_14.TextTransparency = 0.2
+Instances.S_14.TextStrokeTransparency = 0
+Instances.S_14.TextColor3 = Color3.new(1, 0, 0)
+Instances.S_14.Text = "S"
+Instances.S_14.TextStrokeColor3 = Color3.new(1, 0, 0)
+Instances.S_14.TextWrapped = true
+Instances.S_14.Parent = Instances.CDot
+
+Instances.N.Name = "N"
+Instances.N.BorderColor3 = Color3.new(0, 0, 0)
+Instances.N.BackgroundTransparency = 1
+Instances.N.BorderSizePixel = 0
+Instances.N.BackgroundColor3 = Color3.new(0, 0, 0)
+Instances.N.TextTransparency = 0.2
+Instances.N.TextStrokeTransparency = 0
+Instances.N.TextColor3 = Color3.new(1, 0, 0)
+Instances.N.Text = "N"
+Instances.N.TextStrokeColor3 = Color3.new(1, 0, 0)
+Instances.N.TextWrapped = true
+Instances.N.Parent = Instances.CDot
+
+Instances.E_7.Name = "E"
+Instances.E_7.BorderColor3 = Color3.new(0, 0, 0)
+Instances.E_7.BackgroundTransparency = 1
+Instances.E_7.BorderSizePixel = 0
+Instances.E_7.BackgroundColor3 = Color3.new(0, 0, 0)
+Instances.E_7.TextTransparency = 0.2
+Instances.E_7.TextStrokeTransparency = 0
+Instances.E_7.TextColor3 = Color3.new(1, 0, 0)
+Instances.E_7.Text = "E"
+Instances.E_7.TextStrokeColor3 = Color3.new(1, 0, 0)
+Instances.E_7.TextWrapped = true
+Instances.E_7.Parent = Instances.CDot
+
+Instances.W_2.Name = "W"
+Instances.W_2.BorderColor3 = Color3.new(0, 0, 0)
+Instances.W_2.BackgroundTransparency = 1
+Instances.W_2.BorderSizePixel = 0
+Instances.W_2.BackgroundColor3 = Color3.new(0, 0, 0)
+Instances.W_2.TextTransparency = 0.2
+Instances.W_2.TextStrokeTransparency = 0
+Instances.W_2.TextColor3 = Color3.new(1, 0, 0)
+Instances.W_2.Text = "W"
+Instances.W_2.TextStrokeColor3 = Color3.new(1, 0, 0)
+Instances.W_2.TextWrapped = true
+Instances.W_2.Parent = Instances.CDot
+
+Instances.Decal_2.Name = "Decal"
+Instances.Decal_2.Transparency = 0.6
+Instances.Decal_2.Texture = "rbxassetid://176088847"
+Instances.Decal_2.Parent = Instances.Cockpit_15
+
+Instances.Cockpit_16.Name = "Cockpit"
+Instances.Cockpit_16.Anchored = true
+Instances.Cockpit_16.Material = Enum.Material.Metal
+Instances.Cockpit_16.CFrame = CFrame.new(-23.45, 6.12, -7.44, 0.99, 0.15, -0, -0.15, 0.99, -0, 0, 0, 1)
+Instances.Cockpit_16.Parent = Instances.Model_4
+
+Instances.Cockpit_17.Name = "Cockpit"
+Instances.Cockpit_17.Anchored = true
+Instances.Cockpit_17.Material = Enum.Material.Metal
+Instances.Cockpit_17.CFrame = CFrame.new(-24.65, 6.63, -7.38, -0.65, 0.76, -0, 0.76, 0.65, 0, 0, -0, -1)
+Instances.Cockpit_17.Parent = Instances.Model_4
+
+Instances.Cockpit_18.Name = "Cockpit"
+Instances.Cockpit_18.Anchored = true
+Instances.Cockpit_18.Material = Enum.Material.Neon
+Instances.Cockpit_18.CFrame = CFrame.new(-25.01, 5.53, -6.31, 1, -0.05, -0, 0.05, 1, -0, 0, 0, 1)
+Instances.Cockpit_18.Parent = Instances.Model_4
+
+Instances.Cockpit_19.Name = "Cockpit"
+Instances.Cockpit_19.Anchored = true
+Instances.Cockpit_19.Material = Enum.Material.Metal
+Instances.Cockpit_19.CFrame = CFrame.new(-25.1, 5.53, -8.44, 1, -0.05, -0, 0.05, 1, -0, 0, 0, 1)
+Instances.Cockpit_19.Parent = Instances.Model_4
+
+Instances.Cockpit_20.Name = "Cockpit"
+Instances.Cockpit_20.Anchored = true
+Instances.Cockpit_20.Material = Enum.Material.SmoothPlastic
+Instances.Cockpit_20.CFrame = CFrame.new(-24.88, 6.79, -7.02, -0.52, 0.77, 0.36, 0.63, 0.64, -0.44, -0.57, 0, -0.82)
+Instances.Cockpit_20.Parent = Instances.Model_4
+
+Instances.Cockpit_21.Name = "Cockpit"
+Instances.Cockpit_21.Anchored = true
+Instances.Cockpit_21.Material = Enum.Material.SmoothPlastic
+Instances.Cockpit_21.CFrame = CFrame.new(-25.15, 7.11, -7.02, -0.32, 0.77, -0.55, 0.39, 0.64, 0.67, 0.87, -0, -0.5)
+Instances.Cockpit_21.Parent = Instances.Model_4
+
+Instances.Cockpit_22.Name = "Cockpit"
+Instances.Cockpit_22.Anchored = true
+Instances.Cockpit_22.Material = Enum.Material.Metal
+Instances.Cockpit_22.CFrame = CFrame.new(-25.08, 5.56, -6.37, 0, -0.05, 1, 0, 1, 0.05, -1, 0, 0)
+Instances.Cockpit_22.Parent = Instances.Model_4
+
+Instances.Cockpit_23.Name = "Cockpit"
+Instances.Cockpit_23.Anchored = true
+Instances.Cockpit_23.Material = Enum.Material.Neon
+Instances.Cockpit_23.CFrame = CFrame.new(-24.88, 6.8, -7.38, 0.65, 0.76, 0, -0.76, 0.65, -0, -0, -0, 1)
+Instances.Cockpit_23.Parent = Instances.Model_4
+
+Instances.Cockpit_24.Name = "Cockpit"
+Instances.Cockpit_24.Anchored = true
+Instances.Cockpit_24.Material = Enum.Material.SmoothPlastic
+Instances.Cockpit_24.CFrame = CFrame.new(-25.02, 6.97, -4.94, 0.66, 0.75, 0, -0.75, 0.66, -0, -0, -0, 1)
+Instances.Cockpit_24.Parent = Instances.Model_4
+
+Instances.Cockpit_25.Name = "Cockpit"
+Instances.Cockpit_25.Anchored = true
+Instances.Cockpit_25.Material = Enum.Material.Metal
+Instances.Cockpit_25.CFrame = CFrame.new(-24.83, 5.54, -8.44, 1, -0.05, -0, 0.05, 1, -0, 0, 0, 1)
+Instances.Cockpit_25.Parent = Instances.Model_4
+
+Instances.Cockpit_26.Name = "Cockpit"
+Instances.Cockpit_26.Anchored = true
+Instances.Cockpit_26.Material = Enum.Material.Neon
+Instances.Cockpit_26.CFrame = CFrame.new(-25.13, 6.84, -9.19, 0.75, 0.66, 0, 0.66, -0.75, -0, 0, 0, -1)
+Instances.Cockpit_26.Parent = Instances.Model_4
+
+Instances.Cockpit_27.Name = "Cockpit"
+Instances.Cockpit_27.Anchored = true
+Instances.Cockpit_27.Material = Enum.Material.Neon
+Instances.Cockpit_27.CFrame = CFrame.new(-25.12, 6.84, -5.61, 0.75, 0.66, 0, 0.66, -0.75, -0, 0, 0, -1)
+Instances.Cockpit_27.Parent = Instances.Model_4
+
+Instances.Cockpit_28.Name = "Cockpit"
+Instances.Cockpit_28.Anchored = true
+Instances.Cockpit_28.Material = Enum.Material.Metal
+Instances.Cockpit_28.CFrame = CFrame.new(-22.6, 6.11, -7.44, 0.13, -0.99, 0, 0.99, 0.13, -0, 0, 0, 1)
+Instances.Cockpit_28.Parent = Instances.Model_4
+
+Instances.Cockpit_29.Name = "Cockpit"
+Instances.Cockpit_29.Anchored = true
+Instances.Cockpit_29.Material = Enum.Material.SmoothPlastic
+Instances.Cockpit_29.CFrame = CFrame.new(-24.74, 6.62, -4.94, 0.54, 0.75, -0.38, -0.62, 0.66, 0.43, 0.57, 0, 0.82)
+Instances.Cockpit_29.Parent = Instances.Model_4
+
+Instances.Cockpit_30.Name = "Cockpit"
+Instances.Cockpit_30.Anchored = true
+Instances.Cockpit_30.Material = Enum.Material.Neon
+Instances.Cockpit_30.CFrame = CFrame.new(-24.91, 5.52, -8.44, 1, -0.05, -0, 0.05, 1, -0, 0, 0, 1)
+Instances.Cockpit_30.Parent = Instances.Model_4
+
+Instances.Cockpit_31.Name = "Cockpit"
+Instances.Cockpit_31.Anchored = true
+Instances.Cockpit_31.Material = Enum.Material.Metal
+Instances.Cockpit_31.CFrame = CFrame.new(-24.96, 5.54, -8.44, 1, -0.05, -0, 0.05, 1, -0, 0, 0, 1)
+Instances.Cockpit_31.Parent = Instances.Model_4
+
+Instances.Cockpit_32.Name = "Cockpit"
+Instances.Cockpit_32.Anchored = true
+Instances.Cockpit_32.Material = Enum.Material.Metal
+Instances.Cockpit_32.CFrame = CFrame.new(-24.94, 6.86, -9.19, 0.66, 0.75, -0, -0.75, 0.66, 0, 0, 0, 1)
+Instances.Cockpit_32.Parent = Instances.Model_4
+
+Instances.Cockpit_33.Name = "Cockpit"
+Instances.Cockpit_33.Anchored = true
+Instances.Cockpit_33.Material = Enum.Material.Metal
+Instances.Cockpit_33.CFrame = CFrame.new(-25.02, 7.05, -7.39, 0.65, 0.76, 0, -0.76, 0.65, -0, -0, -0, 1)
+Instances.Cockpit_33.Parent = Instances.Model_4
+
+Instances.Cockpit_34.Name = "Cockpit"
+Instances.Cockpit_34.Anchored = true
+Instances.Cockpit_34.Material = Enum.Material.SmoothPlastic
+Instances.Cockpit_34.CFrame = CFrame.new(-24.18, 6.01, -7.02, -0, 0.75, 0.66, 0, 0.66, -0.75, -1, 0, -0)
+Instances.Cockpit_34.Parent = Instances.Model_4
+
+Instances.Cockpit_35.Name = "Cockpit"
+Instances.Cockpit_35.Anchored = true
+Instances.Cockpit_35.Material = Enum.Material.Metal
+Instances.Cockpit_35.CFrame = CFrame.new(-25.08, 5.56, -6.25, -0, -0.05, -1, -0, 1, -0.05, 1, 0, -0)
+Instances.Cockpit_35.Parent = Instances.Model_4
+
+Instances.Cockpit_36.Name = "Cockpit"
+Instances.Cockpit_36.Anchored = true
+Instances.Cockpit_36.Material = Enum.Material.SmoothPlastic
+Instances.Cockpit_36.CFrame = CFrame.new(-25.15, 7.11, -7.83, -0.32, 0.77, -0.55, 0.39, 0.64, 0.67, 0.87, -0, -0.5)
+Instances.Cockpit_36.Parent = Instances.Model_4
+
+Instances.Model_5.Name = "Model"
+Instances.Model_5.PrimaryPart = game.Workspace.Blackhawk.Body.Model.Union
+Instances.Model_5.Parent = Instances.Body
+
+Instances.Union.Name = "Union"
+Instances.Union.Anchored = true
+Instances.Union.Material = Enum.Material.Metal
+Instances.Union.CanCollide = false
+Instances.Union.CFrame = CFrame.new(-19.29, 2.82, -14.16, 1, -0.01, -0.02, 0.02, 0, 1, -0.01, -1, 0)
+Instances.Union.Parent = Instances.Model_5
+
+Instances.Part_7.Name = "Part"
+Instances.Part_7.Anchored = true
+Instances.Part_7.Material = Enum.Material.Metal
+Instances.Part_7.TopSurface = Enum.SurfaceType.Smooth
+Instances.Part_7.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Part_7.CanCollide = false
+Instances.Part_7.CFrame = CFrame.new(-36.54, 2.79, -14.33, 1, -0.01, 0.01, 0.01, 1, 0, -0.01, -0, 1)
+Instances.Part_7.Parent = Instances.Model_5
+
+Instances.Part_8.Name = "Part"
+Instances.Part_8.Anchored = true
+Instances.Part_8.Material = Enum.Material.Metal
+Instances.Part_8.TopSurface = Enum.SurfaceType.Smooth
+Instances.Part_8.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Part_8.CanCollide = false
+Instances.Part_8.CFrame = CFrame.new(-27.93, 2.9, -14.39, 1, -0.01, 0.01, 0.01, 1, 0, -0.01, -0, 1)
+Instances.Part_8.Parent = Instances.Model_5
+
+Instances.Part_9.Name = "Part"
+Instances.Part_9.Anchored = true
+Instances.Part_9.Material = Enum.Material.Metal
+Instances.Part_9.TopSurface = Enum.SurfaceType.Smooth
+Instances.Part_9.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Part_9.CanCollide = false
+Instances.Part_9.CFrame = CFrame.new(-19.87, 3.02, -14.45, 1, -0.01, 0.01, 0.01, 1, 0, -0.01, -0, 1)
+Instances.Part_9.Parent = Instances.Model_5
+
+Instances.Part_10.Name = "Part"
+Instances.Part_10.Anchored = true
+Instances.Part_10.Material = Enum.Material.Metal
+Instances.Part_10.TopSurface = Enum.SurfaceType.Smooth
+Instances.Part_10.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Part_10.CanCollide = false
+Instances.Part_10.CFrame = CFrame.new(-36.08, 2.79, -14.32, 1, -0.01, 0.01, 0.01, 1, 0, -0.01, -0, 1)
+Instances.Part_10.Parent = Instances.Model_5
+
+Instances.Part_11.Name = "Part"
+Instances.Part_11.Anchored = true
+Instances.Part_11.Material = Enum.Material.Metal
+Instances.Part_11.TopSurface = Enum.SurfaceType.Smooth
+Instances.Part_11.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Part_11.CanCollide = false
+Instances.Part_11.CFrame = CFrame.new(-22.88, 3, -14.44, 1, -0.01, 0.01, 0.01, 1, 0, -0.01, -0, 1)
+Instances.Part_11.Parent = Instances.Model_5
+
+Instances.Union_2.Name = "Union"
+Instances.Union_2.Anchored = true
+Instances.Union_2.Material = Enum.Material.Metal
+Instances.Union_2.CanCollide = false
+Instances.Union_2.CFrame = CFrame.new(-17.94, 2.65, -13.93, 0.01, -0.98, 0.21, 0, -0.21, -0.98, 1, 0.01, 0)
+Instances.Union_2.Parent = Instances.Model_5
+
+Instances.Model_6.Name = "Model"
+Instances.Model_6.PrimaryPart = game.Workspace.Blackhawk.Body.Model.Union
+Instances.Model_6.Parent = Instances.Body
+
+Instances.Union_3.Name = "Union"
+Instances.Union_3.Anchored = true
+Instances.Union_3.Material = Enum.Material.Metal
+Instances.Union_3.CanCollide = false
+Instances.Union_3.CFrame = CFrame.new(-8.97, 14.76, -7.43, 1, -0.08, 0, 0.08, 1, -0, -0, 0, 1)
+Instances.Union_3.Parent = Instances.Model_6
+
+Instances.Union_4.Name = "Union"
+Instances.Union_4.Anchored = true
+Instances.Union_4.Material = Enum.Material.Metal
+Instances.Union_4.CanCollide = false
+Instances.Union_4.CFrame = CFrame.new(-8.97, 14.76, -7.43, -1, 0, -0.08, -0.08, 0, 1, 0, 1, -0)
+Instances.Union_4.Parent = Instances.Model_6
+
+Instances.ROTOR.Name = "ROTOR"
+Instances.ROTOR.Anchored = true
+Instances.ROTOR.Material = Enum.Material.Metal
+Instances.ROTOR.TopSurface = Enum.SurfaceType.Motor
+Instances.ROTOR.BottomSurface = Enum.SurfaceType.Smooth
+Instances.ROTOR.CanCollide = false
+Instances.ROTOR.Transparency = 1
+Instances.ROTOR.CFrame = CFrame.new(-8.79, 14.13, -7.7, -0, -0.08, 1, 0.05, 1, 0.08, -1, 0.05, -0)
+Instances.ROTOR.Parent = Instances.Model_6
+
+Instances.START.Name = "START"
+Instances.START.Volume = 3
+Instances.START.SoundId = "rbxassetid://277989301"
+Instances.START.Parent = Instances.ROTOR
+
+Instances.STOP.Name = "STOP"
+Instances.STOP.SoundId = "http://www.roblox.com/asset/?id=252436311"
+Instances.STOP.Parent = Instances.ROTOR
+
+Instances.Union_5.Name = "Union"
+Instances.Union_5.Anchored = true
+Instances.Union_5.Material = Enum.Material.Metal
+Instances.Union_5.CanCollide = false
+Instances.Union_5.CFrame = CFrame.new(-9.02, 15.29, -7.43, 0.08, -1, -0, -1, -0.08, 0, -0, 0, -1)
+Instances.Union_5.Parent = Instances.Model_6
+
+Instances.Union_6.Name = "Union"
+Instances.Union_6.Anchored = true
+Instances.Union_6.Material = Enum.Material.Metal
+Instances.Union_6.CanCollide = false
+Instances.Union_6.CFrame = CFrame.new(-9, 15.15, -7.49, 0, -0.08, -1, 0, 1, -0.08, 1, -0, 0)
+Instances.Union_6.Parent = Instances.Model_6
+
+Instances.Model_7.Name = "Model"
+Instances.Model_7.Parent = Instances.Body
+
+Instances.MeshPart_2.Name = "MeshPart"
+Instances.MeshPart_2.Anchored = true
+Instances.MeshPart_2.Material = Enum.Material.Metal
+Instances.MeshPart_2.CanCollide = false
+Instances.MeshPart_2.CFrame = CFrame.new(-3.1, 6.85, -13.43, -1, -0.02, -0, -0.02, 1, 0, 0, 0, -1)
+Instances.MeshPart_2.Parent = Instances.Model_7
+
+Instances.MeshPart_3.Name = "MeshPart"
+Instances.MeshPart_3.Anchored = true
+Instances.MeshPart_3.Material = Enum.Material.Glass
+Instances.MeshPart_3.CanCollide = false
+Instances.MeshPart_3.Reflectance = 1
+Instances.MeshPart_3.Transparency = 0.7
+Instances.MeshPart_3.CFrame = CFrame.new(-3.26, 8.15, -13.64, -1, -0.02, -0, -0.02, 1, 0, 0, 0, -1)
+Instances.MeshPart_3.Parent = Instances.Model_7
+
+Instances.Model_8.Name = "Model"
+Instances.Model_8.Parent = Instances.Body
+
+Instances.Seat_4.Name = "Seat"
+Instances.Seat_4.Anchored = true
+Instances.Seat_4.CanCollide = false
+Instances.Seat_4.Transparency = 1
+Instances.Seat_4.CFrame = CFrame.new(-2.13, 3.94, -6.2, -0, -0.02, 1, 0, 1, 0.02, -1, 0, -0)
+Instances.Seat_4.Parent = Instances.Model_8
+
+Instances.Union_7.Name = "Union"
+Instances.Union_7.Anchored = true
+Instances.Union_7.Material = Enum.Material.Metal
+Instances.Union_7.CanCollide = false
+Instances.Union_7.CFrame = CFrame.new(-1.63, 5.17, -6.23, 0.02, 1, 0, -1, 0.02, -0, -0, -0, 1)
+Instances.Union_7.Parent = Instances.Model_8
+
+Instances.Model_9.Name = "Model"
+Instances.Model_9.Parent = Instances.Body
+
+Instances.Seat_5.Name = "Seat"
+Instances.Seat_5.Anchored = true
+Instances.Seat_5.CanCollide = false
+Instances.Seat_5.Transparency = 1
+Instances.Seat_5.CFrame = CFrame.new(-10.72, 3.94, -6.26, 0, 0.02, -1, -0, 1, 0.02, 1, -0, 0)
+Instances.Seat_5.Parent = Instances.Model_9
+
+Instances.Union_8.Name = "Union"
+Instances.Union_8.Anchored = true
+Instances.Union_8.Material = Enum.Material.Metal
+Instances.Union_8.CanCollide = false
+Instances.Union_8.CFrame = CFrame.new(-11.23, 5.17, -6.23, -0.02, -1, -0, -1, 0.02, -0, 0, 0, -1)
+Instances.Union_8.Parent = Instances.Model_9
+
+Instances.Model_10.Name = "Model"
+Instances.Model_10.Parent = Instances.Body
+
+Instances.Seat_6.Name = "Seat"
+Instances.Seat_6.Anchored = true
+Instances.Seat_6.CanCollide = false
+Instances.Seat_6.Transparency = 1
+Instances.Seat_6.CFrame = CFrame.new(-10.72, 3.94, -3.62, 0, 0.02, -1, -0, 1, 0.02, 1, -0, 0)
+Instances.Seat_6.Parent = Instances.Model_10
+
+Instances.Union_9.Name = "Union"
+Instances.Union_9.Anchored = true
+Instances.Union_9.Material = Enum.Material.Metal
+Instances.Union_9.CanCollide = false
+Instances.Union_9.CFrame = CFrame.new(-11.23, 5.17, -3.58, -0.02, -1, -0, -1, 0.02, -0, 0, 0, -1)
+Instances.Union_9.Parent = Instances.Model_10
+
+Instances.RailRappel.Name = "RailRappel"
+Instances.RailRappel.Parent = Instances.Body
+
+Instances.Carbiner.Name = "Carbiner"
+Instances.Carbiner.Anchored = true
+Instances.Carbiner.Material = Enum.Material.SmoothPlastic
+Instances.Carbiner.CanCollide = false
+Instances.Carbiner.CFrame = CFrame.new(-8.85, 9.48, -11.9, 1, 0, 0.02, 0.02, -0, -1, -0, 1, -0)
+Instances.Carbiner.Parent = Instances.RailRappel
+
+Instances.ClickDetector.Name = "ClickDetector"
+Instances.ClickDetector.MaxActivationDistance = 6
+Instances.ClickDetector.Parent = Instances.Carbiner
+
+Instances.Carbiner_2.Name = "Carbiner"
+Instances.Carbiner_2.Anchored = true
+Instances.Carbiner_2.Material = Enum.Material.SmoothPlastic
+Instances.Carbiner_2.CanCollide = false
+Instances.Carbiner_2.CFrame = CFrame.new(-7.85, 9.5, -11.9, 1, 0, 0.02, 0.02, -0, -1, -0, 1, -0)
+Instances.Carbiner_2.Parent = Instances.RailRappel
+
+Instances.ClickDetector_2.Name = "ClickDetector"
+Instances.ClickDetector_2.MaxActivationDistance = 6
+Instances.ClickDetector_2.Parent = Instances.Carbiner_2
+
+Instances.Carbiner_3.Name = "Carbiner"
+Instances.Carbiner_3.Anchored = true
+Instances.Carbiner_3.Material = Enum.Material.SmoothPlastic
+Instances.Carbiner_3.CanCollide = false
+Instances.Carbiner_3.CFrame = CFrame.new(-11.85, 9.4, -11.9, 1, 0, 0.02, 0.02, -0, -1, -0, 1, -0)
+Instances.Carbiner_3.Parent = Instances.RailRappel
+
+Instances.ClickDetector_3.Name = "ClickDetector"
+Instances.ClickDetector_3.MaxActivationDistance = 6
+Instances.ClickDetector_3.Parent = Instances.Carbiner_3
+
+Instances.Part_14.Name = "Part"
+Instances.Part_14.Anchored = true
+Instances.Part_14.Material = Enum.Material.SmoothPlastic
+Instances.Part_14.TopSurface = Enum.SurfaceType.Smooth
+Instances.Part_14.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Part_14.CanCollide = false
+Instances.Part_14.CFrame = CFrame.new(-9.5, 9.61, -11.92, 0, -0.02, -1, -0, 1, -0.02, 1, 0, 0)
+Instances.Part_14.Parent = Instances.RailRappel
+
+Instances.Part_15.Name = "Part"
+Instances.Part_15.Anchored = true
+Instances.Part_15.Material = Enum.Material.SmoothPlastic
+Instances.Part_15.TopSurface = Enum.SurfaceType.Smooth
+Instances.Part_15.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Part_15.CanCollide = false
+Instances.Part_15.CFrame = CFrame.new(-9.7, 9.76, -11.92, 0, -0.02, -1, -0, 1, -0.02, 1, 0, 0)
+Instances.Part_15.Parent = Instances.RailRappel
+
+Instances.Part_16.Name = "Part"
+Instances.Part_16.Anchored = true
+Instances.Part_16.Material = Enum.Material.SmoothPlastic
+Instances.Part_16.TopSurface = Enum.SurfaceType.Smooth
+Instances.Part_16.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Part_16.CanCollide = false
+Instances.Part_16.CFrame = CFrame.new(-6.7, 9.83, -11.92, 0, -0.02, -1, -0, 1, -0.02, 1, 0, 0)
+Instances.Part_16.Parent = Instances.RailRappel
+
+Instances.Part_17.Name = "Part"
+Instances.Part_17.Anchored = true
+Instances.Part_17.Material = Enum.Material.SmoothPlastic
+Instances.Part_17.TopSurface = Enum.SurfaceType.Smooth
+Instances.Part_17.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Part_17.CanCollide = false
+Instances.Part_17.CFrame = CFrame.new(-12.3, 9.69, -11.92, 0, -0.02, -1, -0, 1, -0.02, 1, 0, 0)
+Instances.Part_17.Parent = Instances.RailRappel
+
+Instances.Part_18.Name = "Part"
+Instances.Part_18.Anchored = true
+Instances.Part_18.Material = Enum.Material.SmoothPlastic
+Instances.Part_18.TopSurface = Enum.SurfaceType.Smooth
+Instances.Part_18.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Part_18.CanCollide = false
+Instances.Part_18.CFrame = CFrame.new(-9.51, 9.96, -11.92, 0, -0.02, -1, -0, 1, -0.02, 1, 0, 0)
+Instances.Part_18.Parent = Instances.RailRappel
+
+Instances.Seats.Name = "Seats"
+Instances.Seats.Parent = Instances.Body
+
+Instances.PilotSeat.Name = "PilotSeat"
+Instances.PilotSeat.Parent = Instances.Seats
+
+Instances.Metal.Name = "Metal"
+Instances.Metal.Anchored = true
+Instances.Metal.Material = Enum.Material.Metal
+Instances.Metal.CanCollide = false
+Instances.Metal.CFrame = CFrame.new(-20.5, 5.35, -9.48, -0, -0.04, 1, 0.01, 1, 0.04, -1, 0.01, -0)
+Instances.Metal.Parent = Instances.PilotSeat
+
+Instances.Fabric.Name = "Fabric"
+Instances.Fabric.Anchored = true
+Instances.Fabric.Material = Enum.Material.Fabric
+Instances.Fabric.CanCollide = false
+Instances.Fabric.CFrame = CFrame.new(-21.01, 5.87, -9.47, -0, -0.04, 1, 0.01, 1, 0.04, -1, 0.01, -0)
+Instances.Fabric.Parent = Instances.PilotSeat
+
+Instances.Collective.Name = "Collective"
+Instances.Collective.Anchored = true
+Instances.Collective.Material = Enum.Material.Metal
+Instances.Collective.CanCollide = false
+Instances.Collective.CFrame = CFrame.new(-21.16, 4.2, -8.36, -0.01, -0.1, -0.99, -0, 0.99, -0.1, 1, 0, -0.01)
+Instances.Collective.Parent = Instances.PilotSeat
+
+Instances.Joystick.Name = "Joystick"
+Instances.Joystick.Anchored = true
+Instances.Joystick.Material = Enum.Material.Metal
+Instances.Joystick.CanCollide = false
+Instances.Joystick.CFrame = CFrame.new(-22.35, 4.46, -9.29, 0, 0.05, -1, -0.01, 1, 0.05, 1, 0.01, 0)
+Instances.Joystick.Parent = Instances.PilotSeat
+
+Instances.Collective_2.Name = "Collective"
+Instances.Collective_2.Anchored = true
+Instances.Collective_2.Material = Enum.Material.Metal
+Instances.Collective_2.TopSurface = Enum.SurfaceType.Smooth
+Instances.Collective_2.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Collective_2.CanCollide = false
+Instances.Collective_2.CFrame = CFrame.new(-20.48, 3.62, -8.48, 0, -0.04, -1, -0.01, 1, -0.04, 1, 0.01, 0)
+Instances.Collective_2.Parent = Instances.PilotSeat
+
+Instances.Pedals.Name = "Pedals"
+Instances.Pedals.Anchored = true
+Instances.Pedals.Material = Enum.Material.DiamondPlate
+Instances.Pedals.CFrame = CFrame.new(-23.52, 2.87, -9.57, 0, -0.33, -0.94, -0.01, 0.94, -0.33, 1, 0.01, -0)
+Instances.Pedals.Parent = Instances.PilotSeat
+
+Instances.CopilotSeat.Name = "CopilotSeat"
+Instances.CopilotSeat.Parent = Instances.Seats
+
+Instances.Metal_2.Name = "Metal"
+Instances.Metal_2.Anchored = true
+Instances.Metal_2.Material = Enum.Material.Metal
+Instances.Metal_2.CanCollide = false
+Instances.Metal_2.CFrame = CFrame.new(-20.49, 5.29, -5.18, -0, -0.04, 1, 0.01, 1, 0.04, -1, 0.01, -0)
+Instances.Metal_2.Parent = Instances.CopilotSeat
+
+Instances.Fabric_2.Name = "Fabric"
+Instances.Fabric_2.Anchored = true
+Instances.Fabric_2.Material = Enum.Material.Fabric
+Instances.Fabric_2.CanCollide = false
+Instances.Fabric_2.CFrame = CFrame.new(-21.01, 5.81, -5.17, -0, -0.04, 1, 0.01, 1, 0.04, -1, 0.01, -0)
+Instances.Fabric_2.Parent = Instances.CopilotSeat
+
+Instances.Collective_3.Name = "Collective"
+Instances.Collective_3.Anchored = true
+Instances.Collective_3.Material = Enum.Material.Metal
+Instances.Collective_3.CanCollide = false
+Instances.Collective_3.CFrame = CFrame.new(-21.16, 4.14, -4.06, -0.01, -0.1, -0.99, -0, 0.99, -0.1, 1, 0, -0.01)
+Instances.Collective_3.Parent = Instances.CopilotSeat
+
+Instances.Joystick_2.Name = "Joystick"
+Instances.Joystick_2.Anchored = true
+Instances.Joystick_2.Material = Enum.Material.Metal
+Instances.Joystick_2.CanCollide = false
+Instances.Joystick_2.CFrame = CFrame.new(-22.35, 4.4, -4.99, 0, 0.05, -1, -0.01, 1, 0.05, 1, 0.01, 0)
+Instances.Joystick_2.Parent = Instances.CopilotSeat
+
+Instances.Collective_4.Name = "Collective"
+Instances.Collective_4.Anchored = true
+Instances.Collective_4.Material = Enum.Material.Metal
+Instances.Collective_4.TopSurface = Enum.SurfaceType.Smooth
+Instances.Collective_4.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Collective_4.CanCollide = false
+Instances.Collective_4.CFrame = CFrame.new(-20.48, 3.56, -4.18, 0, -0.04, -1, -0.01, 1, -0.04, 1, 0.01, 0)
+Instances.Collective_4.Parent = Instances.CopilotSeat
+
+Instances.Pedals_2.Name = "Pedals"
+Instances.Pedals_2.Anchored = true
+Instances.Pedals_2.Material = Enum.Material.DiamondPlate
+Instances.Pedals_2.CFrame = CFrame.new(-23.51, 2.81, -5.27, 0, -0.33, -0.94, -0.01, 0.94, -0.33, 1, 0.01, -0)
+Instances.Pedals_2.Parent = Instances.CopilotSeat
+
+Instances.MeshPart_4.Name = "MeshPart"
+Instances.MeshPart_4.Anchored = true
+Instances.MeshPart_4.Material = Enum.Material.Neon
+Instances.MeshPart_4.CanCollide = false
+Instances.MeshPart_4.CFrame = CFrame.new(-0.7, 16.41, -7.46, -1, -0.02, -0, -0.02, 1, 0, 0, 0, -1)
+Instances.MeshPart_4.Parent = Instances.Body
+
+Instances.MeshPart_5.Name = "MeshPart"
+Instances.MeshPart_5.Anchored = true
+Instances.MeshPart_5.Material = Enum.Material.Metal
+Instances.MeshPart_5.CanCollide = false
+Instances.MeshPart_5.CFrame = CFrame.new(-7.06, 13.39, -7.45, -1, -0.02, -0, -0.02, 1, 0, 0, 0, -1)
+Instances.MeshPart_5.Parent = Instances.Body
+
+Instances.MeshPart_6.Name = "MeshPart"
+Instances.MeshPart_6.Anchored = true
+Instances.MeshPart_6.Material = Enum.Material.Metal
+Instances.MeshPart_6.CanCollide = false
+Instances.MeshPart_6.CFrame = CFrame.new(-22.26, 5.15, -13.64, -1, -0.02, -0, -0.02, 1, 0, 0, 0, -1)
+Instances.MeshPart_6.Parent = Instances.Body
+
+Instances.MeshPart_7.Name = "MeshPart"
+Instances.MeshPart_7.Anchored = true
+Instances.MeshPart_7.Material = Enum.Material.Metal
+Instances.MeshPart_7.CanCollide = false
+Instances.MeshPart_7.CFrame = CFrame.new(-21.12, 4.64, -7.45, -1, -0.02, -0, -0.02, 1, 0, 0, 0, -1)
+Instances.MeshPart_7.Parent = Instances.Body
+
+Instances.MeshPart_8.Name = "MeshPart"
+Instances.MeshPart_8.Anchored = true
+Instances.MeshPart_8.Material = Enum.Material.SmoothPlastic
+Instances.MeshPart_8.CFrame = CFrame.new(-12.3, 1.4, -0.65, -0, -0.02, 1, -0, 1, 0.02, -1, -0, -0)
+Instances.MeshPart_8.Parent = Instances.Body
+
+Instances.MeshPart_9.Name = "MeshPart"
+Instances.MeshPart_9.Anchored = true
+Instances.MeshPart_9.Material = Enum.Material.Glass
+Instances.MeshPart_9.CanCollide = false
+Instances.MeshPart_9.Reflectance = 1
+Instances.MeshPart_9.Transparency = 0.7
+Instances.MeshPart_9.CFrame = CFrame.new(-18.83, 6.84, -7.34, -1, -0.02, -0, -0.02, 1, 0, 0, 0, -1)
+Instances.MeshPart_9.Parent = Instances.Body
+
+Instances.MeshPart_10.Name = "MeshPart"
+Instances.MeshPart_10.Anchored = true
+Instances.MeshPart_10.Material = Enum.Material.Metal
+Instances.MeshPart_10.CanCollide = false
+Instances.MeshPart_10.CFrame = CFrame.new(1.41, 12.49, -7.46, -1, -0.02, -0, -0.02, 1, 0, 0, 0, -1)
+Instances.MeshPart_10.Parent = Instances.Body
+
+Instances.MeshPart_11.Name = "MeshPart"
+Instances.MeshPart_11.Anchored = true
+Instances.MeshPart_11.Material = Enum.Material.Neon
+Instances.MeshPart_11.CanCollide = false
+Instances.MeshPart_11.CFrame = CFrame.new(-25.98, 1.91, -7.44, -1, -0.02, -0, -0.02, 1, 0, 0, 0, -1)
+Instances.MeshPart_11.Parent = Instances.Body
+
+Instances.PointLight_5.Name = "PointLight"
+Instances.PointLight_5.Range = 2
+Instances.PointLight_5.Parent = Instances.MeshPart_11
+
+Instances.MeshPart_12.Name = "MeshPart"
+Instances.MeshPart_12.Anchored = true
+Instances.MeshPart_12.Material = Enum.Material.SmoothPlastic
+Instances.MeshPart_12.CFrame = CFrame.new(-12.51, 1.39, -14.46, 0, -0.02, -1, -0, 1, -0.02, 1, 0, 0)
+Instances.MeshPart_12.Parent = Instances.Body
+
+Instances.MeshPart_13.Name = "MeshPart"
+Instances.MeshPart_13.Anchored = true
+Instances.MeshPart_13.Material = Enum.Material.Metal
+Instances.MeshPart_13.CanCollide = false
+Instances.MeshPart_13.CFrame = CFrame.new(-14.64, 2.52, -1.55, -0, -0.02, 1, 0, 1, 0.02, -1, 0, -0)
+Instances.MeshPart_13.Parent = Instances.Body
+
+Instances.MeshPart_14.Name = "MeshPart"
+Instances.MeshPart_14.Anchored = true
+Instances.MeshPart_14.Material = Enum.Material.Metal
+Instances.MeshPart_14.CanCollide = false
+Instances.MeshPart_14.CFrame = CFrame.new(1.22, 8.79, -7.46, -1, -0.02, -0, -0.02, 1, 0, 0, 0, -1)
+Instances.MeshPart_14.Parent = Instances.Body
+
+Instances.MeshPart_15.Name = "MeshPart"
+Instances.MeshPart_15.Anchored = true
+Instances.MeshPart_15.Material = Enum.Material.Metal
+Instances.MeshPart_15.CanCollide = false
+Instances.MeshPart_15.Reflectance = 99
+Instances.MeshPart_15.CFrame = CFrame.new(10.85, 1.73, -7.46, -1, -0.02, -0, -0.02, 1, 0, 0, 0, -1)
+Instances.MeshPart_15.Parent = Instances.Body
+
+Instances.MeshPart_16.Name = "MeshPart"
+Instances.MeshPart_16.Anchored = true
+Instances.MeshPart_16.Material = Enum.Material.Neon
+Instances.MeshPart_16.CanCollide = false
+Instances.MeshPart_16.CFrame = CFrame.new(-28.46, 2.04, -7.44, -1, -0.02, -0, -0.02, 1, 0, 0, 0, -1)
+Instances.MeshPart_16.Parent = Instances.Body
+
+Instances.PointLight_6.Name = "PointLight"
+Instances.PointLight_6.Range = 2
+Instances.PointLight_6.Parent = Instances.MeshPart_16
+
+Instances.Mesh_46.Name = "Mesh"
+Instances.Mesh_46.MeshId = "rbxassetid://2664555816"
+Instances.Mesh_46.Parent = Instances.MeshPart_16
+
+Instances.MeshPart_17.Name = "MeshPart"
+Instances.MeshPart_17.Anchored = true
+Instances.MeshPart_17.Material = Enum.Material.Metal
+Instances.MeshPart_17.CanCollide = false
+Instances.MeshPart_17.CFrame = CFrame.new(-16.06, 7.87, -7.45, -1, -0.02, -0, -0.02, 1, 0, 0, 0, -1)
+Instances.MeshPart_17.Parent = Instances.Body
+
+Instances.MeshPart_18.Name = "MeshPart"
+Instances.MeshPart_18.Anchored = true
+Instances.MeshPart_18.Material = Enum.Material.Metal
+Instances.MeshPart_18.CanCollide = false
+Instances.MeshPart_18.CFrame = CFrame.new(-0.16, 12.74, -7.46, -1, -0.02, -0, -0.02, 1, 0, 0, 0, -1)
+Instances.MeshPart_18.Parent = Instances.Body
+
+Instances.MeshPart_19.Name = "MeshPart"
+Instances.MeshPart_19.Anchored = true
+Instances.MeshPart_19.Material = Enum.Material.Metal
+Instances.MeshPart_19.CanCollide = false
+Instances.MeshPart_19.CFrame = CFrame.new(-7.81, 8.46, -7.37, -1, -0.02, -0, -0.02, 1, 0, 0, 0, -1)
+Instances.MeshPart_19.Parent = Instances.Body
+
+Instances.MeshPart_20.Name = "MeshPart"
+Instances.MeshPart_20.Anchored = true
+Instances.MeshPart_20.Material = Enum.Material.Metal
+Instances.MeshPart_20.CanCollide = false
+Instances.MeshPart_20.CFrame = CFrame.new(-14.7, 2.5, -13.65, -0, -0.02, 1, 0, 1, 0.02, -1, 0, -0)
+Instances.MeshPart_20.Parent = Instances.Body
+
+Instances.MeshPart_21.Name = "MeshPart"
+Instances.MeshPart_21.Anchored = true
+Instances.MeshPart_21.Material = Enum.Material.Metal
+Instances.MeshPart_21.CanCollide = false
+Instances.MeshPart_21.CFrame = CFrame.new(-22.25, 5.15, -1.25, -1, -0.02, -0, -0.02, 1, 0, 0, 0, -1)
+Instances.MeshPart_21.Parent = Instances.Body
+
+Instances.MeshPart_22.Name = "MeshPart"
+Instances.MeshPart_22.Anchored = true
+Instances.MeshPart_22.Material = Enum.Material.SmoothPlastic
+Instances.MeshPart_22.CFrame = CFrame.new(10.83, 1.05, -7.46, -1, -0.02, -0, -0.02, 1, 0, 0, 0, -1)
+Instances.MeshPart_22.Parent = Instances.Body
+
+Instances.MeshPart_23.Name = "MeshPart"
+Instances.MeshPart_23.Anchored = true
+Instances.MeshPart_23.Material = Enum.Material.Metal
+Instances.MeshPart_23.CanCollide = false
+Instances.MeshPart_23.CFrame = CFrame.new(-16.05, 7.87, -1.22, -1, -0.02, -0, -0.02, 1, 0, 0, 0, -1)
+Instances.MeshPart_23.Parent = Instances.Body
+
+Instances.MeshPart_24.Name = "MeshPart"
+Instances.MeshPart_24.Anchored = true
+Instances.MeshPart_24.Material = Enum.Material.Metal
+Instances.MeshPart_24.CanCollide = false
+Instances.MeshPart_24.CFrame = CFrame.new(-22.49, 7.06, -13.16, -1, -0.02, -0, -0.02, 1, 0, 0, 0, -1)
+Instances.MeshPart_24.Parent = Instances.Body
+
+Instances.MeshPart_25.Name = "MeshPart"
+Instances.MeshPart_25.Anchored = true
+Instances.MeshPart_25.Material = Enum.Material.Metal
+Instances.MeshPart_25.CanCollide = false
+Instances.MeshPart_25.CFrame = CFrame.new(-6.66, 9.15, -7.45, -1, -0.02, -0, -0.02, 1, 0, 0, 0, -1)
+Instances.MeshPart_25.Parent = Instances.Body
+
+Instances.MeshPart_26.Name = "MeshPart"
+Instances.MeshPart_26.Anchored = true
+Instances.MeshPart_26.Material = Enum.Material.Metal
+Instances.MeshPart_26.CanCollide = false
+Instances.MeshPart_26.CFrame = CFrame.new(-10.37, 8.53, -7.45, -1, -0.02, -0, -0.02, 1, 0, 0, 0, -1)
+Instances.MeshPart_26.Parent = Instances.Body
+
+Instances.MeshPart_27.Name = "MeshPart"
+Instances.MeshPart_27.Anchored = true
+Instances.MeshPart_27.Material = Enum.Material.Metal
+Instances.MeshPart_27.CanCollide = false
+Instances.MeshPart_27.CFrame = CFrame.new(-14.13, 6.52, -10.73, -0, 0.01, 1, -0, 1, -0.01, -1, -0, -0)
+Instances.MeshPart_27.Parent = Instances.Body
+
+Instances.MeshPart_28.Name = "MeshPart"
+Instances.MeshPart_28.Anchored = true
+Instances.MeshPart_28.Material = Enum.Material.Metal
+Instances.MeshPart_28.CanCollide = false
+Instances.MeshPart_28.CFrame = CFrame.new(39.04, 14.13, -7.36, -1, -0.02, -0, -0.02, 1, 0, 0, 0, -1)
+Instances.MeshPart_28.Parent = Instances.Body
+
+Instances.MeshPart_29.Name = "MeshPart"
+Instances.MeshPart_29.Anchored = true
+Instances.MeshPart_29.Material = Enum.Material.Metal
+Instances.MeshPart_29.CanCollide = false
+Instances.MeshPart_29.CFrame = CFrame.new(-14.12, 6.53, -4.14, -0, 0.01, 1, -0, 1, -0.01, -1, -0, -0)
+Instances.MeshPart_29.Parent = Instances.Body
+
+Instances.MeshPart_30.Name = "MeshPart"
+Instances.MeshPart_30.Anchored = true
+Instances.MeshPart_30.Material = Enum.Material.Metal
+Instances.MeshPart_30.CanCollide = false
+Instances.MeshPart_30.CFrame = CFrame.new(20.15, 7.29, -7.77, -1, -0.02, -0, -0.02, 1, 0, 0, 0, -1)
+Instances.MeshPart_30.Parent = Instances.Body
+
+Instances.MeshPart_31.Name = "MeshPart"
+Instances.MeshPart_31.Anchored = true
+Instances.MeshPart_31.Material = Enum.Material.Metal
+Instances.MeshPart_31.CanCollide = false
+Instances.MeshPart_31.CFrame = CFrame.new(-6.71, 9.78, -4.44, -1, -0.02, -0, -0.02, 1, 0, 0, 0, -1)
+Instances.MeshPart_31.Parent = Instances.Body
+
+Instances.MeshPart_32.Name = "MeshPart"
+Instances.MeshPart_32.Anchored = true
+Instances.MeshPart_32.Material = Enum.Material.Metal
+Instances.MeshPart_32.CanCollide = false
+Instances.MeshPart_32.CFrame = CFrame.new(-9.1, 14, -7.4, -0, -0.04, 1, -0, 1, 0.04, -1, -0, -0)
+Instances.MeshPart_32.Parent = Instances.Body
+
+Instances.MeshPart_33.Name = "MeshPart"
+Instances.MeshPart_33.Anchored = true
+Instances.MeshPart_33.Material = Enum.Material.Metal
+Instances.MeshPart_33.CanCollide = false
+Instances.MeshPart_33.CFrame = CFrame.new(-9, 7.04, -7.45, -1, -0.02, -0, -0.02, 1, 0, 0, 0, -1)
+Instances.MeshPart_33.Parent = Instances.Body
+
+Instances.MeshPart_34.Name = "MeshPart"
+Instances.MeshPart_34.Anchored = true
+Instances.MeshPart_34.Material = Enum.Material.Metal
+Instances.MeshPart_34.CanCollide = false
+Instances.MeshPart_34.CFrame = CFrame.new(-22.49, 7.06, -1.73, -1, -0.02, -0, -0.02, 1, 0, 0, 0, -1)
+Instances.MeshPart_34.Parent = Instances.Body
+
+Instances.MeshPart_35.Name = "MeshPart"
+Instances.MeshPart_35.Anchored = true
+Instances.MeshPart_35.Material = Enum.Material.Metal
+Instances.MeshPart_35.CanCollide = false
+Instances.MeshPart_35.CFrame = CFrame.new(-19.2, 7.87, -13.71, -1, -0.02, -0, -0.02, 1, 0, 0, 0, -1)
+Instances.MeshPart_35.Parent = Instances.Body
+
+Instances.MeshPart_36.Name = "MeshPart"
+Instances.MeshPart_36.Anchored = true
+Instances.MeshPart_36.Material = Enum.Material.Metal
+Instances.MeshPart_36.CanCollide = false
+Instances.MeshPart_36.CFrame = CFrame.new(-10.61, 8.39, -6.96, -1, -0.02, -0, -0.02, 1, 0, 0, 0, -1)
+Instances.MeshPart_36.Parent = Instances.Body
+
+Instances.Union_10.Name = "Union"
+Instances.Union_10.Anchored = true
+Instances.Union_10.Material = Enum.Material.Metal
+Instances.Union_10.CanCollide = false
+Instances.Union_10.CFrame = CFrame.new(-1.63, 5.17, -3.57, 0.02, 1, 0, -1, 0.02, -0, -0, -0, 1)
+Instances.Union_10.Parent = Instances.Body
+
+Instances.Union_11.Name = "Union"
+Instances.Union_11.Anchored = true
+Instances.Union_11.Material = Enum.Material.DiamondPlate
+Instances.Union_11.CanCollide = false
+Instances.Union_11.CFrame = CFrame.new(-23.67, 2.59, -7.31, 0, -0.04, -1, -0.01, 1, -0.04, 1, 0.01, -0)
+Instances.Union_11.Parent = Instances.Body
+
+Instances.Union_12.Name = "Union"
+Instances.Union_12.Anchored = true
+Instances.Union_12.Material = Enum.Material.Glass
+Instances.Union_12.CanCollide = false
+Instances.Union_12.Transparency = 0.4
+Instances.Union_12.CFrame = CFrame.new(42.84, 22.28, -6.87, 0, -0.02, -1, -0, 1, -0.02, 1, 0, 0)
+Instances.Union_12.Parent = Instances.Body
+
+Instances.PointLight_7.Name = "PointLight"
+Instances.PointLight_7.Parent = Instances.Union_12
+
+Instances.Union_13.Name = "Union"
+Instances.Union_13.Anchored = true
+Instances.Union_13.Material = Enum.Material.Metal
+Instances.Union_13.CanCollide = false
+Instances.Union_13.CFrame = CFrame.new(-1.63, 5.17, -11.61, 0.02, 1, 0, -1, 0.02, -0, -0, -0, 1)
+Instances.Union_13.Parent = Instances.Body
+
+Instances.Union_14.Name = "Union"
+Instances.Union_14.Anchored = true
+Instances.Union_14.Material = Enum.Material.Metal
+Instances.Union_14.CanCollide = false
+Instances.Union_14.CFrame = CFrame.new(-15.98, 4.95, -5.34, 0.02, 0.03, 1, -1, 0, 0.02, 0, -1, 0.03)
+Instances.Union_14.Parent = Instances.Body
+
+Instances.Union_15.Name = "Union"
+Instances.Union_15.Anchored = true
+Instances.Union_15.Material = Enum.Material.Metal
+Instances.Union_15.CanCollide = false
+Instances.Union_15.CFrame = CFrame.new(-9.12, 17.12, -7.47, 0, 1, -0.06, 0, 0.06, 1, 1, -0, -0)
+Instances.Union_15.Parent = Instances.Body
+
+Instances.Union_16.Name = "Union"
+Instances.Union_16.Anchored = true
+Instances.Union_16.Material = Enum.Material.Metal
+Instances.Union_16.CanCollide = false
+Instances.Union_16.CFrame = CFrame.new(-1.63, 5.17, -8.95, 0.02, 1, 0, -1, 0.02, -0, -0, -0, 1)
+Instances.Union_16.Parent = Instances.Body
+
+Instances.Union_17.Name = "Union"
+Instances.Union_17.Anchored = true
+Instances.Union_17.Material = Enum.Material.Metal
+Instances.Union_17.CanCollide = false
+Instances.Union_17.CFrame = CFrame.new(-15.88, 4.95, -9.94, 0.02, 0.04, -1, -1, 0, -0.02, 0, 1, 0.04)
+Instances.Union_17.Parent = Instances.Body
+
+Instances.MeshPart_37.Name = "MeshPart"
+Instances.MeshPart_37.Anchored = true
+Instances.MeshPart_37.Material = Enum.Material.DiamondPlate
+Instances.MeshPart_37.TopSurface = Enum.SurfaceType.Smooth
+Instances.MeshPart_37.BottomSurface = Enum.SurfaceType.Smooth
+Instances.MeshPart_37.CanCollide = false
+Instances.MeshPart_37.CFrame = CFrame.new(41.66, 20.28, -8.29, 0.03, -1, 0.02, -0.29, -0.03, -0.96, 0.96, 0.03, -0.29)
+Instances.MeshPart_37.Parent = Instances.Body
+
+Instances.MeshPart_38.Name = "MeshPart"
+Instances.MeshPart_38.Anchored = true
+Instances.MeshPart_38.Material = Enum.Material.DiamondPlate
+Instances.MeshPart_38.TopSurface = Enum.SurfaceType.Smooth
+Instances.MeshPart_38.BottomSurface = Enum.SurfaceType.Smooth
+Instances.MeshPart_38.CanCollide = false
+Instances.MeshPart_38.CFrame = CFrame.new(41.7, 19.99, -7.28, 0.03, -1, 0.02, -0.29, -0.03, -0.96, 0.96, 0.03, -0.29)
+Instances.MeshPart_38.Parent = Instances.Body
+
+Instances.Part_54.Name = "Part"
+Instances.Part_54.Anchored = true
+Instances.Part_54.TopSurface = Enum.SurfaceType.Smooth
+Instances.Part_54.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Part_54.Transparency = 1
+Instances.Part_54.CFrame = CFrame.new(-28.67, 5.9, -7.41, -0.86, -0.51, -0, -0.51, 0.86, 0, 0, 0, -1)
+Instances.Part_54.Parent = Instances.Body
+
+Instances.SurfaceGui.Name = "SurfaceGui"
+Instances.SurfaceGui.Parent = Instances.Part_54
+
+Instances.TextLabel.Name = "TextLabel"
+Instances.TextLabel.Size = UDim2.new(1, 0, 1, 0)
+Instances.TextLabel.BorderColor3 = Color3.new(0.11, 0.16, 0.21)
+Instances.TextLabel.Selectable = true
+Instances.TextLabel.BackgroundTransparency = 1
+Instances.TextLabel.BackgroundColor3 = Color3.new(1, 1, 1)
+Instances.TextLabel.FontFace = Font.new("rbxasset://fonts/families/Arial.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+Instances.TextLabel.Text = "01"
+Instances.TextLabel.Parent = Instances.SurfaceGui
+
+Instances.Part_55.Name = "Part"
+Instances.Part_55.Anchored = true
+Instances.Part_55.Material = Enum.Material.Metal
+Instances.Part_55.TopSurface = Enum.SurfaceType.Smooth
+Instances.Part_55.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Part_55.CFrame = CFrame.new(-11.87, 2.81, -7.41, 0, -0.02, -1, -0, 1, -0.02, 1, 0, 0)
+Instances.Part_55.Parent = Instances.Body
+
+Instances.Part_56.Name = "Part"
+Instances.Part_56.Anchored = true
+Instances.Part_56.TopSurface = Enum.SurfaceType.Smooth
+Instances.Part_56.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Part_56.CanCollide = false
+Instances.Part_56.CFrame = CFrame.new(42.21, 20.13, -7.05, 0, -0.02, -1, -0, 1, -0.02, 1, 0, 0)
+Instances.Part_56.Parent = Instances.Body
+
+Instances.Part_57.Name = "Part"
+Instances.Part_57.Anchored = true
+Instances.Part_57.TopSurface = Enum.SurfaceType.Smooth
+Instances.Part_57.BottomSurface = Enum.SurfaceType.Smooth
+Instances.Part_57.CanCollide = false
+Instances.Part_57.CFrame = CFrame.new(-0.43, 8.94, -7.18, 0, -0.02, -1, -0, 1, -0.02, 1, 0, 0)
+Instances.Part_57.Parent = Instances.Body
+
+Instances.Part_58.Name = "Part"
+Instances.Part_58.Anchored = true
+Instances.Part_58.RightSurface = Enum.SurfaceType.SmoothNoOutlines
+Instances.Part_58.Material = Enum.Material.DiamondPlate
+Instances.Part_58.BackSurface = Enum.SurfaceType.SmoothNoOutlines
+Instances.Part_58.TopSurface = Enum.SurfaceType.SmoothNoOutlines
+Instances.Part_58.FrontSurface = Enum.SurfaceType.SmoothNoOutlines
+Instances.Part_58.BottomSurface = Enum.SurfaceType.SmoothNoOutlines
+Instances.Part_58.CanCollide = false
+Instances.Part_58.LeftSurface = Enum.SurfaceType.SmoothNoOutlines
+Instances.Part_58.CFrame = CFrame.new(-23.64, 2.92, -7.32, -1, -0.04, -0, -0.04, 1, 0.01, -0, 0.01, -1)
+Instances.Part_58.Parent = Instances.Body
+
+-- End of conversion.
